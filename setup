@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DOTFILES=$HOME/dotfiles
+CONFIGS=(
+	".clang-format"
+	 ".clangd"
+	 ".editorconfig"
+	 ".gitconfig"
+	 ".lintr"
+	 ".tmux.conf"
+	 ".vimrc"
+	 ".zshrc"
+)
+
+for cfg in ${CONFIGS[@]}; do
+	if [ -e "$HOME/${cfg}" ]; then
+		mv "$HOME/${cfg}" "$HOME/${cfg}-old"
+	fi
+	if [ -L "$HOME/${cfg}" ]; then
+		rm "$HOME/${cfg}"
+	fi
+	ln -s $DOTFILES/${cfg} $HOME/${cfg}
+done
+
+# vim: ft=sh
