@@ -19,15 +19,14 @@ for cfg in ${CONFIGS[@]}; do
 	ln -s $DOTFILES/${cfg} $HOME/${cfg}
 done
 
-# NeoVim dependencies (npm needed to install some LSPs)
-brew install nvm
+# NeoVim dependencies 
+brew install nvm lazygit
+# npm needed to install some LSPs
 nvm install node
 
 # Oh-My-ZSH plugins/themes
 brew install autojump eza
-
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
