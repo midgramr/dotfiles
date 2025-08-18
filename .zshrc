@@ -6,6 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # amuse
 # minimal
 # typewritten
+source $(brew --prefix)/opt/spaceship/spaceship.zsh
 ZSH_THEME="spaceship"
 
 zstyle ':omz:update' mode auto      # update automatically without asking

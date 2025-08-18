@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=$HOME/dotfiles
+DOTFILES=$(pwd)
 CONFIGS=(
 	".clang-format"
 	 ".clangd"
@@ -18,5 +18,17 @@ for cfg in ${CONFIGS[@]}; do
 	fi
 	ln -s $DOTFILES/${cfg} $HOME/${cfg}
 done
+
+# NVIM dependencies (npm needed to install some LSPs)
+brew install nvm
+nvm install node
+
+# ZSH plugins/themes
+brew install autojump eza
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # vim: ft=bash
