@@ -2,7 +2,7 @@
 
 DOTFILES=$(pwd)
 CONFIGS=(
-	".clang-format"
+	 ".clang-format"
 	 ".clangd"
 	 ".editorconfig"
 	 ".gitconfig"
@@ -13,10 +13,10 @@ CONFIGS=(
 )
 
 for cfg in ${CONFIGS[@]}; do
-	if [ -e "$HOME/${cfg}" ]; then
-		mv "$HOME/${cfg}" "$HOME/${cfg}-old"
+	if [ -e "$HOME/$cfg" ]; then
+		mv "$HOME/$cfg" "$HOME/$cfg-old"
 	fi
-	ln -s $DOTFILES/${cfg} $HOME/${cfg}
+	ln -s $DOTFILES/$cfg $HOME/$cfg
 done
 
 # NeoVim dependencies 
@@ -27,8 +27,6 @@ nvm install node
 # Oh-My-ZSH plugins/themes
 brew install autojump eza
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # Setup NeoVim
 brew install neovim
