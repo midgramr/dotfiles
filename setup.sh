@@ -18,22 +18,22 @@ for cfg in ${CONFIGS[@]}; do
 	echo "Set symlink for $cfg"
 done
 
-# # NeoVim dependencies 
-# brew install nvm lazygit
-# # npm needed to install some LSPs
-# nvm install node
-#
-# # Oh-My-ZSH plugins/themes
-# brew install autojump eza
-# git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-#
-# # Setup NeoVim
-# brew install neovim
-# git clone git@github.com:N1v3x2/nvim.git ~/.config/nvim
-#
-# # Setup Kitty
-# curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-# rm -rf ~/.config/kitty
-# git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
+# NeoVim dependencies 
+brew install nvm lazygit tmux
+# npm needed to install some LSPs
+nvm install node
+
+# Oh-My-ZSH plugins/themes
+brew install autojump eza
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# Setup NeoVim
+brew install neovim
+git clone git@github.com:N1v3x2/nvim.git ~/.config/nvim
+
+# Setup Kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+rm -rf ~/.config/kitty
+git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
 
 # vim: ft=bash
