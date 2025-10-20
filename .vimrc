@@ -65,20 +65,20 @@ augroup RestoreCursor
 	\ | endif
 augroup END
 
-call plug#begin()
-
-Plug 'AlessandroYorba/Alduin'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'wadackel/vim-dogrun'
-Plug 'yorickpeterse/happy_hacking.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'dikiaap/minimalist'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'ycm-core/YouCompleteMe'
-
-call plug#end()
+"call plug#begin()
+"
+"Plug 'AlessandroYorba/Alduin'
+"Plug 'tyrannicaltoucan/vim-deep-space'
+"Plug 'wadackel/vim-dogrun'
+"Plug 'yorickpeterse/happy_hacking.vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'dikiaap/minimalist'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+"Plug 'ycm-core/YouCompleteMe'
+"
+"call plug#end()
 
 " snippets
 " let g:UltiSnipsExpandTrigger="<tab>"
@@ -86,32 +86,32 @@ call plug#end()
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " vim airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#formatter = 'default'
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-" unicode symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.colnr = ' ℅:'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.colnr = ' ℅:'
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ' :'
-let g:airline_symbols.maxlinenr = '☰ '
-let g:airline_symbols.dirty='⚡'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = 'Ɇ'
-let g:airline_symbols.whitespace = 'Ξ'
-
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+"" unicode symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.colnr = ' ℅:'
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.colnr = ' ℅:'
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ' :'
+"let g:airline_symbols.maxlinenr = '☰ '
+"let g:airline_symbols.dirty='⚡'
+"let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.spell = 'Ꞩ'
+"let g:airline_symbols.notexists = 'Ɇ'
+"let g:airline_symbols.whitespace = 'Ξ'
+"
 " Themes
-colorscheme minimalist
+"colorscheme minimalist
 
 set nonumber
 autocmd filetype js,ts,py,html,cpp,c,h,css,r, setlocal number

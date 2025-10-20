@@ -1,18 +1,19 @@
-#!/bin/bash
+#!/bin/zsh
 
+# NOTE: need to run this script from the setup directory
 DOTFILES=$(pwd)
 CONFIGS=(
-	 ".clang-format"
-	 ".clangd"
-	 ".editorconfig"
-	 ".gitconfig"
-	 ".lintr"
-	 ".tmux.conf"
-	 ".vimrc"
-	 ".zshrc"
+	 '.clang-format'
+	 '.clangd'
+	 '.editorconfig'
+	 '.gitconfig'
+	 '.lintr'
+	 '.tmux.conf'
+	 '.vimrc'
+	 '.zshrc'
 )
 
-for cfg in ${CONFIGS[@]}; do
+for cfg in $CONFIGS; do
 	rm -f $HOME/$cfg
 	ln -s $DOTFILES/$cfg $HOME/$cfg
 	echo "Set symlink for $cfg"
@@ -39,4 +40,4 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 rm -rf ~/.config/kitty
 git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
 
-# vim: ft=bash
+# vim: ft=zsh
