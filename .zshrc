@@ -12,11 +12,11 @@ ZSH_THEME="minimal"
 zstyle ':omz:update' mode auto      # update automatically without asking
 
 plugins=(
-	git
-	autojump
-	zsh-autosuggestions
-	eza
-	vi-mode
+  git
+  autojump
+  zsh-autosuggestions
+  eza
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -41,8 +41,8 @@ esac
 
 # Git
 function git-prune-branches {
-    git fetch --prune
-    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+  git fetch --prune
+  git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 }
 
 # Variables
