@@ -49,16 +49,10 @@ function git-prune-branches() {
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 export MANPAGER='nvim +Man!'
-# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Aliases
 alias s="kitten ssh" # Auto copies terminfo file to remote
 export IBMCLOUD_API_KEY=YoLvXT_oepqBmLJLefxr5eSr0IYPz30RzfAS2lH-hU6G
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/kevinzhang/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
 
 # vim: ft=zsh

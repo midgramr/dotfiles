@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 DOTFILES=$(pwd)
 CONFIGS=(
@@ -12,7 +12,7 @@ CONFIGS=(
 	 ".zshrc"
 )
 
-for cfg in ${CONFIGS[@]}; do
+for cfg in $CONFIGS; do
 	rm -f $HOME/$cfg
 	ln -s $DOTFILES/$cfg $HOME/$cfg
 	echo "Set symlink for $cfg"
@@ -38,5 +38,11 @@ git clone git@github.com:N1v3x2/nvim.git ~/.config/nvim
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 rm -rf ~/.config/kitty
 git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
+
+# Git
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
 
 # vim: ft=bash
