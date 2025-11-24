@@ -37,7 +37,7 @@ esac
 # Variables
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 export MANPAGER='nvim +Man!'
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Aliases & functions
 alias s="kitten ssh" # Auto copies terminfo file to remote
