@@ -4,9 +4,6 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{js,py}]
-charset = utf-8
-
 [*.py]
 indent_style = space
 indent_size = 4
@@ -22,10 +19,6 @@ indent_style = tab
 indent_style = space
 indent_size = 4
 
-[*.{r,rmd}]
-indent_style = space
-indent_size = 2
-
 [*.snippets]
 indent_style = space
 indent_size = 4
@@ -33,3 +26,7 @@ indent_size = 4
 [*.{java}]
 indent_style = space
 indent_size = 4
+
+[*.{lua}]
+indent_style = space
+indent_size = 2

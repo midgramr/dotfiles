@@ -43,6 +43,5 @@ git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
 git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
-git config --global merge.conflictStyle zdiff3
 
 # vim: ft=bash
