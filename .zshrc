@@ -56,4 +56,8 @@ function nvimhelp {
   nvim +"help $1" +only
 }
 
+# Aliases
+alias s="kitten ssh" # Auto copies terminfo file to remote
+alias work="ssh fpgausr-kzhang"
+
 # vim: ft=zsh
