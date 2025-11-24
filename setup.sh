@@ -40,6 +40,7 @@ rm -rf ~/.config/kitty
 git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
 
 # Git
+brew install delta
 git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
