@@ -4,6 +4,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+	pager = delta
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -17,3 +18,9 @@
 	ui = auto
 [alias]
 	ac = !git add . && git commit -m
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	tool = nvimdiff2

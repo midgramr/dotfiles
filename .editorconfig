@@ -4,11 +4,15 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{js,ts,html,r,rmd,sh,bash,zsh}]
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.{js,ts,html}]
 indent_style = space
 indent_size = 2
 
-[*.{c,cpp,hpp,h,cc,java,py,snippets}]
+[*.{js,ts,html}]
 indent_style = space
 indent_size = 4
 
@@ -17,4 +21,19 @@ indent_style = tab
 
 [*.{go}]
 indent_style = tab
+
+[*.{c,cpp,hpp,h,cc}]
+indent_style = space
 indent_size = 4
+
+[*.snippets]
+indent_style = space
+indent_size = 4
+
+[*.{java}]
+indent_style = space
+indent_size = 4
+
+[*.{lua}]
+indent_style = space
+indent_size = 2
