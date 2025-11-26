@@ -1,8 +1,18 @@
-Includes dotfiles and setup scripts for a zsh-based terminal. Running `./setup` should be a one-stop-shop for all setup and configuration for:
-- NeoVim/Vim
-- Tmux
+Includes dotfiles and setup script for a zsh-based terminal.
+
+Running `./setup.sh` is a one-stop-shop for all setup and configuration for:
+
+- `.zshrc`
+- Neovim
+- Git
+- tmux
 - Oh-My-ZSH
-- Kitty
-- Clangd
-- Clang-format
-- Editorconfig
+- kitty
+- clangd
+- clang-format
+- editorconfig
+
+Todos:
+
+- Modularize zshrc
+- Add sensible, minimal vim config

@@ -1,22 +1,31 @@
 #!/bin/zsh
 
-DOTFILES=$(pwd)
-CONFIGS=(
-	 ".clang-format"
-	 ".clangd"
-	 ".editorconfig"
-	 ".gitconfig"
-	 ".lintr"
-	 ".tmux.conf"
-	 ".vimrc"
-	 ".zshrc"
+set -eux
+
+# TODO: set dotfiles path based on directory this script is located in
+dotfiles="$(basename $0)"
+cfgs=(
+  '.clang-format'
+  '.clangd'
+  '.editorconfig'
+  '.gitconfig'
+  '.lintr'
+  '.tmux.conf'
+  '.vimrc'
+  '.zshrc'
 )
 
-for cfg in $CONFIGS; do
-	rm -f $HOME/$cfg
-	ln -s $DOTFILES/$cfg $HOME/$cfg
-	echo "Set symlink for $cfg"
+for cfg in $cfgs; do
+  rm -f $HOME/$cfg
+  ln -s $dotfiles/$cfg $HOME/$cfg
+  echo "Set symlink for $cfg"
 done
+
+# Git
+brew install lazygit
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
 
 # Tmux
 brew install tmux
@@ -29,7 +38,7 @@ rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 # NeoVim
-brew install neovim nvm lazygit
+brew install neovim nvm
 nvm install node # needed to install some LSPs
 rm -rf ~/.config/nvim
 git clone git@github.com:N1v3x2/nvim.git ~/.config/nvim
@@ -39,10 +48,4 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 rm -rf ~/.config/kitty
 git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
 
-# Git
-brew install delta
-git config --global core.pager delta
-git config --global interactive.diffFilter 'delta --color-only'
-git config --global delta.navigate true
-
-# vim: ft=bash
+# vim: ft=zsh
