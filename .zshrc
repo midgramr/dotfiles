@@ -47,9 +47,8 @@ function git-prune-branches {
     git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 }
 
-RG=$(which rg)
 function rg {
-  $RG -p "${@}" | less -R
+  command rg -p "${@}" | less -R
 }
 
 function nvimhelp {

@@ -2,7 +2,6 @@
 
 set -eux
 
-# TODO: set dotfiles path based on directory this script is located in
 dotfiles="$(basename $0)"
 cfgs=(
   '.clang-format'
