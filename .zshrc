@@ -55,4 +55,6 @@ function nvimhelp {
   nvim +"help $1" +only
 }
 
+alias interact='~/Development/projects/stuff/interact.py --color'
+
 # vim: ft=zsh
