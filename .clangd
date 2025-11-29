@@ -10,7 +10,7 @@ CompileFlags:
     - -Wno-unused-const-variable
     - -Wno-sign-conversion
     - -std=c++17
-    - -xc++
+    - -I/Users/n1v3x/Development/projects/stuff/include/
 Index:
   Background: Skip
 

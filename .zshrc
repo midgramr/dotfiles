@@ -52,7 +52,7 @@ function rg {
 }
 
 function nvimhelp {
-  nvim +"help $1" +only
+  nvim +"help $1" +only +"no q <Cmd>q<CR>"
 }
 
 alias interact='~/Development/projects/stuff/interact.py --color'

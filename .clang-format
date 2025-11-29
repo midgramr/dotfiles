@@ -4,14 +4,16 @@ IndentWidth: 4
 ---
 Language: Cpp
 DerivePointerAlignment: false
-PointerAlignment: Left
+PointerAlignment: Right
 AlignConsecutiveShortCaseStatements:
   Enabled: true
   AcrossEmptyLines: true
   AcrossComments: true
   AlignCaseArrows: true
 AllowShortCaseExpressionOnASingleLine: true
-AllowShortEnumsOnASingleLine: true
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLambdasOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Inline
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Empty
 ---
