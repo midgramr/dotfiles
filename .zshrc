@@ -34,6 +34,7 @@ export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
 unalias run-help
 autoload run-help
 
+alias help=run-help
 alias s="kitten ssh" # Auto copies terminfo file to remote
 alias interact='~/Development/projects/stuff/interact.py --color'
 
