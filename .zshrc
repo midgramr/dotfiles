@@ -16,31 +16,54 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+# Oh-My-ZSH config end
 
-# Node
-source $(brew --prefix nvm)/nvm.sh
+source "$(brew --prefix nvm)/nvm.sh"
 # pnpm
 export PNPM_HOME="/Users/n1v3x/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
 export MANPAGER='nvim +Man!'
 export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
-export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
 
+# fzf
+# export FZF_DEFAULT_OPTS='--tmux center'
+export FZF_CTRL_T_OPTS="
+--walker-skip .git,node_modules,target
+--preview 'bat -n --color=always --theme-dark gruvbox-dark {}'
+--bind 'ctrl-/:change-preview-window(bottom|hidden|)'"
+
+# Set custom preview command for different completion contexts
+_fzf_comprun() {
+  local command=$1
+  shift
+  case "$command" in
+    cd)           fzf --preview 'tree -C -L 2 {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"              "$@" ;;
+    ssh)          fzf --preview 'dig {}'                        "$@" ;;
+   *)            fzf --preview 'bat -n --color=always {}'      "$@" ;;
+  esac
+}
+source <(fzf --zsh)
+
+# Zsh help utility
+export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
 unalias run-help
 autoload run-help
-
 alias help=run-help
-alias s="kitten ssh" # Auto copies terminfo file to remote
+
+alias s='kitten ssh'
 alias interact='~/Development/projects/stuff/interact.py --color'
+alias fd='fd -H -E .git'
+alias bat='bat --theme-dark gruvbox-dark'
 
 function git-prune-branches {
-    git fetch --prune
-    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+  git fetch --prune
+  git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 }
 
 function rg {
