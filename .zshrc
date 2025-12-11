@@ -31,24 +31,26 @@ export MANPAGER='nvim +Man!'
 export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 
 # fzf
-# export FZF_DEFAULT_OPTS='--tmux center'
-export FZF_CTRL_T_OPTS="
---walker-skip .git,node_modules,target
---preview 'bat -n --color=always --theme-dark gruvbox-dark {}'
---bind 'ctrl-/:change-preview-window(bottom|hidden|)'"
+export FZF_DEFAULT_OPTS='--style=minimal --cycle'
+export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
+source <(fzf --zsh)
 
-# Set custom preview command for different completion contexts
+# Show only directories when autocompleting ls **<TAB>
+_fzf_complete_ls() {
+  _fzf_complete -- "$@" < <(eza -aD --git-ignore)
+}
+
+# Customize preview depending on command
 _fzf_comprun() {
   local command=$1
   shift
+
   case "$command" in
-    cd)           fzf --preview 'tree -C -L 2 {} | head -200'   "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}"              "$@" ;;
-    ssh)          fzf --preview 'dig {}'                        "$@" ;;
-   *)            fzf --preview 'bat -n --color=always {}'      "$@" ;;
+    cd|ls)        fzf --preview 'tree -C -L 2 {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"            "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}'    "$@" ;;
   esac
 }
-source <(fzf --zsh)
 
 # Zsh help utility
 export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
