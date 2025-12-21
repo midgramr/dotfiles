@@ -2,6 +2,7 @@
 
 set -eux
 
+# TODO: Research GNU Stow
 dotfiles="$(basename $0)"
 cfgs=(
   '.clang-format'
@@ -36,8 +37,8 @@ brew install autojump eza
 rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
-# General utilities
-brew install fd bat eth-p/software/bat-extras-batgrep fzf
+# General
+brew install fd bat fzf neofetch
 
 # TODO: make these submodules
 
@@ -51,5 +52,7 @@ git clone git@github.com:N1v3x2/nvim.git ~/.config/nvim
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 rm -rf ~/.config/kitty
 git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
+
+# TODO: Aerospace
 
 # vim: ft=zsh
