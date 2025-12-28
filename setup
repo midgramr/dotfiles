@@ -3,15 +3,13 @@
 set -eux
 
 # TODO: Research GNU Stow
-dotfiles="$(basename $0)"
+dotfiles=dirname "$(realpath $0)"
 cfgs=(
   '.clang-format'
   '.clangd'
   '.editorconfig'
   '.gitconfig'
-  '.lintr'
   '.tmux.conf'
-  '.vimrc'
   '.zshrc'
 )
 
@@ -31,6 +29,7 @@ git config --global delta.navigate true
 brew install tmux
 rm -rf ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# TODO: tmux-sessionizer
 
 # Oh-My-ZSH
 brew install autojump eza
@@ -38,21 +37,21 @@ rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 # General
-brew install fd bat fzf neofetch
+brew install fd bat eth-p/software/bat-extras-batgrep fzf neofetch
 
-# TODO: make these submodules
+# Neovim doesn't NEED to be a submodule, but making it a submodule would
+# make the history cleaner
 
-# NeoVim
+# Neovim
 brew install neovim nvm
 nvm install node # needed to install some LSPs
 rm -rf ~/.config/nvim
 git clone git@github.com:N1v3x2/nvim.git ~/.config/nvim
 
-# Kitty
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-rm -rf ~/.config/kitty
-git clone git@github.com:N1v3x2/kitty.git ~/.config/kitty
+# TODO: Ghostty
 
 # TODO: Aerospace
+
+# TODO: Karabiner
 
 # vim: ft=zsh
