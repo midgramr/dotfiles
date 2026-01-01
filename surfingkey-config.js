@@ -39,6 +39,8 @@ map('<Ctrl-h>', 'S');
 map('<Ctrl-l>', 'D');
 map('<Ctrl-k>', 'R');
 map('<Ctrl-j>', 'E');
+mapkey('d', 'Scroll down', () => { Normal.scroll('pageDown'); });
+mapkey('u', 'Scroll up', () => { Normal.scroll('pageUp'); });
 
 unmap('S');
 unmap('D');
