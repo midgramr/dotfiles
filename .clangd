@@ -9,7 +9,7 @@ CompileFlags:
     - -Wfloat-equal
     - -Wno-unused-const-variable
     - -Wno-sign-conversion
-    - -std=c++17
+    - -std=c++23
     - -I/Users/n1v3x/Development/projects/stuff/include/
 Index:
   Background: Skip

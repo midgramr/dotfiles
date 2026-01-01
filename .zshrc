@@ -19,41 +19,21 @@ source $ZSH/oh-my-zsh.sh
 # Oh-My-ZSH config end
 
 source "$(brew --prefix nvm)/nvm.sh"
-# pnpm
-export PNPM_HOME="/Users/n1v3x/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 export MANPAGER='nvim +Man!'
 export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 
 # fzf
-export FZF_DEFAULT_OPTS='--style=minimal --cycle --tmux=80% --layout=default'
+export FZF_DEFAULT_OPTS='--style=minimal --cycle --tmux --layout=reverse'
 export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
 source <(fzf --zsh)
 
 _fzf_complete_ls() {
-  _fzf_complete -- "$@" < <(eza -aD --git-ignore)
+  _fzf_complete -- "$@" < <(fd -t d)
 }
 
 _fzf_complete_nvim() {
   _fzf_complete -- "$@" < <(fd -t f)
-}
-
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd|ls)        fzf --preview 'tree -C -L 2 {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}"            "$@" ;;
-    ssh)          fzf --preview 'dig {}'                      "$@" ;;
-    *)            fzf --preview 'bat -n --color=always {}'    "$@" ;;
-  esac
-
 }
 
 # Cht.sh
@@ -73,17 +53,18 @@ alias help=run-help
 # Kitty binaries
 export PATH=$PATH:/Applications/kitty.app/Contents/MacOS
 
+# Go binaries
+export PATH=$PATH:~/go/bin
+
 # Override builtin ruby/gem
 export PATH=$(brew --prefix)/opt/ruby/bin:$PATH
 
 gems="$(echo $(brew --prefix)/lib/ruby/gems/3.4.0/gems/**/bin | tr ' ' :)"
 export PATH="$PATH:$gems"
 
-alias s='kitten ssh'
 alias interact='~/Development/projects/stuff/interact.py --color'
 alias fd='fd -H -E .git'
 alias bat='bat --theme-dark gruvbox-dark'
-# NOTE: this overrides the builtin `bg`
 alias bg='batgrep'
 alias cd='pushd -q'
 alias pd='popd -q'
