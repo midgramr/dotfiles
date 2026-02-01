@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+set -o pipefail
+set -u
+
+pane_title=$1
+split_direction=$2
+
+container=$(echo $pane_title | cut -d@ -f2 | cut -d: -f1)
+docker ps -q | rg -q "$container"
+if [[ $? == 0 ]]; then
+    tmux splitw $split_direction "docker exec -it $container bash"
+else
+    tmux splitw $split_direction -c "#{pane_current_path}"
+fi

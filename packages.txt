@@ -1,4 +1,5 @@
 aerospace
+bin
 editorconfig
 ghostty
 git
