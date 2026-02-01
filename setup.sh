@@ -2,6 +2,9 @@
 
 set -eux
 
+# TODO: fix oh-my-zsh config (don't include submodule in dotfiles)
+# TODO: add install for homebrew
+
 cat utils.txt | xargs brew install
 cat packages.txt | xargs stow --adopt --dotfiles -R -t ~ -v
 
