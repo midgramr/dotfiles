@@ -3,6 +3,8 @@ BasedOnStyle: LLVM
 IndentWidth: 4
 ---
 Language: Cpp
+AccessModifierOffset: 0
+AlignAfterOpenBracket: DontAlign
 DerivePointerAlignment: false
 PointerAlignment: Right
 AlignConsecutiveShortCaseStatements:

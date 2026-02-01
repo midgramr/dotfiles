@@ -19,7 +19,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 10
+accordion-padding = 5
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -46,16 +46,16 @@ automatically-unhide-macos-hidden-apps = true
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 persistent-workspaces = [
-    '1', # browser, mail
-    '2', # terminal
-    '3', # notes (Obsidian)
+    '1', # Browser
+    '2', # Terminal
+    '3', # Notes (Obsidian)
     '4', # Discord
-    '5', # music
-    '6', # calendar
+    '5', # Music
+    '6', # Facetime
     '7',
     '8',
     '9',
-    '0', # misc (temporary)
+    '0', # temporary workspace
 ]
 
 # A callback that runs every time binding mode changes
@@ -66,42 +66,49 @@ on-mode-changed = []
 on-focus-changed = ['move-mouse window-lazy-center']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.Safari'
-    run = ['move-node-to-workspace 1', 'workspace 1', 'layout tiles']
+    if.app-id = 'org.mozilla.firefox'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 1', 'workspace 1']
 
 [[on-window-detected]]
-    if.app-name-regex-substring = 'Mail|Maps'
-    run = [
-        'move-node-to-workspace 1',
-        'workspace 1',
-        'flatten-workspace-tree',
-        'layout accordion horizontal'
-    ]
+    if.app-id = 'org.mozilla.thunderbird'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 2', 'workspace 2', 'layout floating']
 
 [[on-window-detected]]
     if.app-id = 'com.mitchellh.ghostty'
-    run = ['layout floating', 'move-node-to-workspace 2', 'workspace 2']
-
-[[on-window-detected]]
-    if.app-id = 'md.obsidian'
+    if.during-aerospace-startup = true
     run = ['move-node-to-workspace 3', 'workspace 3']
 
 [[on-window-detected]]
-    if.app-id = 'com.hnc.Discord'
+    if.app-id = 'md.obsidian'
+    if.during-aerospace-startup = true
     run = ['move-node-to-workspace 4', 'workspace 4']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.Music'
+    if.app-id = 'com.hnc.Discord'
+    if.during-aerospace-startup = true
     run = ['move-node-to-workspace 5', 'workspace 5']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.iCal'
+    if.app-id = 'com.apple.Music'
+    if.during-aerospace-startup = true
     run = ['move-node-to-workspace 6', 'workspace 6']
 
 [[on-window-detected]]
+    if.app-id = 'com.apple.iCal'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 7', 'workspace 7']
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'FaceTime|Screen Sharing|zoom\.us'
+    run = ['move-node-to-workspace 8', 'workspace 8', 'layout floating']
+
+# These apps are typically temporary, so open them in a floating window
+[[on-window-detected]]
     if.app-name-regex-substring = """\
-        Finder|Find My|Messages|Reminders|\
-        Stocks|System Settings|Weather"""
+        Calendar|Finder|Find My|Mail|Maps|Messages|\
+        Reminders|Stocks|System Settings|Weather"""
     run = ['layout floating']
 
 # Possible values: (qwerty|dvorak|colemak)
@@ -151,12 +158,12 @@ on-focus-changed = ['move-mouse window-lazy-center']
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
     # You can uncomment the following lines to open up terminal with alt + enter shortcut
     # (like in i3)
-    # alt-enter = '''exec-and-forget osascript -e '
-    # tell application 'Terminal'
-    #     do script
-    #     activate
-    # end tell'
-    # '''
+    cmd-ctrl-alt-m = 'exec-and-forget open /System/Applications/Messages.app'
+    cmd-ctrl-alt-r = 'exec-and-forget open /System/Applications/Reminders.app'
+    cmd-ctrl-alt-x = 'exec-and-forget open /System/Applications/System\ Settings.app'
+    cmd-ctrl-alt-e = 'exec-and-forget open -na /Applications/Ghostty.app --args -e ranger'
+
+    cmd-ctrl-alt-f = 'fullscreen'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     cmd-ctrl-alt-slash = 'layout tiles horizontal vertical'
@@ -179,6 +186,7 @@ on-focus-changed = ['move-mouse window-lazy-center']
     cmd-ctrl-alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    cmd-ctrl-alt-backtick = 'workspace `'
     cmd-ctrl-alt-0 = 'workspace 0'
     cmd-ctrl-alt-1 = 'workspace 1'
     cmd-ctrl-alt-2 = 'workspace 2'
@@ -191,21 +199,23 @@ on-focus-changed = ['move-mouse window-lazy-center']
     cmd-ctrl-alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    cmd-ctrl-alt-shift-0 = 'move-node-to-workspace 0'
-    cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
-    cmd-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
-    cmd-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
-    cmd-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
-    cmd-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
-    cmd-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
-    cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
-    cmd-ctrl-alt-shift-8 = 'move-node-to-workspace 8'
-    cmd-ctrl-alt-shift-9 = 'move-node-to-workspace 9'
+    cmd-ctrl-alt-shift-backtick = ['move-node-to-workspace `', 'workspace `']
+    cmd-ctrl-alt-shift-0 = ['move-node-to-workspace 0', 'workspace 0', 'layout tiling']
+    cmd-ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1', 'layout tiling']
+    cmd-ctrl-alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2', 'layout tiling']
+    cmd-ctrl-alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3', 'layout tiling']
+    cmd-ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4', 'layout tiling']
+    cmd-ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5', 'layout tiling']
+    cmd-ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6', 'layout tiling']
+    cmd-ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7', 'layout tiling']
+    cmd-ctrl-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8', 'layout tiling']
+    cmd-ctrl-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9', 'layout tiling']
 
+    # NOTE: commenting this out for now to develop better habits
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-    cmd-ctrl-alt-tab = 'workspace-back-and-forth'
+    # cmd-ctrl-alt-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    cmd-ctrl-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    # cmd-ctrl-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     cmd-ctrl-alt-semicolon = 'mode service'

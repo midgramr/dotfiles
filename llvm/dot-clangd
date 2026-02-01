@@ -1,0 +1,15 @@
+CompileFlags:
+  Add:
+    # - -DLOCAL
+    - -Wall
+    # - -O2
+    # - -Wextra
+    # - -Wshadow
+    # - -Wconversion
+    # - -Wfloat-equal
+    # - -Wno-unused-const-variable
+    # - -Wno-sign-conversion
+    # - -I/opt/homebrew/include/c++/15/aarch64-apple-darwin25
+Index:
+  Background: Skip
+

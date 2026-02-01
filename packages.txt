@@ -1,0 +1,11 @@
+aerospace
+editorconfig
+ghostty
+git
+karabiner
+linearmouse
+llvm
+nvim
+ranger
+tmux
+zsh

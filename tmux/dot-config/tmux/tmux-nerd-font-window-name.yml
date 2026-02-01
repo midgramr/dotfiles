@@ -1,0 +1,3 @@
+config:
+  show-name: true
+  multi-pane-icon: ""
