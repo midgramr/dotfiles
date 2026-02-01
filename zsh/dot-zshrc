@@ -14,7 +14,6 @@ zstyle ':omz:update' mode auto
 plugins=(
   git
   autojump
-  zsh-autosuggestions
   eza
   vi-mode
 )
@@ -87,9 +86,12 @@ function nvimhelp {
   nvim +"help $1" +only +"no q <Cmd>q<CR>"
 }
 
-# vim: ft=zsh
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/n1v3x/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# vim: ft=zsh

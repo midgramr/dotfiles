@@ -16,6 +16,11 @@
         "disableAcceleration" : false,
         "redirectsToScroll" : false,
         "speed" : 0.06
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
       }
     }
   ]
