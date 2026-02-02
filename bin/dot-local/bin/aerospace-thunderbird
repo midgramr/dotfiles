@@ -3,9 +3,10 @@
 set -u
 
 window_id="$(aerospace list-windows --all | rg 'Thunderbird.*Reminder' | cut -w -f1)"
-workspace_name="$(aerospace list-workspaces --focused)"
+current_workspace="$(aerospace list-workspaces --focused)"
 
-aerospace move-node-to-workspace --fail-if-noop --focus-follows-window --window-id "$window_id" "$workspace_name"
+aerospace move-node-to-workspace \
+    --fail-if-noop --focus-follows-window --window-id "$window_id" "$current_workspace"
 if [[ $? != 0 ]]; then
     aerospace focus --window-id "$window_id"
 fi
