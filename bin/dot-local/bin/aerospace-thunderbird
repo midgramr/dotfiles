@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -u
+
+window_id="$(aerospace list-windows --all | rg 'Thunderbird.*Reminder' | cut -w -f1)"
+current_workspace="$(aerospace list-workspaces --focused)"
+
+aerospace move-node-to-workspace \
+    --fail-if-noop --focus-follows-window --window-id "$window_id" "$current_workspace"
+if [[ $? != 0 ]]; then
+    aerospace focus --window-id "$window_id"
+fi
+
+# vim: ft=bash

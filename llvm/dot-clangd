@@ -1,0 +1,13 @@
+CompileFlags:
+  Add:
+    - -Wall
+    - -Wextra
+    - -Wshadow
+    - -Wconversion
+    - -Wfloat-equal
+    - -Wno-unused-const-variable
+    - -Wno-sign-conversion
+Index:
+  Background: Skip
+
+# vim: ft=yaml

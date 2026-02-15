@@ -1,0 +1,91 @@
+snippet cf Codeforces
+    import sys
+
+    input = lambda: sys.stdin.readline().rstrip('\r\n ')
+    ii = lambda: int(input())
+    lii = lambda: list(map(int, input().split()))
+
+    def solve():
+        pass$0
+
+    def main():
+        T = 1$1
+        for _ in range(T):
+            ans = solve()
+            print(ans)
+
+    main()
+
+snippet gs Graham Scan
+    from math import hypot
+    from collections.abc import Sequence
+    from functools import cmp_to_key
+
+    Point = tuple[float, float]
+
+    def graham_scan(points: Sequence[Point]) -> Sequence[Point]:
+        # Find bottom left point
+        p0 = points[0]
+        for x, y in points:
+            if y < p0[1] or (y == p0[1] and x < p0[0]):
+                p0 = (x, y)
+
+        def cross(a: Point, b: Point) -> float:
+            (ax, ay), (bx, by) = a, b
+            return ax * by - ay * bx
+
+        def cmp_dist(a: Point, b: Point) -> int:
+            dist1, dist2 = hypot(*a), hypot(*b)
+            if dist1 > dist2:
+                return 1
+            elif dist1 < dist2:
+                return -1
+            else:
+                return 0
+
+        # Sort points by polar angle with p0
+        def cmp(a: Point, b: Point) -> int:
+            if a == p0:
+                return -1
+            if b == p0:
+                return 1
+            p1 = (a[0] - p0[0], a[1] - p0[1])
+            p2 = (b[0] - p0[0], b[1] - p0[1])
+            prod = cross(p1, p2)
+            if prod > 0:
+                return -1
+            elif prod < 0:
+                return 1
+            else:
+                return cmp_dist(a, b)
+
+        points = sorted(points, key=cmp_to_key(cmp))
+
+        if len(points) < 3:
+            return points
+
+        stk = points[:2]
+        for i in range(2, len(points)):
+            p3 = points[i]
+            while len(stk) > 1:
+                p2, p1 = stk[-1], stk[-2]
+                # Check whether last 3 points make a left turn
+                a = (p2[0] - p1[0], p2[1] - p1[1])
+                b = (p3[0] - p2[0], p3[1] - p2[1])
+                if cross(a, b) > 0:
+                    break
+                stk.pop()
+            stk.append(p3)
+
+        return stk
+
+snippet euclid Extended Euclid's Algorithm
+    def extended_euclid(a: int, b: int) -> tuple[int, int, int]:
+        """Returns (gcd(a,b), x, y), where gcd(a,b) = ax + by."""
+        if a < b:
+            d, x, y = extended_euclid(b, a)
+            return d, y, x
+        if b == 0:
+            return a, 1, 0
+        dp, xp, yp = extended_euclid(b, a % b)
+        return dp, yp, xp - a // b * yp

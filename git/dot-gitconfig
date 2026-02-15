@@ -1,0 +1,28 @@
+[user]
+	name = Kevin Zhang
+	email = kevzhang2022@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	pager = delta
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+[filter-repo]
+	tool = fit-filter-repo
+[color]
+	ui = auto
+[alias]
+	ac = !git add . && git commit -m
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	tool = nvimdiff2
+[mergetool]
+	keepBackup = false
