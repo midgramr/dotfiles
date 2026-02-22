@@ -1,7 +1,5 @@
-autojump
 bat
 dust
-eth-p/software/bat-extras-batgrep
 eza
 fd
 fzf
@@ -14,7 +12,8 @@ python
 ranger
 tmux
 tree-sitter-cli
+sesh
 stow
-vim
 zathura
+zoxide
 zsh-autosuggestions

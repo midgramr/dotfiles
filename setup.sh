@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# NOTE: This script should be idempotent
+
 set -ux
 
 # Install Homebrew
@@ -8,10 +10,7 @@ if [[ $? != 0 ]]; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Brew utilities
-cat utils.txt | xargs brew install
-
-# Configs
+cat formulas.txt | xargs brew install
 cat packages.txt | xargs stow --adopt --dotfiles -R -t ~ -v
 
 # Git

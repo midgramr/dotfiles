@@ -1,4 +1,5 @@
 # TODO: minimize config (remove Oh-My-ZSH)
+# TODO: modularize configs (integrate each app's config with stow)
 
 export EDITOR=nvim
 
@@ -21,6 +22,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # Oh-My-ZSH config end
 
+# Setup completions
+fpath=(~/.zsh.d/ $HOME/.docker/completions $fpath)
+autoload -U compinit
+compinit
+
 source "$(brew --prefix nvm)/nvm.sh"
 export HOMEBREW_FORCE_VENDOR_RUBY=1
 export HOMEBREW_NO_ENV_HINTS=1
@@ -32,8 +38,8 @@ export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 # TODO: create zsh widget (?) to automatically become nvim process after exit
 # NOTE: this could be done a in hacky way by repurposing the existing cmdline
 # completion, but the tool's author suggested creating some custom binding
-export FZF_DEFAULT_OPTS='--style=minimal --cycle --tmux --layout=reverse'
-export FZF_CTRL_T_OPTS='--walker-skip .git,node_modules,target'
+export FZF_DEFAULT_OPTS="--style=minimal --cycle --layout=reverse --highlight-line --gutter=' ' --pointer='>'"
+export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
 source <(fzf --zsh)
 
 _fzf_complete_ls() {
@@ -44,13 +50,11 @@ _fzf_complete_nvim() {
   _fzf_complete -- "$@" < <(fd -t f)
 }
 
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --preview='echo {} | cut -w -f3 | eza --color=always' --preview-window='down'"
+eval "$(zoxide init zsh)"
+
 # Cht.sh
 CHTSH_QUERY_OPTIONS="T"
-
-# Setup completions
-fpath=(~/.zsh.d/ $fpath)
-autoload -U compinit
-compinit
 
 # Zsh help utility
 export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
@@ -58,21 +62,11 @@ unalias run-help
 autoload run-help
 alias help=run-help
 
-# Clang-repl
-export SDKROOT=$(xcrun --show-sdk-path)
-export PATH=$PATH:/Users/n1v3x/Development/open-source/llvm-project/build/bin
-
 # Kitty binaries
 export PATH=$PATH:/Applications/kitty.app/Contents/MacOS
 
 # Go binaries
 export PATH=$PATH:~/go/bin
-
-# Override builtin ruby/gem
-export PATH=$(brew --prefix)/opt/ruby/bin:$PATH
-
-gems="$(echo $(brew --prefix)/lib/ruby/gems/3.4.0/gems/**/bin | tr ' ' :)"
-export PATH="$PATH:$gems"
 
 # Enable core dumps for Neovim dev
 ulimit -c unlimited
@@ -80,21 +74,12 @@ ulimit -c unlimited
 alias interact='~/Development/projects/stuff/interact.py --color'
 alias fd='fd -H -E .git'
 alias bat='bat --theme-dark gruvbox-dark'
-alias batg='batgrep'
 
 function nvimhelp {
   nvim +"help $1" +only +"no q <Cmd>q<CR>"
 }
 
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/n1v3x/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# vim: ft=zsh
 
 # pnpm
 export PNPM_HOME="/Users/n1v3x/Library/pnpm"
@@ -103,3 +88,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# vim: ft=zsh
