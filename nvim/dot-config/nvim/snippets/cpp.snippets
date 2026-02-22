@@ -59,7 +59,7 @@ snippet dsu Disjoint Set Union
         vector<int> parent, setSize;
 
     public:
-        DSU(int n) : parent(n), setSize(n, 1) {
+        Dsu(int n) : parent(n), setSize(n, 1) {
             iota(parent.begin(), parent.end(), 0);
         }
 
@@ -79,6 +79,43 @@ snippet dsu Disjoint Set Union
                 setSize[parX] += setSize[parY];
             }
             return true;
+        }
+    };
+
+snippet dsu2 Disjoint Set Union
+    class Dsu {
+    private:
+        unordered_map<string, string> parent;
+        unordered_map<string, int> size;
+
+    public:
+        void makeSet(const auto &x) {
+            if (parent.count(x)) {
+                return;
+            }
+            parent[x] = x;
+            size[x] = 1;
+        }
+
+        string findSet(const auto &x) {
+            if (parent[x] == x) {
+                return x;
+            }
+            return parent[x] = findSet(parent[x]);
+        }
+
+        void unionSet(const auto &x, const auto &y) {
+            auto parX = findSet(x), parY = findSet(y);
+            if (parX == parY) {
+                return;
+            }
+            if (size[parX] <= size[parY]) {
+                parent[parX] = parY;
+                size[parY] += size[parX];
+            } else {
+                parent[parY] = parX;
+                size[parX] += size[parY];
+            }
         }
     };
 

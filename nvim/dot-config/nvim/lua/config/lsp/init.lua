@@ -1,6 +1,15 @@
 local servers = require 'config.lsp.servers'
 vim.lsp.enable(servers)
 
+vim.filetype.add {
+  filename = {
+    ['compose.yaml'] = 'yaml.docker-compose',
+    ['docker-compose.yaml'] = 'yaml.docker-compose',
+    ['compose.yml'] = 'yaml.docker-compose',
+    ['docker-compose.yml'] = 'yaml.docker-compose',
+  },
+}
+
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, {
   desc = 'vim.diagnostic.open_float',
 })
