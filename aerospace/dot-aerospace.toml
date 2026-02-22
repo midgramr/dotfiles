@@ -18,8 +18,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 persistent-workspaces = [
-    '1', # Browser
-    '2', # Mail
+    '1', # Browser (school)
+    '2', # Browser (personal)
     '3', # Terminal
     '4', # Notes
     '5', # Discord
@@ -27,7 +27,7 @@ persistent-workspaces = [
     '7', # Facetime/Zoom
     '8',
     '9',
-    '0', # Temporary workspace
+    '0', 
 ]
 
 on-focus-changed = ['move-mouse window-lazy-center']
