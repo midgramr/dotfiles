@@ -7,9 +7,15 @@ pane_title=$1
 split_direction=$2
 
 container=$(echo $pane_title | cut -d@ -f2 | cut -d: -f1)
+dir=$(echo $pane_title | cut -d: -f2)
 docker ps -q | rg -q "$container"
 if [[ $? == 0 ]]; then
-    tmux splitw $split_direction "docker exec -it $container bash"
+    # Try to open the container in the same directory.
+    # If it fails, just open it in the default
+    tmux splitw $split_direction "docker exec -it $container bash -c 'cd $dir 2>/dev/null && bash'"
+    if [[ $? != 0 ]]; then
+        tmux splitw $split_direction "docker exec -it $container bash"
+    fi
 else
     tmux splitw $split_direction -c "#{pane_current_path}"
 fi
