@@ -2,6 +2,7 @@ aerospace
 bin
 editorconfig
 ghostty
+gh
 git
 karabiner
 linearmouse
