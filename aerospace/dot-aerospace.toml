@@ -129,6 +129,8 @@ on-focus-changed = ['move-mouse window-lazy-center']
     cmd-ctrl-alt-8 = 'workspace 8'
     cmd-ctrl-alt-9 = 'workspace 9'
 
+    cmd-ctrl-alt-tab = 'workspace-back-and-forth'
+
     cmd-ctrl-alt-shift-backtick = ['move-node-to-workspace `', 'workspace `']
     cmd-ctrl-alt-shift-0 = ['move-node-to-workspace 0', 'workspace 0', 'layout tiling']
     cmd-ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1', 'layout tiling']
