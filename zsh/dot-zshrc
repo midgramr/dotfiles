@@ -14,7 +14,6 @@ zstyle ':omz:update' mode auto
 
 plugins=(
   git
-  autojump
   eza
   vi-mode
 )
@@ -60,7 +59,6 @@ CHTSH_QUERY_OPTIONS="T"
 export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
 unalias run-help
 autoload run-help
-alias help=run-help
 
 # Kitty binaries
 export PATH=$PATH:/Applications/kitty.app/Contents/MacOS
@@ -71,22 +69,15 @@ export PATH=$PATH:~/go/bin
 # Enable core dumps for Neovim dev
 ulimit -c unlimited
 
-alias interact='~/Development/projects/stuff/interact.py --color'
+alias help=run-help
 alias fd='fd -H -E .git'
 alias bat='bat --theme-dark gruvbox-dark'
-
-function nvimhelp {
-  nvim +"help $1" +only +"no q <Cmd>q<CR>"
-}
+alias d='docker'
+alias dc='docker compose'
+alias di='docker image'
+alias db='docker build'
+alias dr='docker run'
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# pnpm
-export PNPM_HOME="/Users/n1v3x/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 # vim: ft=zsh
