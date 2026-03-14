@@ -1,0 +1,18 @@
+return {
+  'bashls',
+  'clangd',
+  'cssls',
+  'composels',
+  'dockerls',
+  'eslintls',
+  'gh-actions-ls',
+  'gopls',
+  'html-ls',
+  'jdtls',
+  'jsonls',
+  'luals',
+  'marksman',
+  'pyright',
+  'texlab',
+  'tsls',
+}

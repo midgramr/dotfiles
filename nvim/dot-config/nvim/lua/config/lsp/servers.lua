@@ -5,6 +5,7 @@ return {
   'docker-compose-language-service',
   'dockerfile-language-server',
   'eslint-lsp',
+  'gh-actions-language-server',
   'gopls',
   'html-lsp',
   'jdtls',

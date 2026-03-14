@@ -1,5 +1,5 @@
-local servers = require 'config.lsp.servers'
-vim.lsp.enable(servers)
+local lsps = require 'config.lsp.lsps'
+vim.lsp.enable(lsps)
 
 vim.filetype.add {
   filename = {
@@ -12,6 +12,11 @@ vim.filetype.add {
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, {
   desc = 'vim.diagnostic.open_float',
+})
+vim.keymap.set('n', '<leader>D', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, {
+  desc = 'Toggle LSP diagnostics',
 })
 
 vim.diagnostic.config {

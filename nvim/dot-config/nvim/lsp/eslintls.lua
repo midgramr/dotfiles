@@ -4,22 +4,27 @@ return {
   filetypes = {
     'javascript',
     'javascriptreact',
-    'javascript.jsx',
-    -- 'typescript',
+    'typescript',
     'typescriptreact',
-    'typescript.tsx',
     'vue',
     'svelte',
     'astro',
   },
-  root_markers = { 'eslintConfig' },
+  workspace_required = true,
+  root_markers = {
+    'eslint.config.ts',
+    'eslint.config.mts',
+    'eslint.config.cts',
+    'eslint.config.js',
+    'eslint.config.mjs',
+    'eslint.config.cjs',
+  },
   settings = {
     validate = 'on',
+    ---@diagnostic disable-next-line: assign-type-mismatch
     packageManager = nil,
     useESLintClass = false,
-    experimental = {
-      useFlatConfig = false,
-    },
+    experimental = {},
     codeActionOnSave = {
       enable = false,
       mode = 'all',
@@ -36,7 +41,7 @@ return {
     -- This path is relative to the workspace folder (root dir) of the server instance.
     nodePath = '',
     -- use the workspace folder location or the file location (if no workspace folder is open) as the working directory
-    workingDirectory = { mode = 'location' },
+    workingDirectory = { mode = 'auto' },
     codeAction = {
       disableRuleComment = {
         enable = true,

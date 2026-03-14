@@ -4,17 +4,28 @@ return {
     { 'williamboman/mason.nvim', opts = {} },
   },
   config = function()
-    local servers = require 'config.lsp.servers'
-    local ensure_installed = servers
-    -- TODO: make separate module for formatters/linters
-    vim.list_extend(ensure_installed, {
-      'clang-format',
-      'html-lsp',
-      'stylua',
-    })
     require('mason-tool-installer').setup {
       auto_update = true,
-      ensure_installed = ensure_installed,
+      ensure_installed = {
+        'bash-language-server',
+        'clangd',
+        'css-lsp',
+        'docker-compose-language-service',
+        'docker-language-server',
+        'eslint-lsp',
+        'gh-actions-language-server',
+        'gopls',
+        'html-lsp',
+        'jdtls',
+        'json-lsp',
+        'lua-language-server',
+        'marksman',
+        'pyright',
+        'texlab',
+        'typescript-language-server',
+        'clang-format',
+        'stylua',
+      },
     }
   end,
 }

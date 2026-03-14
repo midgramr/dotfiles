@@ -18,15 +18,16 @@ return { -- Collection of various small independent plugins/modules
 
     function Get_lsp_client()
       local clients = vim.lsp.get_clients()
-      if #clients > 0 then
-        local names = clients[1]['name']
-        for i = 2, #clients do
+      local names = ''
+      local seen = {}
+      for i = 1, #clients do
+        local name = clients[i]['name']
+        if not seen[name] then
           names = names .. ', ' .. clients[i]['name']
+          seen[name] = true
         end
-        return names
-      else
-        return ''
       end
+      return names
     end
 
     local statusline = require 'mini.statusline'

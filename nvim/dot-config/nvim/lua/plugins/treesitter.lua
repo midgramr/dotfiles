@@ -63,7 +63,7 @@ return {
     },
     indent = {
       enable = true,
-      disable = { 'ruby', 'python' },
+      disable = { 'ruby', 'python', 'yaml' },
     },
   },
 }
