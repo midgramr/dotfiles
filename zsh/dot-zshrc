@@ -13,9 +13,9 @@ ZSH_THEME="minimal"
 zstyle ':omz:update' mode auto
 
 plugins=(
-  git
-  eza
-  vi-mode
+    git
+    eza
+    vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -37,25 +37,48 @@ export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 # TODO: create zsh widget (?) to automatically become nvim process after exit
 # NOTE: this could be done a in hacky way by repurposing the existing cmdline
 # completion, but the tool's author suggested creating some custom binding
-export FZF_DEFAULT_OPTS="--style=minimal --cycle --layout=reverse --highlight-line --gutter=' ' --pointer='>'"
+fg0='#d4be98'
+bg0='#282828'
+green='#a9b665'
+bg_green='#34381b'
+orange='#e78a4e'
+gray='#a89984'
+export FZF_DEFAULT_OPTS="\
+--style=minimal --cycle --layout=reverse --highlight-line --gutter=' ' --pointer='>'
+--no-bold --color=\
+fg:$fg0,\
+bg:$bg0,\
+hl:$green,\
+fg+:$fg0,\
+bg+:$bg_green,\
+hl+:$green,\
+info:$gray,\
+prompt:$orange,\
+pointer:$fg0,\
+spinner:$green,
+"
+
 export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
+
+export FZF_CTRL_T_OPTS=""
 source <(fzf --zsh)
 
 _fzf_complete_ls() {
-  _fzf_complete -- "$@" < <(fd -t d)
+    _fzf_complete -- "$@" < <(fd -t d)
 }
 
 _fzf_complete_nvim() {
-  _fzf_complete -- "$@" < <(fd -t f)
+    _fzf_complete -- "$@" < <(fd -t f)
 }
 
+# zoxide
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --preview='echo {} | cut -w -f3 | eza --color=always' --preview-window='down'"
 eval "$(zoxide init zsh)"
 
-# Cht.sh
+# cht.sh
 CHTSH_QUERY_OPTIONS="T"
 
-# Zsh help utility
+# zsh help utility
 export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
 unalias run-help
 autoload run-help
@@ -69,14 +92,17 @@ export PATH=$PATH:~/go/bin
 # Enable core dumps for Neovim dev
 ulimit -c unlimited
 
-alias help=run-help
-alias fd='fd -H -E .git'
 alias bat='bat --theme-dark gruvbox-dark'
+alias c='cht.sh'
 alias d='docker'
 alias dc='docker compose'
 alias di='docker image'
 alias db='docker build'
 alias dr='docker run'
+alias fd='fd -H -E .git'
+alias help='run-help'
+
+# TODO: make keybind for running nvim via fzf
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
