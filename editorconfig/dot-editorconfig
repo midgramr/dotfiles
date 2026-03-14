@@ -6,8 +6,22 @@ insert_final_newline = true
 indent_size = 4
 indent_style = space
 
-[{\.clangd,*.{js,jsx,ts,tsx,html,css,lua,bash,sh,zsh,conf,json,yaml}}]
+[*.{html,css}]
+indent_size = 2
+
+[*.{js,jsx,mjs,ts,tsx,mts,json}]
+indent_size = 2
+
+[*.{bash,sh,zsh}]
+indent_size = 2
+
+[*.{conf,yaml}]
+indent_size = 2
+
+[*.lua]
 indent_size = 2
 
 [{Makefile,*.{go}}]
 indent_style = tab
+
+# vim: ft=editorconfig
