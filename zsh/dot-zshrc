@@ -59,20 +59,23 @@ spinner:$green,
 "
 
 export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
-
-export FZF_CTRL_T_OPTS=""
 source <(fzf --zsh)
 
 _fzf_complete_ls() {
     _fzf_complete -- "$@" < <(fd -t d)
 }
-
 _fzf_complete_nvim() {
     _fzf_complete -- "$@" < <(fd -t f)
 }
 
+fzf_nvim() {
+    fd -u . | fzf --bind 'enter:become(nvim {})'
+}
+zle -N fzf_nvim
+bindkey '^f' fzf_nvim
+
 # zoxide
-export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --preview='echo {} | cut -w -f3 | eza --color=always' --preview-window='down'"
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS"
 eval "$(zoxide init zsh)"
 
 # cht.sh
