@@ -47,7 +47,9 @@ return {
 
         dynamic_preview_title = true,
         preview = {
+          check_mime_type = false,
           filesize_limit = false,
+          highlight_limit = false,
           timeout = false,
         },
 
@@ -101,6 +103,7 @@ return {
     vim.keymap.set('n', '<Leader>/', function()
       builtin.current_buffer_fuzzy_find()
     end, { desc = '[/] Fuzzy search in current buffer' })
+    vim.keymap.set('n', '<Leader>sH', builtin.highlights, { desc = '[S]earch [H]ighlights' })
 
     -- LSP overrides
     vim.api.nvim_create_autocmd('LspAttach', {

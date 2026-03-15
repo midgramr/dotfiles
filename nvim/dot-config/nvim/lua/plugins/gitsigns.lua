@@ -28,6 +28,10 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
       map('n', ']c', function()
         gitsigns.nav_hunk('next', nav_opts)
       end, { desc = 'Previous hunk' })
+
+      vim.api.nvim_set_hl(0, 'GitSignsAddInline', { link = 'OctoBubbleGreen' })
+      vim.api.nvim_set_hl(0, 'GitSignsChangeInline', { link = 'OctoBubbleBlue' })
+      vim.api.nvim_set_hl(0, 'GitSignsDeleteInline', { link = 'OctoBubbleRed' })
     end,
 
     preview_config = {
