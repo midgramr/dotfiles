@@ -11,7 +11,7 @@ if [[ $? != 0 ]]; then
 fi
 
 cat formulas.txt | xargs brew install
-cat packages.txt | xargs stow --adopt --dotfiles -R -t ~ -v
+cat packages.txt | xargs stow --dotfiles -R -t ~ -v
 
 # Git
 git config --global core.pager delta

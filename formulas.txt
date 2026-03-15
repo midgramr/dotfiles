@@ -1,9 +1,11 @@
 bat
+bfs
 dust
 eza
 fd
 fzf
 gcc
+gh
 git-delta
 neovim
 ninja

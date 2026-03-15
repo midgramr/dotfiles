@@ -34,31 +34,33 @@ export MANPAGER='nvim +Man! +"set so=99"'
 export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 
 # fzf
-# TODO: create zsh widget (?) to automatically become nvim process after exit
-# NOTE: this could be done a in hacky way by repurposing the existing cmdline
-# completion, but the tool's author suggested creating some custom binding
 fg0='#d4be98'
 bg0='#282828'
 green='#a9b665'
 bg_green='#34381b'
 orange='#e78a4e'
 gray='#a89984'
+
 export FZF_DEFAULT_OPTS="--cycle --layout=reverse --highlight-line \
---gutter=' ' --pointer='>' --no-bold --no-scrollbar --height=~50% \
+--gutter=' ' --pointer='>' --no-bold --no-scrollbar \
 --color=fg:$fg0,bg:$bg0,hl:$green,fg+:$fg0,bg+:$bg_green,hl+:$green,\
 info:$gray,prompt:$orange,pointer:$fg0,spinner:$green"
 export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
+export FZF_ALT_C_COMMAND=''
 source <(fzf --zsh)
+
+BFS_FLAGS="-exclude \( -name .git -o -name node_modules \) \
+-mindepth 1 -printf '%P\\n'"
 
 fzf-nvim() {
     tmux set -p cursor-style bar
-    fd . | fzf --scheme=path --bind 'enter:become(nvim {})'
+    eval "bfs $BFS_FLAGS" | fzf --scheme=path --bind 'enter:become(nvim {})'
     tmux set -p cursor-style block
 }
 
 fzf-z() {
     tmux set -p cursor-style bar
-    dir=$(fd -td . | fzf --scheme=path)
+    dir=$(eval "bfs -type d $BFS_FLAGS" | fzf --scheme=path)
     if [[ -n $dir ]]; then
         z $dir
     fi
