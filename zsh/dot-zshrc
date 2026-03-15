@@ -43,36 +43,36 @@ green='#a9b665'
 bg_green='#34381b'
 orange='#e78a4e'
 gray='#a89984'
-export FZF_DEFAULT_OPTS="\
---style=minimal --cycle --layout=reverse --highlight-line --gutter=' ' --pointer='>'
---no-bold --color=\
-fg:$fg0,\
-bg:$bg0,\
-hl:$green,\
-fg+:$fg0,\
-bg+:$bg_green,\
-hl+:$green,\
-info:$gray,\
-prompt:$orange,\
-pointer:$fg0,\
-spinner:$green,
-"
-
+export FZF_DEFAULT_OPTS="--cycle --layout=reverse --highlight-line \
+--gutter=' ' --pointer='>' --no-bold --no-scrollbar --height=~50% \
+--color=fg:$fg0,bg:$bg0,hl:$green,fg+:$fg0,bg+:$bg_green,hl+:$green,\
+info:$gray,prompt:$orange,pointer:$fg0,spinner:$green"
 export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
 source <(fzf --zsh)
 
-_fzf_complete_ls() {
-    _fzf_complete -- "$@" < <(fd -t d)
-}
-_fzf_complete_nvim() {
-    _fzf_complete -- "$@" < <(fd -t f)
+fzf-nvim() {
+    tmux set -p cursor-style bar
+    fd . | fzf --scheme=path --bind 'enter:become(nvim {})'
+    tmux set -p cursor-style block
 }
 
-fzf_nvim() {
-    fd -u . | fzf --bind 'enter:become(nvim {})'
+fzf-z() {
+    tmux set -p cursor-style bar
+    dir=$(fd -td . | fzf --scheme=path)
+    if [[ -n $dir ]]; then
+        z $dir
+    fi
+    tmux set -p cursor-style block
 }
-zle -N fzf_nvim
-bindkey '^f' fzf_nvim
+
+zle-line-pre-redraw() { zle reset-prompt; }
+
+zle -N fzf-nvim
+zle -N fzf-z
+zle -N zle-line-pre-redraw
+bindkey '^b' test-widget
+bindkey '^f' fzf-nvim
+bindkey '^z' fzf-z
 
 # zoxide
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS"
