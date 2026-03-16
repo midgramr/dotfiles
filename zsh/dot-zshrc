@@ -107,8 +107,6 @@ alias dr='docker run'
 alias fd='fd -H -E .git'
 alias help='run-help'
 
-# TODO: make keybind for running nvim via fzf
-
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # vim: ft=zsh
