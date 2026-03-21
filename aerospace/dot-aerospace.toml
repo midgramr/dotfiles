@@ -97,7 +97,8 @@ on-focus-changed = ['move-mouse window-lazy-center']
     cmd-ctrl-alt-m = 'exec-and-forget open /System/Applications/Messages.app'
     cmd-ctrl-alt-r = 'exec-and-forget open /System/Applications/Reminders.app'
     cmd-ctrl-alt-x = 'exec-and-forget open /System/Applications/System\ Settings.app'
-    cmd-ctrl-alt-e = 'exec-and-forget open -na /Applications/Ghostty.app --args -e ranger'
+    cmd-ctrl-alt-e = 'exec-and-forget open /System/Applications/Mail.app'
+    cmd-ctrl-alt-s = 'exec-and-forget open /System/Applications/Calendar.app'
 
     cmd-ctrl-alt-f = 'fullscreen'
 
