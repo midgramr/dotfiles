@@ -1,0 +1,71 @@
+#!/bin/bash
+
+set -ux -o pipefail
+
+# TODO: add parsing for sub-commands, namely add (default) and delete
+
+# NOTE: this script will break if the remote gets changed in a repo;
+# could maybe set the wt_dir to a hidden directory in the original working tree
+
+remote="$(git remote get-url origin | cut -d: -f2 | cut -d . -f1)"
+wt_group="$(echo $remote | tr / -)"
+wt_dir="$HOME/.local/state/worktrees/$wt_group"
+mkdir -p "$wt_dir"
+
+# Track the tmux session associated with the original working tree
+session_file="$wt_dir/session"
+
+if [[ ! -e "$session_file" ]]; then
+  session="$(tmux display -p '#S')"
+  echo $session >"$session_file"
+fi
+
+fmt='%(refname:short) %(if)%(worktreepath)%(then)%(worktreepath)%(else)none%(end)'
+branches="$(git branch --format "$fmt")"
+curr_branch="$(git branch --show-current)"
+
+# What if this is outside a git repo?
+branch="$(
+  git branch --color=always |
+    rg -v "^$curr_branch\\s" |
+    fzf --tmux --ansi --border-label ' branches ' |
+    cut -w -f2
+)"
+if [[ -z "$branch" || "$branch" == "$curr_branch" ]]; then
+  exit 0
+fi
+
+existing="$(echo "$branches" | rg "^$branch\\s" | cut -w -f2)"
+if [[ $? != 0 ]]; then
+  exit 1
+fi
+
+# Remove slashes from branch name since they can't be used in filenames
+clean_branch="$(echo "$branch" | tr / -)"
+wt_path="$wt_dir/$clean_branch"
+
+if [[ "$existing" == "none" ]]; then
+  # worktree name should be globally unique, since every repo's worktrees
+  # will be stored in $worktrees_dir
+  git worktree prune
+  git worktree add "$wt_path" "$branch" &>/dev/null
+else
+  echo "$existing" | rg -q "$wt_dir"
+  if [[ $? == 1 ]]; then
+    # This is the original working tree
+    session="$(cat "$session_file")"
+    tmux switch-client -t "$session"
+    exit 0
+  fi
+fi
+
+# Handle corresponding tmux sessions
+session=" $remote/$branch"
+
+tmux has-session -t "$session" &>/dev/null
+if [[ $? != 0 ]]; then
+  tmux new-session -d -s "$session" -c "$wt_path"
+fi
+tmux switch-client -t "$session"
+
+# vim: ts=2 sts=2 sw=2 et
