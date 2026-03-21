@@ -22,7 +22,10 @@
 	diffFilter = delta --color-only
 [delta]
 	navigate = true
+
 [merge]
 	tool = nvimdiff2
 [mergetool]
 	keepBackup = false
+
+# vim: ft=gitconfig
