@@ -14,7 +14,8 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, {
   desc = 'vim.diagnostic.open_float',
 })
 vim.keymap.set('n', '<leader>D', function()
-  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+  local enabled = vim.diagnostic.is_enabled { bufnr = 0 }
+  vim.diagnostic.enable(not enabled, { bufnr = 0 })
 end, {
   desc = 'Toggle LSP diagnostics',
 })

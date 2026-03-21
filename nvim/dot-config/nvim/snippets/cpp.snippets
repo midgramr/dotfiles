@@ -2,8 +2,8 @@ extends c
 
 snippet cf Codeforces
     #include <bits/stdc++.h>
-    #define all(a) a.begin(), a.end()
-    #define sz(a) (int)a.size()
+    #define all(a) (a).begin(), (a).end()
+    #define sz(a) (int)(a).size()
     #define rep(i, a, b) for (int i = a; i < b; ++i)
     #define rrep(i, a, b) for (int i = a; i >= b; --i)
 
@@ -17,8 +17,7 @@ snippet cf Codeforces
     }
 
     int main() {
-        ios_base::sync_with_stdio(false);
-        cin.tie(nullptr);
+        cin.tie(0)->sync_with_stdio(0);
         int t; cin >> t;
         while (t--) {
             solve();
@@ -27,8 +26,8 @@ snippet cf Codeforces
 
 snippet cf2 Codeforces
     #include <bits/stdc++.h>
-    #define all(a) a.begin(), a.end()
-    #define sz(a) (int)a.size()
+    #define all(a) (a).begin(), (a).end()
+    #define sz(a) (int)(a).size()
     #define rep(i, a, b) for (int i = a; i < b; ++i)
     #define rrep(i, a, b) for (int i = a; i >= b; --i)
 
@@ -42,8 +41,7 @@ snippet cf2 Codeforces
     }
 
     int main() {
-        ios_base::sync_with_stdio(false);
-        cin.tie(nullptr);
+        cin.tie(0)->sync_with_stdio(0);
         solve();
     }
 

@@ -10,11 +10,11 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
         vim.keymap.set(mode, l, r, opts)
       end
 
-      map('n', '<leader>hp', gitsigns.preview_hunk_inline, { desc = 'Git [p]review hunk inline' })
-      map('n', '<leader>hP', gitsigns.preview_hunk, { desc = 'Git [P]review hunk in float' })
-      map('n', '<leader>hB', gitsigns.blame_line, { desc = 'Git [B]lame line' })
-      map('n', '<leader>hb', gitsigns.blame, { desc = 'Git [b]lame' })
-      map('n', '<leader>hd', function()
+      map('n', '<Leader>gp', gitsigns.preview_hunk_inline, { desc = 'Git [p]review hunk inline' })
+      map('n', '<Leader>gP', gitsigns.preview_hunk, { desc = 'Git [P]review hunk in float' })
+      map('n', '<Leader>gB', gitsigns.blame_line, { desc = 'Git [B]lame line' })
+      map('n', '<Leader>gb', gitsigns.blame, { desc = 'Git [b]lame' })
+      map('n', '<Leader>gd', function()
         gitsigns.diffthis '@'
       end, { desc = 'Git [D]iff against last commit' })
 

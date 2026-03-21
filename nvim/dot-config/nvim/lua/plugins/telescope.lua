@@ -104,6 +104,11 @@ return {
       builtin.current_buffer_fuzzy_find()
     end, { desc = '[/] Fuzzy search in current buffer' })
     vim.keymap.set('n', '<Leader>sH', builtin.highlights, { desc = '[S]earch [H]ighlights' })
+    vim.keymap.set('n', '<Leader>sm', builtin.marks, { desc = '[S]earch [M]arks' })
+    vim.keymap.set('n', '<Leader>sb', builtin.buffers, { desc = '[S]earch [M]arks' })
+
+    -- Map common functions to easier keybinds
+    vim.keymap.set('n', '<C-f>', builtin.find_files, { desc = 'Search files' })
 
     -- LSP overrides
     vim.api.nvim_create_autocmd('LspAttach', {
