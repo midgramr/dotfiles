@@ -55,17 +55,14 @@ snippet ordset GNU PBDS Order Statistic Tree
 snippet dsu Disjoint Set Union
     class Dsu {
         vector<int> parent, setSize;
-
     public:
         Dsu(int n) : parent(n), setSize(n, 1) {
             iota(parent.begin(), parent.end(), 0);
         }
-
         int findSet(int x) {
             if (parent[x] == x) return x;
             return parent[x] = findSet(parent[x]);
         }
-
         bool unionSet(int x, int y) {
             int parX = findSet(x), parY = findSet(y);
             if (parX == parY) return false;
@@ -85,7 +82,6 @@ snippet dsu2 Disjoint Set Union
     private:
         unordered_map<string, string> parent;
         unordered_map<string, int> size;
-
     public:
         void makeSet(const auto &x) {
             if (parent.count(x)) {
@@ -94,14 +90,12 @@ snippet dsu2 Disjoint Set Union
             parent[x] = x;
             size[x] = 1;
         }
-
         string findSet(const auto &x) {
             if (parent[x] == x) {
                 return x;
             }
             return parent[x] = findSet(parent[x]);
         }
-
         void unionSet(const auto &x, const auto &y) {
             auto parX = findSet(x), parY = findSet(y);
             if (parX == parY) {
@@ -218,17 +212,14 @@ snippet fenwick Fenwick Tree
     private:
         vector<T> tree;
         int n;
-
     public:
         FenwickTree(int n) : tree(n + 1), n(n) {}
-
         void update(int i, T val) {
             while (i <= n) {
                 tree[i] += val;
                 i += (i & -i);
             }
         }
-
         T get(int i) {
             T res = 0;
             while (i > 0) {

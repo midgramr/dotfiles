@@ -34,6 +34,8 @@ return {
       css = { 'prettier' },
       json = { 'prettier' },
       yaml = { 'prettier' },
+      javascriptreact = { 'prettier' },
+      -- typescriptreact = { 'prettier' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --

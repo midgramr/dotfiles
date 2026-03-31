@@ -1,28 +1,15 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  main = 'nvim-treesitter.configs',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-context',
-    keys = {
-      {
-        '[c',
-        function ()
-          require('treesitter-context').go_to_context(vim.v.count1)
-        end,
-        mode = 'n',
-        desc = 'Go to treesitter context',
-        silent = true,
-      }
-    },
-  },
-  opts = {
-    ensure_installed = {
+  config = function()
+    local treesitter = require 'nvim-treesitter'
+    local parsers = {
       'bash',
       'c',
       'cpp',
       'css',
       'diff',
+      'dockerfile',
       'editorconfig',
       'git_config',
       'go',
@@ -30,7 +17,7 @@ return {
       'java',
       'javascript',
       'json',
-      'jsonc',
+      'jsx',
       'latex',
       'lua',
       'luadoc',
@@ -41,29 +28,30 @@ return {
       'python',
       'query',
       'regex',
+      'tmux',
       'toml',
       'typescript',
+      'tsx',
       'vim',
       'vimdoc',
       'xml',
       'yaml',
-    },
-    highlight = {
-      enable = true,
-      disable = { 'latex' },
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = 'gi',
-        scope_incremental = 'gi',
-        node_decremental = 'go',
-      },
-    },
-    indent = {
-      enable = true,
-      disable = { 'ruby', 'python', 'yaml' },
-    },
-  },
+      'zsh',
+    }
+    local patterns = vim.tbl_extend('force', parsers, {
+      'javascriptreact',
+      'typescriptreact',
+      'yaml.docker-compose',
+    })
+    treesitter.install(parsers)
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = patterns,
+      callback = function()
+        vim.treesitter.start()
+        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        -- vim.wo.foldmethod = 'expr'
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end,
+    })
+  end,
 }
