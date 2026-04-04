@@ -18,16 +18,15 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 persistent-workspaces = [
-    '1', # Browser (school)
-    '2', # Browser (personal)
-    '3', # Terminal
+    '1', # School
+    '2', # Personal
+    '3', # Development
     '4', # Notes
-    '5', # Discord
-    '6', # Music
-    '7', # Facetime/Zoom
+    '5', # Misc
+    '6',
+    '7',
     '8',
     '9',
-    '0', 
 ]
 
 on-focus-changed = ['move-mouse window-lazy-center']
@@ -36,27 +35,9 @@ on-focus-changed = ['move-mouse window-lazy-center']
     PATH = '${HOME}/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 
 [[on-window-detected]]
-    if.app-name-regex-substring = """\
-        Calendar|Finder|Find My|Mail|Maps|Messages|\
-        Reminders|Stocks|System Settings|Thunderbird|\
-        Weather"""
-    check-further-callbacks = true
-    run = ['layout floating']
-
-[[on-window-detected]]
-    if.app-id = 'org.mozilla.thunderbird'
-    if.window-title-regex-substring = 'Reminder'
-    run = ['exec-and-forget aerospace-thunderbird']
-
-[[on-window-detected]]
     if.app-id = 'org.mozilla.firefox'
     if.during-aerospace-startup = true
     run = ['move-node-to-workspace 1', 'workspace 1']
-
-[[on-window-detected]]
-    if.app-id = 'org.mozilla.thunderbird'
-    if.during-aerospace-startup = true
-    run = ['move-node-to-workspace 2', 'workspace 2']
 
 [[on-window-detected]]
     if.app-id = 'com.mitchellh.ghostty'
@@ -67,16 +48,6 @@ on-focus-changed = ['move-mouse window-lazy-center']
     if.app-id = 'md.obsidian'
     if.during-aerospace-startup = true
     run = ['move-node-to-workspace 4', 'workspace 4']
-
-[[on-window-detected]]
-    if.app-id = 'com.hnc.Discord'
-    if.during-aerospace-startup = true
-    run = ['move-node-to-workspace 5', 'workspace 5']
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.Music'
-    if.during-aerospace-startup = true
-    run = ['move-node-to-workspace 6', 'workspace 6']
 
 [[on-window-detected]]
     if.app-name-regex-substring = 'FaceTime|Screen Sharing|zoom\.us'
@@ -97,8 +68,11 @@ on-focus-changed = ['move-mouse window-lazy-center']
     cmd-ctrl-alt-m = 'exec-and-forget open /System/Applications/Messages.app'
     cmd-ctrl-alt-r = 'exec-and-forget open /System/Applications/Reminders.app'
     cmd-ctrl-alt-x = 'exec-and-forget open /System/Applications/System\ Settings.app'
-    cmd-ctrl-alt-e = 'exec-and-forget open /System/Applications/Mail.app'
     cmd-ctrl-alt-s = 'exec-and-forget open /System/Applications/Calendar.app'
+    cmd-ctrl-alt-t = 'exec-and-forget open /Applications/Thunderbird.app'
+    cmd-ctrl-alt-d = 'exec-and-forget open /Applications/Discord.app'
+    cmd-ctrl-alt-e = 'exec-and-forget open /System/Library/CoreServices/Finder.app'
+    cmd-ctrl-alt-c = 'exec-and-forget open /Applications/Claude.app'
 
     cmd-ctrl-alt-f = 'fullscreen'
 
@@ -118,8 +92,6 @@ on-focus-changed = ['move-mouse window-lazy-center']
     cmd-ctrl-alt-minus = 'resize smart -50'
     cmd-ctrl-alt-equal = 'resize smart +50'
 
-    cmd-ctrl-alt-backtick = 'workspace `'
-    cmd-ctrl-alt-0 = 'workspace 0'
     cmd-ctrl-alt-1 = 'workspace 1'
     cmd-ctrl-alt-2 = 'workspace 2'
     cmd-ctrl-alt-3 = 'workspace 3'
@@ -132,17 +104,15 @@ on-focus-changed = ['move-mouse window-lazy-center']
 
     cmd-ctrl-alt-tab = 'workspace-back-and-forth'
 
-    cmd-ctrl-alt-shift-backtick = ['move-node-to-workspace `', 'workspace `']
-    cmd-ctrl-alt-shift-0 = ['move-node-to-workspace 0', 'workspace 0', 'layout tiling']
-    cmd-ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1', 'layout tiling']
-    cmd-ctrl-alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2', 'layout tiling']
-    cmd-ctrl-alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3', 'layout tiling']
-    cmd-ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4', 'layout tiling']
-    cmd-ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5', 'layout tiling']
-    cmd-ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6', 'layout tiling']
-    cmd-ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7', 'layout tiling']
-    cmd-ctrl-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8', 'layout tiling']
-    cmd-ctrl-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9', 'layout tiling']
+    cmd-ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1', 'layout accordion']
+    cmd-ctrl-alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2', 'layout accordion']
+    cmd-ctrl-alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3', 'layout accordion']
+    cmd-ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4', 'layout accordion']
+    cmd-ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5', 'layout accordion']
+    cmd-ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 4', 'layout accordion']
+    cmd-ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 4', 'layout accordion']
+    cmd-ctrl-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 4', 'layout accordion']
+    cmd-ctrl-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 4', 'layout accordion']
 
     cmd-ctrl-alt-semicolon = 'mode service'
 
