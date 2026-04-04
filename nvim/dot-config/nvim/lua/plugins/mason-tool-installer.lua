@@ -7,6 +7,7 @@ return {
     require('mason-tool-installer').setup {
       auto_update = true,
       ensure_installed = {
+        -- language servers
         'bash-language-server',
         'clangd',
         'css-lsp',
@@ -23,7 +24,10 @@ return {
         'pyright',
         'texlab',
         'typescript-language-server',
+
+        -- formatters
         'clang-format',
+        'shfmt',
         'stylua',
       },
     }

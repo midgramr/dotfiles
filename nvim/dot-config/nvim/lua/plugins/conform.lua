@@ -6,48 +6,25 @@ return {
     {
       '<leader>f',
       function()
-        require('conform').format { async = true, lsp_format = 'fallback' }
+        require('conform').format { async = true }
       end,
       mode = '',
       desc = '[F]ormat buffer',
     },
   },
   opts = {
-    notify_on_error = false,
-    format_on_save = false,
-    -- format_on_save = function(bufnr)
-    --   local disable_filetypes = { 'cpp', 'python', 'bash', 'zsh' }
-    --   local lsp_format_opt
-    --   if disable_filetypes[vim.bo[bufnr].filetype] then
-    --     lsp_format_opt = 'never'
-    --   else
-    --     lsp_format_opt = 'fallback'
-    --   end
-    --   return {
-    --     timeout_ms = 500,
-    --     lsp_format = lsp_format_opt,
-    --   }
-    -- end,
     formatters_by_ft = {
+      bash = { 'shfmt' },
+      sh = { 'shfmt' },
+      zsh = { 'shfmt' },
+
+      cpp = { 'clang-format' },
+
       lua = { 'stylua' },
-      html = { 'prettier' },
-      css = { 'prettier' },
-      json = { 'prettier' },
-      yaml = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      -- typescriptreact = { 'prettier' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
-      cpp = { 'clang_format' },
+
+      ['_'] = { 'prettier' },
     },
-    formatters = {
-      clang_format = {
-        command = 'clang-format',
-        args = '-style=file:$HOME/.clang-format',
-      },
-    },
+    default_format_opts = { lsp_format = 'fallback' },
+    format_on_save = false,
   },
 }
