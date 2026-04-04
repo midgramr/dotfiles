@@ -36,17 +36,40 @@ export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 # fzf
 fg0='#d4be98'
 bg0='#282828'
+yellow='#d8a657'
 green='#a9b665'
+blue='#7daea3'
 bg_green='#34381b'
 orange='#e78a4e'
 gray='#a89984'
 
-export FZF_DEFAULT_OPTS="--cycle --layout=reverse --highlight-line \
---gutter=' ' --pointer='>' --no-bold --no-scrollbar \
---color=fg:$fg0,bg:$bg0,hl:$green,fg+:$fg0,bg+:$bg_green,hl+:$green,\
-info:$gray,prompt:$orange,pointer:$fg0,spinner:$green"
-export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target"
-export FZF_ALT_C_COMMAND=''
+colors="\
+fg:$fg0,\
+selected-fg:$yellow,\
+bg:$bg0,\
+hl:$green,\
+fg+:$fg0,\
+bg+:$bg_green,\
+hl+:$green,\
+info:$gray,\
+prompt:$orange,\
+pointer:$fg0,\
+marker:$blue,\
+spinner:$green"
+
+export FZF_DEFAULT_OPTS="\
+--cycle \
+--layout=reverse \
+--highlight-line \
+--gutter=' ' \
+--pointer='>' \
+--marker='+' \
+--no-bold \
+--no-scrollbar \
+--color=$colors"
+
+export FZF_ALT_C_COMMAND=""
+
 source <(fzf --zsh)
 
 BFS_FLAGS="-exclude \( -name .git -o -name node_modules \) \
@@ -100,13 +123,17 @@ ulimit -c unlimited
 alias bat='bat --theme-dark gruvbox-dark'
 alias c='cht.sh'
 alias d='docker'
+alias da='docker attach'
 alias dc='docker compose'
 alias di='docker image'
 alias db='docker build'
 alias dr='docker run'
+alias ds='docker start'
 alias fd='fd -H -E .git'
 alias help='run-help'
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(uv generate-shell-completion zsh)"
 
 # vim: ft=zsh
