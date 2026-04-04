@@ -1,71 +1,148 @@
 #!/bin/bash
 
-set -ux -o pipefail
+set -x -o pipefail
 
-# TODO: add parsing for sub-commands, namely add (default) and delete
+# High-level idea: on invocation, bring up an fzf prompt containing a list of
+# 1. local branches (override remote branch if both exist)
+# 2. remote branches
+#
+# If you hover over a branch with an associated worktree and press <C-d>, the
+# worktree and associated tmux session with be deleted
+#
+# If you choose a branch with no worktree, a worktree + tmux session will be
+# created and switched to
+#
+# If you choose a branch with a worktree (and thus a session), the session
+# will be switched to
+#
+# NOTE: It's possible that a branch with a worktree doesn't have an associated
+# tmux session (e.g., if created outside this tool). In that case, I'll need
+# to check for and handle that edge case
+#
+# NOTE: this script will break if the remote gets changed in a repo
+# Could maybe set the wt_dir to a hidden directory in the original working tree
 
-# NOTE: this script will break if the remote gets changed in a repo;
-# could maybe set the wt_dir to a hidden directory in the original working tree
+WORKTREES_HOME="${XDG_STATE_HOME:-$HOME/.local/state}/worktrees"
 
-remote="$(git remote get-url origin | cut -d: -f2 | cut -d . -f1)"
-wt_group="$(echo $remote | tr / -)"
-wt_dir="$HOME/.local/state/worktrees/$wt_group"
-mkdir -p "$wt_dir"
+print_help() {
+    echo -e "Usage: fzf-worktrees [options]\n"
+    echo "-c, --cwd     working directory to run this from"
+    echo "-h, --help    show this help"
+}
 
-# Track the tmux session associated with the original working tree
-session_file="$wt_dir/session"
+while (($# > 0)); do
+    case $1 in
+    -c | --cwd)
+        cd "$2"
+        shift
+        shift
+        ;;
+    -h | --help)
+        print_help
+        exit 0
+        ;;
+    *)
+        echo "Unknown argument $1"
+        print_help
+        exit 1
+        ;;
+    esac
+done
 
-if [[ ! -e "$session_file" ]]; then
-  session="$(tmux display -p '#S')"
-  echo $session >"$session_file"
-fi
+pick_branch() {
+    local branch="$(
+        git branch -a --color=always | rg -v 'origin/HEAD' |
+            fzf --tmux --ansi --border-label ' branches ' --info=hidden --no-sort \
+                --bind 'ctrl-d:execute(
+                    branch="$(echo {} | cut -w -f2)"
+                    remote="$(git remote get-url origin | cut -d: -f2 | cut -d . -f1)"
+                    worktree="$(git branch --list "$branch" --format "%(worktreepath)")"
+                    session=" $remote/$branch"
+                    if [[ -n "$worktree" ]]; then
+                        git worktree remove --force "$worktree"
+                        tmux kill-session -t "$session" &>/dev/null
+                    fi
+                )+reload(git branch -a --color=always | rg -v "origin/HEAD")' |
+            cut -w -f2
+    )"
 
-fmt='%(refname:short) %(if)%(worktreepath)%(then)%(worktreepath)%(else)none%(end)'
-branches="$(git branch --format "$fmt")"
-curr_branch="$(git branch --show-current)"
+    if [[ -z "$branch" || "$branch" == "$(git branch --show-current)" ]]; then
+        return 2
+    fi
 
-# What if this is outside a git repo?
-branch="$(
-  git branch --color=always |
-    rg -v "^$curr_branch\\s" |
-    fzf --tmux --ansi --border-label ' branches ' |
-    cut -w -f2
-)"
-if [[ -z "$branch" || "$branch" == "$curr_branch" ]]; then
-  exit 0
-fi
+    local branch_fmt='%(refname:short) %(if)%(worktreepath)%(then)%(worktreepath)%(else)none%(end)'
+    local branches="$(git branch -a --format "$branch_fmt" | rg -v 'origin/HEAD')"
 
-existing="$(echo "$branches" | rg "^$branch\\s" | cut -w -f2)"
-if [[ $? != 0 ]]; then
-  exit 1
-fi
+    # User selected a remote branch
+    if echo "$branch" | rg -q "^remotes/"; then
+        local local_branch="$(echo "$branch" | cut -d/ -f3-4)"
+        if ! echo "$branches" | rg -q "$local_branch"; then
+            git branch "$local_branch" -t "$branch"
+        fi
+        local branch="$local_branch"
+    fi
+
+    if ! echo "$branches" | rg -q -m 1 "$branch\\s"; then
+        return 1
+    fi
+
+    echo "$branch"
+}
 
 # Remove slashes from branch name since they can't be used in filenames
-clean_branch="$(echo "$branch" | tr / -)"
-wt_path="$wt_dir/$clean_branch"
-
-if [[ "$existing" == "none" ]]; then
-  # worktree name should be globally unique, since every repo's worktrees
-  # will be stored in $worktrees_dir
-  git worktree prune
-  git worktree add "$wt_path" "$branch" &>/dev/null
-else
-  echo "$existing" | rg -q "$wt_dir"
-  if [[ $? == 1 ]]; then
-    # This is the original working tree
-    session="$(cat "$session_file")"
-    tmux switch-client -t "$session"
-    exit 0
-  fi
-fi
+setup_worktree() {
+    local branch="$1"
+    local repo_worktree_dir="$2"
+    local existing_worktree="$(git branch --list "$branch" --format "%(worktreepath)")"
+    if [[ -z "$existing_worktree" ]]; then
+        local clean_branch="$(echo "$branch" | tr / -)"
+        local worktree_dir="$repo_worktree_dir/$clean_branch"
+        mkdir -p "$repo_worktree_dir"
+        git worktree prune
+        git worktree add "$worktree_dir" "$branch" &>/dev/null
+        echo "$worktree_dir"
+    else
+        echo "$existing_worktree"
+    fi
+}
 
 # Handle corresponding tmux sessions
-session=" $remote/$branch"
+switch_session() {
+    local remote="$1"
+    local branch="$2"
+    local repo_worktree_dir="$3"
+    local worktree_dir="$4"
 
-tmux has-session -t "$session" &>/dev/null
-if [[ $? != 0 ]]; then
-  tmux new-session -d -s "$session" -c "$wt_path"
-fi
-tmux switch-client -t "$session"
+    local session=" $remote/$branch"
+    local session_file="$repo_worktree_dir/session"
+    local existing_worktree="$(git branch --list "$branch" --format "%(worktreepath)")"
 
-# vim: ts=2 sts=2 sw=2 et
+    if [[ ! -e "$session_file" ]]; then
+        echo "$(tmux display -p '#S')" >"$session_file"
+    fi
+
+    if ! echo "$existing_worktree" | rg -q "$repo_worktree_dir"; then
+        # If the branch's worktree can't be found in `repo_worktree_dir`
+        # that means this is the tmux session associated with the original worktree
+        local session="$(cat "$session_file")"
+    fi
+
+    if ! tmux has-session -t "$session" &>/dev/null; then
+        tmux new-session -d -s "$session" -c "$worktree_dir"
+    fi
+    tmux switch-client -t "$session"
+}
+
+remote="$(git remote get-url origin | cut -d: -f2 | cut -d . -f1)"
+worktree_group="$(echo $remote | tr / -)"
+repo_worktree_dir="$WORKTREES_HOME/$worktree_group"
+
+branch="$(pick_branch)"
+case $? in
+1) exit 1 ;;
+2) exit 0 ;;
+esac
+
+worktree_dir="$(setup_worktree "$branch" "$repo_worktree_dir")"
+
+switch_session "$remote" "$branch" "$repo_worktree_dir" "$worktree_dir"
