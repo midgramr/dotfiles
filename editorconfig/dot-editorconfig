@@ -12,9 +12,6 @@ indent_size = 2
 [*.{js,jsx,mjs,ts,tsx,mts,json}]
 indent_size = 2
 
-[*.{bash,sh,zsh}]
-indent_size = 2
-
 [*.{conf,yaml}]
 indent_size = 2
 
