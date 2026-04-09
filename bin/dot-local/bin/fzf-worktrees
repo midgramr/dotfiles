@@ -52,7 +52,7 @@ done
 pick_branch() {
     local branch="$(
         git branch -a --color=always | rg -v 'origin/HEAD' |
-            fzf --tmux --ansi --border-label ' branches ' --info=hidden --no-sort \
+            fzf --tmux --ansi --border-label ' worktrees ' --info=hidden --no-sort \
                 --bind 'ctrl-d:execute(
                     branch="$(echo {} | cut -w -f2)"
                     remote="$(git remote get-url origin | cut -d: -f2 | cut -d . -f1)"
