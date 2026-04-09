@@ -6,7 +6,7 @@ return {
     {
       '<leader>f',
       function()
-        require('conform').format { async = true }
+        require('conform').format { async = true, lsp_format = 'fallback' }
       end,
       mode = '',
       desc = '[F]ormat buffer',
@@ -18,13 +18,15 @@ return {
       sh = { 'shfmt' },
       zsh = { 'shfmt' },
 
+      c = { 'clang-format' },
       cpp = { 'clang-format' },
+
+      tex = { 'tex-fmt' },
 
       lua = { 'stylua' },
 
       ['_'] = { 'prettier' },
     },
-    default_format_opts = { lsp_format = 'fallback' },
     format_on_save = false,
   },
 }

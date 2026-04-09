@@ -29,6 +29,7 @@ return {
         'clang-format',
         'shfmt',
         'stylua',
+        'tex-fmt',
       },
     }
   end,

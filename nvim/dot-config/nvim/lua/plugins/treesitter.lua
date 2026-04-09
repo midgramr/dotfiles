@@ -2,10 +2,9 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   config = function()
-    local treesitter = require 'nvim-treesitter'
-    local parsers = {
+    local ts = require 'nvim-treesitter'
+    ts.install {
       'bash',
-      -- 'c',
       'cpp',
       'css',
       'diff',
@@ -19,11 +18,8 @@ return {
       'json',
       'jsx',
       'latex',
-      -- 'lua',
       'luadoc',
       'make',
-      -- 'markdown',
-      -- 'markdown_inline',
       'properties',
       'python',
       'query',
@@ -33,24 +29,19 @@ return {
       'typescript',
       'tsx',
       'vim',
-      -- 'vimdoc',
       'xml',
       'yaml',
       'zsh',
     }
-    local patterns = vim.tbl_extend('force', parsers, {
-      'javascriptreact',
-      'typescriptreact',
-      'yaml.docker-compose',
-    })
-    treesitter.install(parsers)
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = patterns,
-      callback = function()
-        vim.treesitter.start()
-        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-        -- vim.wo.foldmethod = 'expr'
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      callback = function(args)
+        local lang = vim.treesitter.language.get_lang(args.match)
+        if lang and vim.treesitter.language.add(lang) then
+          vim.treesitter.start()
+          -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+          -- vim.wo.foldmethod = 'expr'
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
       end,
     })
   end,
