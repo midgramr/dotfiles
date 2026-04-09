@@ -1,4 +1,21 @@
-local lsps = require 'config.lsp.lsps'
+local lsps = {
+  'bashls',
+  'clangd',
+  'cssls',
+  'composels',
+  'dockerls',
+  'eslintls',
+  'gh-actions-ls',
+  'gopls',
+  'html-ls',
+  'jdtls',
+  'jsonls',
+  'luals',
+  'marksman',
+  'pyright',
+  'texlab',
+  'tsls',
+}
 vim.lsp.enable(lsps)
 
 vim.filetype.add {
