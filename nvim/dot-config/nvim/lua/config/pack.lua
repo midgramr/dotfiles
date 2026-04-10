@@ -61,7 +61,7 @@ vim.pack.add({
   { src = gh 'lervag/vimtex' },
 }, { confirm = false })
 
--- TODO: better: iterate through files in plugin dir and require them, rather than
+-- TODO: better to iterate through files in plugin dir and require them, rather than
 -- specifying them individually here
 require 'plugins.autopairs'
 require 'plugins.blink'
