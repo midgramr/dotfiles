@@ -1,20 +1,8 @@
-return {
-  'stevearc/oil.nvim',
-  keys = {
-    {
-      '-',
-      '<Cmd>Oil<CR>',
-      mode = 'n',
-      desc = 'Open parent directory',
-    },
-  },
-  ---@module 'oil'
-  ---@type oil.SetupOpts
-  opts = {
+require('nvim-web-devicons').setup()
+require('oil').setup {
     watch_for_changes = true,
     show_hidden = true,
     skip_confirm_for_simple_edits = true,
-  },
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  lazy = false,
 }
+
+vim.keymap.set('n', '-', '<Cmd>Oil<CR>', { desc = 'Open parent directory '})
