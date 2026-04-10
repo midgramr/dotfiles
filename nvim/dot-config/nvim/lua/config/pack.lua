@@ -32,6 +32,12 @@ vim.api.nvim_create_autocmd('PackChanged', {
   end,
 })
 
+-- Builtin plugins
+vim.cmd.packadd 'nvim.difftool'
+vim.cmd.packadd 'nvim.tohtml'
+vim.cmd.packadd 'nvim.undotree'
+
+-- Downloaded plugins
 vim.pack.add({
   { src = gh 'saghen/blink.cmp', version = 'v1.10.2' },
   { src = gh 'stevearc/conform.nvim', name = 'conform' },

@@ -27,10 +27,11 @@ vim.filetype.add {
   },
 }
 
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, {
+vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, {
   desc = 'vim.diagnostic.open_float',
 })
-vim.keymap.set('n', '<leader>D', function()
+
+vim.keymap.set('n', '<Leader>D', function()
   local enabled = vim.diagnostic.is_enabled { bufnr = 0 }
   vim.diagnostic.enable(not enabled, { bufnr = 0 })
 end, {

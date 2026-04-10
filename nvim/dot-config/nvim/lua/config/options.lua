@@ -44,3 +44,5 @@ vim.o.scrolloff = 10
 vim.o.winborder = 'rounded'
 
 vim.o.termguicolors = true
+
+require('vim._core.ui2').enable()
