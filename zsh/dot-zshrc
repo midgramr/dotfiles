@@ -1,34 +1,44 @@
 # TODO: minimize config (remove Oh-My-ZSH)
 # TODO: modularize configs (integrate each app's config with stow)
+# TODO: Add detectable prompt escape sequence via PROMPT='printf "\033]133;A\007"'
 
 export EDITOR=nvim
 
 # Oh-My-ZSH config
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="minimal"
+# ZSH_THEME="minimal"
 
 # Update automatically without asking
-zstyle ':omz:update' mode auto
+# zstyle ':omz:update' mode auto
 
-plugins=(
-    git
-    eza
-    vi-mode
-)
-
-source $ZSH/oh-my-zsh.sh
+# plugins=(
+#     git
+#     eza
+#     vi-mode
+# )
+#
+# source $ZSH/oh-my-zsh.sh
 # Oh-My-ZSH config end
+
+export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+
+# OSC 133 support
+precmd() {
+  print -Pn "\e]133;A\e\\"  # prompt start
+}
 
 # Setup completions
 fpath=(~/.zsh.d/ $HOME/.docker/completions $fpath)
-autoload -U compinit
-compinit
 
-source "$(brew --prefix nvm)/nvm.sh"
-export HOMEBREW_FORCE_VENDOR_RUBY=1
-export HOMEBREW_NO_ENV_HINTS=1
+# Only rebuild completions cache once a day
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
 
 export MANPAGER='nvim +Man! +"set so=99"'
 export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
@@ -103,9 +113,6 @@ bindkey '^z' fzf-z
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS"
 eval "$(zoxide init zsh)"
 
-# cht.sh
-CHTSH_QUERY_OPTIONS="T"
-
 # zsh help utility
 export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
 unalias run-help
@@ -113,12 +120,6 @@ autoload run-help
 
 # Kitty binaries
 export PATH=$PATH:/Applications/kitty.app/Contents/MacOS
-
-# Go binaries
-export PATH=$PATH:~/go/bin
-
-# Enable core dumps for Neovim dev
-ulimit -c unlimited
 
 alias bat='bat --theme-dark gruvbox-dark'
 alias c='cht.sh'
@@ -130,10 +131,35 @@ alias db='docker build'
 alias dr='docker run'
 alias ds='docker start'
 alias fd='fd -H -E .git'
+alias g='git'
+alias ga='git add'
+alias gaa='git add --all'
+alias gbs='git bisect'
+alias gb='git branch'
+alias gcp='git cherry-pick'
+alias gc='git commit --verbose'
+alias gd='git diff'
+alias gf='git fetch'
+alias glg='git log --stat'
+alias gm='git merge'
+alias gl='git pull'
+alias gp='git push'
+alias gr='git remote'
+alias grf='git reflog'
+alias grs='git restore'
+alias grm='git rm'
+alias gsh='git show'
+alias gst='git status'
+alias gsw='git switch'
+alias gwt='git worktree'
 alias help='run-help'
+alias ls='eza'
+alias ll='eza -gl'
+alias la='eza -gla'
+alias lD='eza -glD'
+alias lS='eza -gl -ssize'
+alias lT='eza -gl -snewest'
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-eval "$(uv generate-shell-completion zsh)"
 
 # vim: ft=zsh
