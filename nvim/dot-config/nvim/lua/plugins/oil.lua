@@ -10,6 +10,7 @@ require('oil').setup {
   skip_confirm_for_simple_edits = true,
   keymaps = {
     ['`'] = { 'actions.cd', opts = { scope = 'win' }, mode = 'n' },
+    ['<C-t>'] = {},
   },
 }
 
