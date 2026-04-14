@@ -1,6 +1,10 @@
-local ts = require 'nvim-treesitter'
-ts.install {
+vim.pack.add({
+  { src = vim.g.gh 'nvim-treesitter/nvim-treesitter' },
+}, { confirm = false })
+
+require('nvim-treesitter').install {
   'bash',
+  'c',
   'cpp',
   'css',
   'diff',
@@ -16,6 +20,8 @@ ts.install {
   'latex',
   'luadoc',
   'make',
+  'markdown',
+  'markdown_inline',
   'properties',
   'python',
   'query',

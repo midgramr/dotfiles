@@ -1,3 +1,7 @@
+vim.pack.add({
+  { src = vim.g.gh 'stevearc/conform.nvim', name = 'conform' },
+}, { confirm = false })
+
 local conform = require 'conform'
 conform.setup {
   formatters_by_ft = {
@@ -11,6 +15,8 @@ conform.setup {
     tex = { 'tex-fmt' },
 
     lua = { 'stylua' },
+
+    make = { 'bake' },
 
     ['_'] = { 'prettier' },
   },

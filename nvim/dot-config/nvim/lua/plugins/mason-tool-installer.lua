@@ -1,3 +1,8 @@
+vim.pack.add({
+  { src = vim.g.gh 'williamboman/mason.nvim', name = 'mason' },
+  { src = vim.g.gh 'WhoIsSethDaniel/mason-tool-installer.nvim', name = 'mason-tool-installer' },
+}, { confirm = false })
+
 require('mason').setup()
 require('mason-tool-installer').setup {
   auto_update = true,
@@ -22,6 +27,7 @@ require('mason-tool-installer').setup {
 
     -- formatters
     'clang-format',
+    'mbake',
     'shfmt',
     'stylua',
     'tex-fmt',

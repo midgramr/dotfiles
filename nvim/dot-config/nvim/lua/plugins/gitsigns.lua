@@ -1,3 +1,7 @@
+vim.pack.add({
+  { src = vim.g.gh 'lewis6991/gitsigns.nvim', name = 'gitsigns' },
+}, { confirm = false })
+
 local gitsigns = require 'gitsigns'
 
 gitsigns.setup {

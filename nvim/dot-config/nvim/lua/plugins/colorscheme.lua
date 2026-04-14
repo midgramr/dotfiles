@@ -1,3 +1,7 @@
+vim.pack.add({
+  { src = vim.g.gh 'sainnhe/gruvbox-material' },
+}, { confirm = false })
+
 vim.g.gruvbox_material_enable_italic = true
 vim.g.gruvbox_material_enable_bold = true
 vim.g.gruvbox_material_float_style = 'blend'

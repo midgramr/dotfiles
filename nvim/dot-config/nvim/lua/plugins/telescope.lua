@@ -1,3 +1,10 @@
+vim.pack.add({
+  { src = vim.g.gh 'nvim-lua/plenary.nvim', name = 'plenary' },
+  { src = vim.g.gh 'nvim-telescope/telescope.nvim', name = 'telescope', version = 'v0.2.0' },
+  { src = vim.g.gh 'nvim-telescope/telescope-fzf-native.nvim', name = 'telescope-fzf-native' },
+  { src = vim.g.gh 'nvim-telescope/telescope-ui-select.nvim', name = 'telescope-ui-select' },
+}, { confirm = false })
+
 local telescope = require 'telescope'
 local builtin = require 'telescope.builtin'
 local themes = require 'telescope.themes'

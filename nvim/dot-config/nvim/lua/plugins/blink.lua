@@ -1,3 +1,9 @@
+vim.pack.add({
+  { src = vim.g.gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
+  { src = vim.g.gh 'folke/lazydev.nvim', name = 'lazydev' },
+  { src = vim.g.gh 'saghen/blink.cmp', version = 'v1.10.2' },
+}, { confirm = false })
+
 -- Dependencies
 require('luasnip').setup()
 require('lazydev').setup()
