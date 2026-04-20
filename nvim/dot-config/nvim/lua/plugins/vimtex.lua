@@ -1,5 +1,5 @@
-vim.pack.add ({
-  { src = vim.g.gh 'lervag/vimtex' },
+vim.pack.add({
+  { src = Gh 'lervag/vimtex' },
 }, { confirm = false })
 
 vim.g.vimtex_view_method = 'zathura'

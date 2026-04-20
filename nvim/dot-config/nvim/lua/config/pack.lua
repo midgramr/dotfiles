@@ -1,5 +1,8 @@
-vim.g.gh = function(x)
-  return 'https://github.com/' .. x
+---Helper to convert "owner/repo" string to GitHub URL
+---@param repo string
+---@return string url
+function Gh(repo)
+  return 'https://github.com/' .. repo
 end
 
 vim.api.nvim_create_user_command('PackList', function()
@@ -22,15 +25,6 @@ vim.api.nvim_create_user_command('PackPrune', function()
     :totable()
   vim.pack.del(nonactive)
 end, { desc = 'Prune unused packages' })
-
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
-      vim.system({ 'make' }, { cwd = ev.data.path })
-    end
-  end,
-})
 
 -- Builtin plugins
 vim.cmd.packadd 'nvim.difftool'

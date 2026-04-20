@@ -66,10 +66,11 @@ function MyTabline()
       name = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ':t')
     end
 
+    local tabfmt = '%s%%#%s# %d %s '
     if i == vim.fn.tabpagenr() then
-      s = s .. '%#TabLineSel# ' .. i .. ' ' .. name .. ' '
+      s = string.format(tabfmt, s, 'TabLineSel', i, name)
     else
-      s = s .. '%#TabLine# ' .. i .. ' ' .. name .. ' '
+      s = string.format(tabfmt, s, 'TabLine', i, name)
     end
   end
   return s .. '%#TabLineFill#'

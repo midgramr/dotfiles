@@ -1,6 +1,9 @@
 vim.pack.add({
-  { src = vim.g.gh 'williamboman/mason.nvim', name = 'mason' },
-  { src = vim.g.gh 'WhoIsSethDaniel/mason-tool-installer.nvim', name = 'mason-tool-installer' },
+  { src = Gh 'williamboman/mason.nvim', name = 'mason' },
+  {
+    src = Gh 'WhoIsSethDaniel/mason-tool-installer.nvim',
+    name = 'mason-tool-installer',
+  },
 }, { confirm = false })
 
 require('mason').setup()

@@ -1,5 +1,6 @@
 vim.pack.add({
-  { src = vim.g.gh 'sainnhe/gruvbox-material' },
+  { src = Gh 'sainnhe/everforest' },
+  { src = Gh 'sainnhe/gruvbox-material' },
 }, { confirm = false })
 
 vim.g.gruvbox_material_enable_italic = true

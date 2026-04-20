@@ -1,8 +1,27 @@
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
+      vim.system({ 'make' }, { cwd = ev.data.path })
+    end
+  end,
+})
+
 vim.pack.add({
-  { src = vim.g.gh 'nvim-lua/plenary.nvim', name = 'plenary' },
-  { src = vim.g.gh 'nvim-telescope/telescope.nvim', name = 'telescope', version = 'v0.2.0' },
-  { src = vim.g.gh 'nvim-telescope/telescope-fzf-native.nvim', name = 'telescope-fzf-native' },
-  { src = vim.g.gh 'nvim-telescope/telescope-ui-select.nvim', name = 'telescope-ui-select' },
+  { src = Gh 'nvim-lua/plenary.nvim', name = 'plenary' },
+  {
+    src = Gh 'nvim-telescope/telescope.nvim',
+    name = 'telescope',
+    version = 'v0.2.0',
+  },
+  {
+    src = Gh 'nvim-telescope/telescope-fzf-native.nvim',
+    name = 'telescope-fzf-native',
+  },
+  {
+    src = Gh 'nvim-telescope/telescope-ui-select.nvim',
+    name = 'telescope-ui-select',
+  },
 }, { confirm = false })
 
 local telescope = require 'telescope'
@@ -88,7 +107,12 @@ vim.keymap.set('n', '<Leader>sr', builtin.resume, { desc = '[S]earch [R]esume' }
 vim.keymap.set('n', '<Leader>sR', builtin.registers, { desc = '[S]earch [R]egisters' })
 vim.keymap.set('n', '<Leader>sj', builtin.jumplist, { desc = '[S]earch [J]umplist' })
 vim.keymap.set('n', '<Leader>so', builtin.vim_options, { desc = '[S]earch [O]ptions' })
-vim.keymap.set('n', '<Leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+vim.keymap.set(
+  'n',
+  '<Leader>s.',
+  builtin.oldfiles,
+  { desc = '[S]earch Recent Files ("." for repeat)' }
+)
 vim.keymap.set('n', '<Leader>/', function()
   builtin.current_buffer_fuzzy_find()
 end, { desc = '[/] Fuzzy search in current buffer' })
@@ -122,4 +146,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Git
 vim.keymap.set('n', '<Leader>gh', builtin.git_bcommits, { desc = '[G]it buffer commit [H]istory' })
-vim.keymap.set('v', '<Leader>gh', builtin.git_bcommits_range, { desc = '[G]it buffer commit [H]istory' })
+vim.keymap.set(
+  'v',
+  '<Leader>gh',
+  builtin.git_bcommits_range,
+  { desc = '[G]it buffer commit [H]istory' }
+)

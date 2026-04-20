@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = vim.g.gh 'stevearc/conform.nvim', name = 'conform' },
+  { src = Gh 'stevearc/conform.nvim', name = 'conform' },
 }, { confirm = false })
 
 local conform = require 'conform'
@@ -20,7 +20,7 @@ conform.setup {
 
     ['_'] = { 'prettier' },
   },
-  format_on_save = false,
+  format_on_save = nil,
 }
 
 vim.keymap.set('n', '<Leader>f', function()

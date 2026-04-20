@@ -1,7 +1,7 @@
 vim.pack.add({
-  { src = vim.g.gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
-  { src = vim.g.gh 'folke/lazydev.nvim', name = 'lazydev' },
-  { src = vim.g.gh 'saghen/blink.cmp', version = 'v1.10.2' },
+  { src = Gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
+  { src = Gh 'folke/lazydev.nvim', name = 'lazydev' },
+  { src = Gh 'saghen/blink.cmp', version = 'v1.10.2' },
 }, { confirm = false })
 
 -- Dependencies
@@ -63,7 +63,10 @@ require('blink.cmp').setup {
               local icon = ctx.kind_icon
               -- if LSP source, check for color derived from documentation
               if ctx.item.source_name == 'LSP' then
-                local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
+                local color_item = require('nvim-highlight-colors').format(
+                  ctx.item.documentation,
+                  { kind = ctx.kind }
+                )
                 if color_item and color_item.abbr ~= '' then
                   icon = color_item.abbr
                 end
@@ -75,7 +78,10 @@ require('blink.cmp').setup {
               local highlight = 'BlinkCmpKind' .. ctx.kind
               -- if LSP source, check for color derived from documentation
               if ctx.item.source_name == 'LSP' then
-                local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
+                local color_item = require('nvim-highlight-colors').format(
+                  ctx.item.documentation,
+                  { kind = ctx.kind }
+                )
                 if color_item and color_item.abbr_hl_group then
                   highlight = color_item.abbr_hl_group
                 end

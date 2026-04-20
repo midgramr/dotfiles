@@ -1,6 +1,6 @@
 vim.pack.add({
-  { src = vim.g.gh 'nvim-tree/nvim-web-devicons' },
-  { src = vim.g.gh 'stevearc/oil.nvim', name = 'oil' },
+  { src = Gh 'nvim-tree/nvim-web-devicons' },
+  { src = Gh 'stevearc/oil.nvim', name = 'oil' },
 }, { confirm = false })
 
 require('nvim-web-devicons').setup()

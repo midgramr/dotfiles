@@ -9,12 +9,16 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "everforest": {
+      "rev": "aeef62ee97872d2557d25904d160ec93a4a355f8",
+      "src": "https://github.com/sainnhe/everforest"
+    },
     "gitsigns": {
       "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "gruvbox-material": {
-      "rev": "afb275d8e6dc379762d122bd24e1773fc057abf3",
+      "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "lazydev": {
@@ -71,16 +75,12 @@
       "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
       "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
     },
-    "tmux": {
-      "rev": "2c1c3be0ef287073cef963f2aefa31a15c8b9cd8",
-      "src": "https://github.com/aserowy/tmux.nvim"
-    },
     "todo-comments": {
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"
     },
     "vimtex": {
-      "rev": "9306903316c3ddd250676b7cf97c84a84c9c8f99",
+      "rev": "be0c96efe8be5af25d9075b9eaae77d5ddbee710",
       "src": "https://github.com/lervag/vimtex"
     }
   }

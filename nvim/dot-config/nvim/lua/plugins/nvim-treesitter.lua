@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = vim.g.gh 'nvim-treesitter/nvim-treesitter' },
+  { src = Gh 'nvim-treesitter/nvim-treesitter' },
 }, { confirm = false })
 
 require('nvim-treesitter').install {
@@ -18,6 +18,7 @@ require('nvim-treesitter').install {
   'json',
   'jsx',
   'latex',
+  'lua',
   'luadoc',
   'make',
   'markdown',
@@ -31,6 +32,7 @@ require('nvim-treesitter').install {
   'typescript',
   'tsx',
   'vim',
+  'vimdoc',
   'xml',
   'yaml',
   'zsh',

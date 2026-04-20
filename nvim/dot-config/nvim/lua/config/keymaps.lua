@@ -17,7 +17,12 @@ vim.keymap.set({ 'n', 't' }, '<M-.>', '<Cmd>winc ><CR>', { desc = 'Increase wind
 -- Tabs
 for i = 1, 9 do
   vim.keymap.set('n', '<M-' .. i .. '>', i .. 'gt', { desc = 'Go to tab page ' .. i })
-  vim.keymap.set('t', '<M-' .. i .. '>', '<C-\\><C-n>' .. i .. 'gt', { desc = 'Go to tab page ' .. i })
+  vim.keymap.set(
+    't',
+    '<M-' .. i .. '>',
+    '<C-\\><C-n>' .. i .. 'gt',
+    { desc = 'Go to tab page ' .. i }
+  )
 end
 vim.keymap.set({ 'n', 't' }, '<M-t>', '<Cmd>tab Oil<CR>', { desc = 'Open Oil in new tab' })
 
@@ -30,12 +35,9 @@ vim.keymap.set({ 'n', 't' }, '<C-t>', function()
   else
     vim.cmd 'split +term'
   end
-  vim.cmd 'startinsert'
 end, { desc = 'Open terminal in split' })
 vim.keymap.set('n', '<C-M-t>', function()
-  vim.print 'here?'
   vim.cmd 'tab term'
-  vim.cmd 'startinsert'
 end, { desc = 'Open terminal in new tab' })
 
 vim.keymap.set('n', '<C-y>', '<Cmd>%y<CR>', { desc = 'Yank entire file' })
