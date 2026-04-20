@@ -9,7 +9,7 @@ gh
 git-delta
 neovim
 ninja
-nvm
+node
 python
 ranger
 tmux

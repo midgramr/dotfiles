@@ -1,3 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
 
-cat packages.txt | xargs stow --dotfiles -R -t ~ -v
+cat packages.txt | xargs stow --dotfiles -R -t "$HOME" -v
+
+# vim: ft=zsh
