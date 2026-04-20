@@ -44,7 +44,15 @@ return {
     get_jdtls_jvm_args(),
   },
   filetypes = { 'java' },
-  root_markers = { '.git', 'build.gradle', 'build.gradle.kts', 'build.xml', 'pom.xml', 'settings.gradle', 'settings.gradle.kts' },
+  root_markers = {
+    '.git',
+    'build.gradle',
+    'build.gradle.kts',
+    'build.xml',
+    'pom.xml',
+    'settings.gradle',
+    'settings.gradle.kts',
+  },
   init_options = {
     workspace = get_jdtls_workspace_dir(),
     jvm_args = {},
