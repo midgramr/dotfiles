@@ -1,3 +1,12 @@
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'nvim-treesitter' and kind == 'update' then
+      vim.cmd 'TSUpdate'
+    end
+  end,
+})
+
 vim.pack.add({
   { src = Gh 'nvim-treesitter/nvim-treesitter' },
 }, { confirm = false })
@@ -37,6 +46,7 @@ require('nvim-treesitter').install {
   'yaml',
   'zsh',
 }
+
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
     local lang = vim.treesitter.language.get_lang(args.match)

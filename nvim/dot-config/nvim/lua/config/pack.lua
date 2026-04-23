@@ -5,15 +5,15 @@ function Gh(repo)
   return 'https://github.com/' .. repo
 end
 
-vim.api.nvim_create_user_command('PackList', function()
+vim.api.nvim_create_user_command('Packlist', function()
   vim.pack.update(nil, { offline = true })
 end, { desc = 'List installed packages' })
 
-vim.api.nvim_create_user_command('PackUpdate', function()
+vim.api.nvim_create_user_command('Packupdate', function()
   vim.pack.update()
 end, { desc = 'List installed packages' })
 
-vim.api.nvim_create_user_command('PackPrune', function()
+vim.api.nvim_create_user_command('Packprune', function()
   local nonactive = vim
     .iter(vim.pack.get())
     :filter(function(x)
@@ -30,20 +30,16 @@ end, { desc = 'Prune unused packages' })
 vim.cmd.packadd 'nvim.difftool'
 vim.cmd.packadd 'nvim.undotree'
 
--- TODO: better to iterate through files in plugin dir and require them, rather than
--- specifying them individually here
-
--- NOTE: load colorscheme first
 require 'plugins.colorscheme'
 
-require 'plugins.autopairs'
-require 'plugins.blink'
-require 'plugins.conform'
-require 'plugins.gitsigns'
-require 'plugins.mason-tool-installer'
-require 'plugins.nvim-highlight-colors'
-require 'plugins.nvim-treesitter'
-require 'plugins.oil'
-require 'plugins.telescope'
-require 'plugins.todo-comments'
-require 'plugins.vimtex'
+vim
+  .iter(vim.fs.dir(vim.fn.stdpath 'config' .. '/lua/plugins'))
+  :filter(function(_, type)
+    return type == 'file'
+  end)
+  :map(function(file)
+    return string.match(file, '(.+)%.lua$')
+  end)
+  :each(function(plugin)
+    require('plugins.' .. plugin)
+  end)

@@ -63,9 +63,9 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "telescope": {
-      "rev": "e69b434b968a33815e2f02a5c7bd7b8dd4c7d4b2",
+      "rev": "3333a52ff548ba0a68af6d8da1e54f9cd96e9179",
       "src": "https://github.com/nvim-telescope/telescope.nvim",
-      "version": "'v0.2.0'"
+      "version": "'v0.2.1'"
     },
     "telescope-fzf-native": {
       "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",

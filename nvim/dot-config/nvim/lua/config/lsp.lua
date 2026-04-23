@@ -1,30 +1,18 @@
--- TODO: read filenames from dir rather than hardcoding them here
-local lsps = {
-  'bashls',
-  'clangd',
-  'cssls',
-  'composels',
-  'dockerls',
-  'eslintls',
-  'gh-actions-ls',
-  'gopls',
-  'html-ls',
-  'jdtls',
-  'jsonls',
-  'luals',
-  'marksman',
-  'pyright',
-  'texlab',
-  'tsls',
-}
+local lsps = vim
+  .iter(vim.fs.dir(vim.fn.stdpath 'config' .. '/lsp'))
+  :filter(function(_, type)
+    return type == 'file'
+  end)
+  :map(function(file)
+    return string.match(file, '(.+)%.lua$')
+  end)
+  :totable()
+
 vim.lsp.enable(lsps)
 
 vim.filetype.add {
-  filename = {
-    ['compose.yaml'] = 'yaml.docker-compose',
-    ['docker-compose.yaml'] = 'yaml.docker-compose',
-    ['compose.yml'] = 'yaml.docker-compose',
-    ['docker-compose.yml'] = 'yaml.docker-compose',
+  pattern = {
+    ['.*compose.*%.ya?ml'] = 'yaml.docker-compose',
   },
 }
 

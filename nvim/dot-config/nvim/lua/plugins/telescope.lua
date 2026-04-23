@@ -12,7 +12,7 @@ vim.pack.add({
   {
     src = Gh 'nvim-telescope/telescope.nvim',
     name = 'telescope',
-    version = 'v0.2.0',
+    version = 'v0.2.1',
   },
   {
     src = Gh 'nvim-telescope/telescope-fzf-native.nvim',
