@@ -29,17 +29,3 @@ end, { desc = 'Prune unused packages' })
 -- Builtin plugins
 vim.cmd.packadd 'nvim.difftool'
 vim.cmd.packadd 'nvim.undotree'
-
-require 'plugins.colorscheme'
-
-vim
-  .iter(vim.fs.dir(vim.fn.stdpath 'config' .. '/lua/plugins'))
-  :filter(function(_, type)
-    return type == 'file'
-  end)
-  :map(function(file)
-    return string.match(file, '(.+)%.lua$')
-  end)
-  :each(function(plugin)
-    require('plugins.' .. plugin)
-  end)

@@ -1,8 +1,5 @@
 local lsps = vim
   .iter(vim.fs.dir(vim.fn.stdpath 'config' .. '/lsp'))
-  :filter(function(_, type)
-    return type == 'file'
-  end)
   :map(function(file)
     return string.match(file, '(.+)%.lua$')
   end)
