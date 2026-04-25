@@ -61,7 +61,7 @@ function MyTabline()
       name = vim.fn.fnamemodify(dirname, ':t')
     elseif bufname == '' then
       -- Are there any other situations in which the buffer wouldn't have a name?
-      name = 'telescope'
+      name = 'fzf'
     else
       name = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ':t')
     end
