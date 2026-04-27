@@ -7,22 +7,39 @@ local lsps = vim
 
 vim.lsp.enable(lsps)
 
+--[[
+-- Workaround for adding broder to snippet docs
+-- until neovim natively supports 'previewpopup'
+local function set_popup_border(winid)
+  if winid and winid >= 0 and vim.api.nvim_win_is_valid(winid) then
+    pcall(vim.api.nvim_win_set_config, winid, { border = 'rounded' })
+  end
+end
+
+vim.api.nvim_create_autocmd('CompleteChanged', {
+  group = vim.api.nvim_create_augroup('CompletionPopupBorder', { clear = true }),
+  callback = function()
+    vim.schedule(function()
+      local info = vim.fn.complete_info { 'selected' }
+      set_popup_border(info.preview_winid)
+    end)
+  end,
+})
+
+local overridden = vim.api.nvim__complete_set
+---@diagnostic disable-next-line: duplicate-set-field
+function vim.api.nvim__complete_set(index, opts)
+  local windata = overridden(index, opts)
+  set_popup_border(windata.winid)
+  return windata
+end
+--]]
+
 vim.filetype.add {
   pattern = {
     ['.*compose.*%.ya?ml'] = 'yaml.docker-compose',
   },
 }
-
-vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, {
-  desc = 'vim.diagnostic.open_float',
-})
-
-vim.keymap.set('n', '<Leader>D', function()
-  local enabled = vim.diagnostic.is_enabled { bufnr = 0 }
-  vim.diagnostic.enable(not enabled, { bufnr = 0 })
-end, {
-  desc = 'Toggle LSP diagnostics',
-})
 
 vim.diagnostic.config {
   severity_sort = true,

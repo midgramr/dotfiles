@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
 })
 
 vim.pack.add({
-  { src = Gh 'nvim-treesitter/nvim-treesitter' },
+  { src = utils.gh 'nvim-treesitter/nvim-treesitter' },
 }, { confirm = false })
 
 require('nvim-treesitter').install {

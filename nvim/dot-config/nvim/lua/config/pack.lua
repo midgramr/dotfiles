@@ -1,10 +1,3 @@
----Helper to convert "owner/repo" string to GitHub URL
----@param repo string
----@return string url
-function Gh(repo)
-  return 'https://github.com/' .. repo
-end
-
 vim.api.nvim_create_user_command('Packlist', function()
   vim.pack.update(nil, { offline = true })
 end, { desc = 'List installed packages' })

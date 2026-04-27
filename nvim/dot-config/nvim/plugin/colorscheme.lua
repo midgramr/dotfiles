@@ -1,8 +1,18 @@
 vim.pack.add({
-  { src = Gh 'sainnhe/everforest' },
-  { src = Gh 'sainnhe/gruvbox-material' },
+  { src = utils.gh 'sainnhe/everforest' },
+  { src = utils.gh 'sainnhe/gruvbox-material' },
 }, { confirm = false })
 
+-- vim.api.nvim_create_autocmd('ColorScheme', {
+--   callback = function()
+--     vim.api.nvim_set_hl(0, 'PreInsert', { link = 'NonText' })
+--     vim.api.nvim_set_hl(0, 'Pmenu', { link = 'Normal' })
+--     vim.api.nvim_set_hl(0, 'PmenuSel', { link = 'TelescopeSelection' })
+--     vim.api.nvim_set_hl(0, 'PmenuBorder', { link = 'FloatBorder' })
+--     vim.api.nvim_set_hl(0, 'PmenuKind', { link = 'Green' })
+--   end,
+-- })
+--
 vim.g.gruvbox_material_enable_italic = true
 vim.g.gruvbox_material_enable_bold = true
 vim.g.gruvbox_material_float_style = 'blend'

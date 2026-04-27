@@ -1,7 +1,7 @@
 vim.pack.add({
-  { src = Gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
-  { src = Gh 'folke/lazydev.nvim', name = 'lazydev' },
-  { src = Gh 'saghen/blink.cmp', version = 'v1.10.2' },
+  { src = utils.gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
+  { src = utils.gh 'folke/lazydev.nvim', name = 'lazydev' },
+  { src = utils.gh 'saghen/blink.cmp', version = 'v1.10.2' },
 }, { confirm = false })
 
 -- Dependencies

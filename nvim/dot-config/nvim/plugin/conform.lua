@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = Gh 'stevearc/conform.nvim', name = 'conform' },
+  { src = utils.gh 'stevearc/conform.nvim', name = 'conform' },
 }, { confirm = false })
 
 local conform = require 'conform'
@@ -8,16 +8,11 @@ conform.setup {
     bash = { 'shfmt' },
     sh = { 'shfmt' },
     zsh = { 'shfmt' },
-
     c = { 'clang-format' },
     cpp = { 'clang-format' },
-
     tex = { 'tex-fmt' },
-
     lua = { 'stylua' },
-
     make = { 'bake' },
-
     ['_'] = { 'prettier' },
   },
   format_on_save = nil,

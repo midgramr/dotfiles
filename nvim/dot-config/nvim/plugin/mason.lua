@@ -1,7 +1,7 @@
 vim.pack.add({
-  { src = Gh 'williamboman/mason.nvim', name = 'mason' },
+  { src = utils.gh 'williamboman/mason.nvim', name = 'mason' },
   {
-    src = Gh 'WhoIsSethDaniel/mason-tool-installer.nvim',
+    src = utils.gh 'WhoIsSethDaniel/mason-tool-installer.nvim',
     name = 'mason-tool-installer',
   },
 }, { confirm = false })
