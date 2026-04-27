@@ -4,55 +4,44 @@ vim.pack.add({
   { src = utils.gh 'saghen/blink.cmp', version = 'v1.10.2' },
 }, { confirm = false })
 
--- Dependencies
-require('luasnip').setup()
 require('lazydev').setup()
-
--- Setup
+require('luasnip').setup()
 require('luasnip.loaders.from_snipmate').lazy_load()
 require('blink.cmp').setup {
   keymap = {
     preset = 'none',
     ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
     ['<C-e>'] = { 'hide', 'fallback' },
-
     ['<Tab>'] = { 'accept', 'fallback' },
-
     ['<C-j>'] = { 'select_next', 'fallback_to_mappings' },
     ['<C-k>'] = { 'select_prev', 'fallback_to_mappings' },
     ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
     ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
-
     ['<C-l>'] = { 'snippet_forward', 'fallback_to_mappings' },
     ['<C-h>'] = { 'snippet_backward', 'fallback_to_mappings' },
-
     ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
     ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
-
     ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
   },
-
   cmdline = {
     keymap = {
       preset = 'inherit',
       ['<Tab>'] = { 'show_and_insert', 'accept', 'fallback' },
     },
   },
-
   appearance = {
     nerd_font_variant = 'mono',
   },
-
   completion = {
     documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 250,
       window = {
-        border = 'rounded',
         winhighlight = 'Normal:Normal',
       },
     },
     ghost_text = { enabled = true },
     menu = {
-      border = 'rounded',
       draw = {
         treesitter = { 'lsp' },
         components = {
@@ -94,7 +83,6 @@ require('blink.cmp').setup {
       winhighlight = 'Normal:Normal,PmenuExtra:Normal,CursorLine:TelescopeSelection',
     },
   },
-
   sources = {
     default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
     providers = {
@@ -104,17 +92,8 @@ require('blink.cmp').setup {
       },
     },
   },
-
   snippets = { preset = 'luasnip' },
-
   fuzzy = { implementation = 'prefer_rust_with_warning' },
-
   -- Shows a signature help window while you type arguments for a function
-  signature = {
-    enabled = true,
-    trigger = { enabled = false },
-    window = {
-      border = 'rounded',
-    },
-  },
+  signature = { enabled = true },
 }

@@ -12,7 +12,7 @@ vim.pack.add({
 --     vim.api.nvim_set_hl(0, 'PmenuKind', { link = 'Green' })
 --   end,
 -- })
---
+
 vim.g.gruvbox_material_enable_italic = true
 vim.g.gruvbox_material_enable_bold = true
 vim.g.gruvbox_material_float_style = 'blend'

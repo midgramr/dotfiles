@@ -43,12 +43,4 @@ vim.o.copyindent = true
 
 vim.o.title = true
 
--- vim.o.autocomplete = true
--- vim.o.complete = 'o'
--- vim.opt.completeopt = { 'menu', 'menuone', 'preinsert', 'popup' }
---
--- vim.o.pumheight = 8
--- vim.o.pumborder = 'rounded'
--- vim.o.pummaxwidth = 30
-
 vim.o.tabline = '%!v:lua.Tabline()'

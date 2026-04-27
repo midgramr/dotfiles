@@ -66,35 +66,4 @@ end, {
   desc = 'Toggle buffer diagnostics',
 })
 
--- Completions
---[[
-vim.keymap.set('i', '<C-j>', function()
-  return utils.pumvisible() and '<C-n>' or '<C-j>'
-end, { expr = true })
-
-vim.keymap.set('i', '<C-k>', function()
-  return utils.pumvisible() and '<C-p>' or '<C-k>'
-end, { expr = true })
-
-vim.keymap.set('i', '/', function()
-  return vim.fn.pumvisible() ~= 0 and '<C-e>' or '/'
-end, { expr = true })
-
-vim.keymap.set({ 'i', 's' }, '<C-l>', function()
-  if vim.snippet.active { direction = 1 } then
-    return '<Cmd>lua vim.snippet.jump(1)<CR>'
-  else
-    return '<C-l>'
-  end
-end, { expr = true })
-
-vim.keymap.set({ 'i', 's' }, '<C-h>', function()
-  if vim.snippet.active { direction = 1 } then
-    return '<Cmd>lua vim.snippet.jump(-1)<CR>'
-  else
-    return '<C-h>'
-  end
-end, { expr = true })
---]]
-
 -- TODO: Autopairs

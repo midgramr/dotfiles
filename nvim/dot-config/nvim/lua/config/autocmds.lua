@@ -33,15 +33,3 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
   end,
 })
-
--- vim.api.nvim_create_autocmd('LspAttach', {
---   desc = 'Setup LSP completions',
---   callback = function(ev)
---     vim.lsp.completion.enable(true, ev.data.client_id, ev.buf, {
---       autotrigger = false,
---     })
---     vim.keymap.set('i', '<c-space>', function()
---       vim.lsp.completion.get()
---     end)
---   end,
--- })
