@@ -38,12 +38,6 @@ vim.keymap.set('n', '<C-M-t>', function()
   vim.cmd 'tab term'
 end, { desc = 'Open terminal in new tab' })
 
--- Navigation
-vim.keymap.set('n', '[[', '?{<CR>w99[{', { remap = true })
-vim.keymap.set('n', '][', '/}<CR>b99]}', { remap = true })
-vim.keymap.set('n', ']]', 'j0[[%/{<CR>', { remap = true })
-vim.keymap.set('n', '[]', 'k$][%?}<CR>', { remap = true })
-
 -- QOL
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<C-y>', '<Cmd>%y<CR>', { desc = 'Yank entire file' })
@@ -58,7 +52,6 @@ end, { desc = 'Restart Neovim' })
 vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, {
   desc = 'vim.diagnostic.open_float',
 })
-
 vim.keymap.set('n', '<Leader>D', function()
   local enabled = vim.diagnostic.is_enabled { bufnr = 0 }
   vim.diagnostic.enable(not enabled, { bufnr = 0 })
@@ -66,4 +59,67 @@ end, {
   desc = 'Toggle buffer diagnostics',
 })
 
--- TODO: Autopairs
+local combos = {
+  ['('] = ')',
+  ['['] = ']',
+  ['{'] = '}',
+}
+
+local ns = vim.api.nvim_create_namespace 'autopairs'
+
+for left, right in pairs(combos) do
+  vim.keymap.set('i', left, function()
+    vim.api.nvim_put({ left .. right }, 'c', false, false)
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    local row, col = cursor[1], cursor[2]
+    vim.api.nvim_buf_set_extmark(0, ns, row - 1, col, { invalidate = true })
+  end)
+
+  vim.keymap.set('i', right, function()
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    local line, col = cursor[1] - 1, cursor[2]
+    local extmarks = vim.api.nvim_buf_get_extmarks(
+      0,
+      ns,
+      { line, col },
+      { line, col },
+      { limit = 1 }
+    )
+    local next = vim.api.nvim_buf_get_text(0, line, col, line, col + 1, {})
+    if #extmarks > 0 and #next > 0 and next[1] == right then
+      return '<Right>'
+    else
+      return right
+    end
+  end, { expr = true })
+end
+
+vim.keymap.set('i', '<BS>', function()
+  local cursor = vim.api.nvim_win_get_cursor(0)
+  local line, col = cursor[1] - 1, cursor[2]
+  local extmarks = vim.api.nvim_buf_get_extmarks(0, ns, { line, col }, { line, col }, { limit = 1 })
+  local prev = vim.api.nvim_buf_get_text(0, line, math.max(0, col - 1), line, col, {})
+  local next = vim.api.nvim_buf_get_text(0, line, col, line, col + 1, {})
+  if
+    #extmarks > 0
+    and #prev > 0
+    and combos[prev[1]]
+    and #next > 0
+    and combos[prev[1]] == next[1]
+  then
+    return '<BS><Del>'
+  else
+    return '<BS>'
+  end
+end, { expr = true })
+
+vim.keymap.set('i', '<CR>', function()
+  local cursor = vim.api.nvim_win_get_cursor(0)
+  local line, col = cursor[1] - 1, cursor[2]
+  local prev = vim.api.nvim_buf_get_text(0, line, math.max(0, col - 1), line, col, {})
+  if #prev > 0 and combos[prev[1]] then
+    return '<CR><CR><Up>' .. string.rep('<Tab>', vim.fn.indent(line + 1) / vim.bo.tabstop + 1)
+  else
+    return '<CR>'
+  end
+end, { expr = true })
