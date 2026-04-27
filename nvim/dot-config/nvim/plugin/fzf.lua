@@ -1,15 +1,26 @@
 vim.pack.add({
-  { src = Gh 'ibhagwan/fzf-lua' },
-  { src = Gh 'nvim-tree/nvim-web-devicons' },
+  { src = utils.gh 'ibhagwan/fzf-lua' },
+  { src = utils.gh 'nvim-tree/nvim-web-devicons' },
 }, { confirm = false })
 
+---@diagnostic disable: missing-fields
 require('fzf-lua').setup {
-  { 'telescope', 'hide' },
+  winopts = {
+    preview = {
+      winopts = {
+        number = false,
+        relativenumber = false,
+      }
+    }
+  },
   fzf_opts = {
     ['--layout'] = 'reverse',
   },
-  ---@diagnostic disable-next-line: missing-fields
   hls = {
+    border = 'TelescopeBorder',
+    help_border = 'TelescopeBorder',
+    preview_border = 'TelescopeBorder',
+    cursorline = 'CursorLine',
     header_text = 'Red',
     path_colnr = 'Blue',
     path_linenr = 'Green',
@@ -20,6 +31,24 @@ require('fzf-lua').setup {
     live_prompt = 'Purple',
     live_sym = 'Purple',
   },
+  ---@diagnostic disable: assign-type-mismatch
+  fzf_colors = {
+    ['fg'] = { 'fg', 'TelescopeNormal' },
+    ['bg'] = { 'bg', 'TelescopeNormal' },
+    ['hl'] = { 'fg', 'TelescopeMatching' },
+    ['fg+'] = { 'fg', 'TelescopeSelection' },
+    ['bg+'] = { 'bg', 'TelescopeSelection' },
+    ['hl+'] = { 'fg', 'TelescopeMatching' },
+    ['info'] = { 'fg', 'TelescopeMultiSelection' },
+    ['border'] = { 'fg', 'TelescopeBorder' },
+    ['gutter'] = '-1',
+    ['query'] = { 'fg', 'TelescopePromptNormal' },
+    ['prompt'] = { 'fg', 'TelescopePromptPrefix' },
+    ['pointer'] = { 'fg', 'TelescopeSelectionCaret' },
+    ['marker'] = { 'fg', 'TelescopeSelectionCaret' },
+    ['header'] = { 'fg', 'TelescopeTitle' },
+  },
+  ---@diagnostic enable: assign-type-mismatch
   files = {
     formatter = 'path.filename_first',
     cwd_header = true,
@@ -29,6 +58,7 @@ require('fzf-lua').setup {
     scope = 'win',
   },
 }
+---@diagnostic enable: missing-fields
 
 -- Buffers/files
 vim.keymap.set('n', '<C-k>', FzfLua.builtin, { desc = 'fzf builtin' })
@@ -48,7 +78,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
     vim.keymap.set('n', 'grr', FzfLua.lsp_references, { desc = 'fzf lsp_references' })
     vim.keymap.set('n', 'gd', FzfLua.lsp_definitions, { desc = 'fzf lsp_definitions' })
-    vim.keymap.set('n', 'gO', FzfLua.lsp_document_symbols, { desc = 'fzf lsp_document_symbols' })
+    -- vim.keymap.set('n', 'gO', FzfLua.lsp_document_symbols, { desc = 'fzf lsp_document_symbols' })
     vim.keymap.set(
       'n',
       'gq',
@@ -62,7 +92,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.set('n', '<Leader>r', FzfLua.resume, { desc = 'fzf resume' })
 vim.keymap.set('n', '<Leader>o', FzfLua.nvim_options, { desc = 'fzf nvim_options' })
 vim.keymap.set('n', '<C-h>', FzfLua.help_tags, { desc = 'fzf help_tags' })
-vim.keymap.set('n', '<C-m>', FzfLua.man_pages, { desc = 'fzf man_pages' })
 vim.keymap.set('n', '<C-z>', FzfLua.zoxide, { desc = 'fzf zoxide' })
 
 FzfLua.register_ui_select()
