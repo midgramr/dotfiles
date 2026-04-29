@@ -43,4 +43,6 @@ vim.o.copyindent = true
 
 vim.o.title = true
 
-vim.o.tabline = '%!v:lua.Tabline()'
+vim.o.showmode = false
+
+require('vim._core.ui2').enable()
