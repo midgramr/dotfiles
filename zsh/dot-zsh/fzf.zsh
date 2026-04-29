@@ -29,7 +29,6 @@ export FZF_DEFAULT_OPTS="\
 --pointer='>' \
 --marker='+' \
 --no-bold \
---no-scrollbar \
 --color=$colors"
 
 export FZF_ALT_C_COMMAND=""
