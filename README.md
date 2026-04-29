@@ -2,5 +2,6 @@
 
 Todos:
 
-- Modularize zshrc
-- Migrate away from Oh-My-ZSH
+- Move from aerospace to yabai
+- Sketchybar
+- Alfred (once I'm employed)
