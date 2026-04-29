@@ -10,8 +10,8 @@ require('fzf-lua').setup {
       winopts = {
         number = false,
         relativenumber = false,
-      }
-    }
+      },
+    },
   },
   fzf_opts = {
     ['--layout'] = 'reverse',
@@ -21,6 +21,7 @@ require('fzf-lua').setup {
     help_border = 'TelescopeBorder',
     preview_border = 'TelescopeBorder',
     cursorline = 'CursorLine',
+    header_bind = 'Blue',
     header_text = 'Red',
     path_colnr = 'Blue',
     path_linenr = 'Green',

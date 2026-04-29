@@ -11,6 +11,7 @@ require('oil').setup {
   keymaps = {
     ['`'] = { 'actions.cd', opts = { scope = 'win' }, mode = 'n' },
     ['<C-t>'] = {},
+    ['<C-l>'] = {},
   },
 }
 

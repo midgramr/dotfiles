@@ -1,10 +1,8 @@
 vim.pack.add({
   { src = utils.gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
-  { src = utils.gh 'folke/lazydev.nvim', name = 'lazydev' },
   { src = utils.gh 'saghen/blink.cmp', version = 'v1.10.2' },
 }, { confirm = false })
 
-require('lazydev').setup()
 require('luasnip').setup()
 require('luasnip.loaders.from_snipmate').lazy_load()
 require('blink.cmp').setup {
@@ -29,9 +27,7 @@ require('blink.cmp').setup {
       ['<Tab>'] = { 'show_and_insert', 'accept', 'fallback' },
     },
   },
-  appearance = {
-    nerd_font_variant = 'mono',
-  },
+  appearance = { nerd_font_variant = 'mono' },
   completion = {
     documentation = {
       auto_show = true,
@@ -83,15 +79,7 @@ require('blink.cmp').setup {
       winhighlight = 'Normal:Normal,PmenuExtra:Normal,CursorLine:TelescopeSelection',
     },
   },
-  sources = {
-    default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
-    providers = {
-      lazydev = {
-        module = 'lazydev.integrations.blink',
-        score_offset = 100,
-      },
-    },
-  },
+  sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
   snippets = { preset = 'luasnip' },
   fuzzy = { implementation = 'prefer_rust_with_warning' },
   signature = { enabled = true },
