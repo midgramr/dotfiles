@@ -59,6 +59,8 @@ end, {
   desc = 'Toggle buffer diagnostics',
 })
 
+-- Autopairs
+-- NOTE: not handling single/double quotes, since that requires extra logic
 local combos = {
   ['('] = ')',
   ['['] = ']',
@@ -66,6 +68,21 @@ local combos = {
 }
 
 local ns = vim.api.nvim_create_namespace 'autopairs'
+
+local function insideautopair()
+  local cursor = vim.api.nvim_win_get_cursor(0)
+  local line, col = cursor[1] - 1, cursor[2]
+  local extmarks = vim.api.nvim_buf_get_extmarks(0, ns, { line, col }, { line, col }, { limit = 1 })
+  -- NOTE: cleaner approach might be to get the current line with nvim_get_current_line()
+  -- and index into that string
+  local prev = vim.api.nvim_buf_get_text(0, line, math.max(0, col - 1), line, col, {})
+  local next = vim.api.nvim_buf_get_text(0, line, col, line, col + 1, {})
+  return #extmarks > 0
+    and #prev > 0
+    and combos[prev[1]]
+    and #next > 0
+    and combos[prev[1]] == next[1]
+end
 
 for left, right in pairs(combos) do
   vim.keymap.set('i', left, function()
@@ -87,6 +104,7 @@ for left, right in pairs(combos) do
     )
     local next = vim.api.nvim_buf_get_text(0, line, col, line, col + 1, {})
     if #extmarks > 0 and #next > 0 and next[1] == right then
+      -- TODO: handle case when blink.cmp autoinserts a pair during completion
       return '<Right>'
     else
       return right
@@ -95,31 +113,9 @@ for left, right in pairs(combos) do
 end
 
 vim.keymap.set('i', '<BS>', function()
-  local cursor = vim.api.nvim_win_get_cursor(0)
-  local line, col = cursor[1] - 1, cursor[2]
-  local extmarks = vim.api.nvim_buf_get_extmarks(0, ns, { line, col }, { line, col }, { limit = 1 })
-  local prev = vim.api.nvim_buf_get_text(0, line, math.max(0, col - 1), line, col, {})
-  local next = vim.api.nvim_buf_get_text(0, line, col, line, col + 1, {})
-  if
-    #extmarks > 0
-    and #prev > 0
-    and combos[prev[1]]
-    and #next > 0
-    and combos[prev[1]] == next[1]
-  then
-    return '<BS><Del>'
-  else
-    return '<BS>'
-  end
+  return insideautopair() and '<BS><Del>' or '<BS>'
 end, { expr = true })
 
 vim.keymap.set('i', '<CR>', function()
-  local cursor = vim.api.nvim_win_get_cursor(0)
-  local line, col = cursor[1] - 1, cursor[2]
-  local prev = vim.api.nvim_buf_get_text(0, line, math.max(0, col - 1), line, col, {})
-  if #prev > 0 and combos[prev[1]] then
-    return '<CR><CR><Up>' .. string.rep('<Tab>', vim.fn.indent(line + 1) / vim.bo.tabstop + 1)
-  else
-    return '<CR>'
-  end
+  return insideautopair() and '<CR><Esc>O' or '<CR>'
 end, { expr = true })
