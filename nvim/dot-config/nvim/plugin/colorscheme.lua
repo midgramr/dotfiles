@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     vim.api.nvim_set_hl(0, 'PmenuBorder', { link = 'FloatBorder' })
     vim.api.nvim_set_hl(0, 'PmenuKind', { link = 'Green' })
     vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { link = 'FloatBorder' })
+    vim.api.nvim_set_hl(0, 'OkMsg', { link = 'GreenBold' })
   end,
 })
 

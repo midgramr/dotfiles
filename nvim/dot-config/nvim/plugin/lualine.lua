@@ -14,7 +14,7 @@ require('lualine').setup {
   },
   tabline = {
     lualine_a = {
-      { 'tabs', mode = 2 },
+      { 'tabs', mode = 2, max_length = vim.o.columns },
     },
   },
   extensions = { 'fzf', 'man', 'oil', 'quickfix' }

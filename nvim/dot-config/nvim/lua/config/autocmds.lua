@@ -22,14 +22,5 @@ vim.api.nvim_create_autocmd('TermOpen', {
     vim.bo.bufhidden = 'unload'
     vim.bo.modified = false
     vim.bo.filetype = 'term'
-    vim.cmd 'startinsert'
-  end,
-})
-
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function()
-    if vim.bo.filetype == 'term' then
-      vim.cmd 'startinsert'
-    end
   end,
 })

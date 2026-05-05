@@ -1,7 +1,13 @@
 -- Windows
 vim.keymap.set({ 'n', 't' }, '<M-q>', '<Cmd>bd!<CR>', { desc = 'Quit window' })
-vim.keymap.set({ 'n', 't' }, '<M-s>', '<Cmd>vert Oil<CR>', { desc = 'Open Oil vertically' })
-vim.keymap.set({ 'n', 't' }, '<M-x>', '<Cmd>hor Oil<CR>', { desc = 'Open Oil horizontally' })
+vim.keymap.set({ 'n', 't' }, '<M-s>', function()
+  local width = vim.api.nvim_win_get_width(0)
+  if width > 150 then
+    return '<Cmd>vert Oil<CR>'
+  else
+    return '<Cmd>hor Oil<CR>'
+  end
+end, { desc = 'Open Oil in split', expr = true })
 vim.keymap.set({ 'n', 't' }, '<M-h>', '<Cmd>winc h<CR>', { desc = 'Move to left window' })
 vim.keymap.set({ 'n', 't' }, '<M-j>', '<Cmd>winc j<CR>', { desc = 'Move to window below' })
 vim.keymap.set({ 'n', 't' }, '<M-k>', '<Cmd>winc k<CR>', { desc = 'Move to right window' })
@@ -23,6 +29,8 @@ for i = 1, 9 do
   )
 end
 vim.keymap.set({ 'n', 't' }, '<M-t>', '<Cmd>tab Oil<CR>', { desc = 'Open Oil in new tab' })
+vim.keymap.set('n', '<M-S-h>', '<Cmd>tabm -1<CR>', { desc = 'Move tab left by 1' })
+vim.keymap.set('n', '<M-S-l>', '<Cmd>tabm +1<CR>', { desc = 'Move tab right by 1' })
 
 -- Terminal
 vim.keymap.set('t', '<M-Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
