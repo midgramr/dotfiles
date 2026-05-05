@@ -9,14 +9,15 @@ cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing = true
 
-title = Ghostty
+title = main
 
-# background-opacity = 0.9
 background-blur = true
+
+split-divider-color = #5a524c
 
 link-url = true
 
-shell-integration-features = no-title,no-cursor,sudo,ssh-terminfo,ssh-env
+shell-integration-features = cursor,no-title,sudo,ssh-env
 
 confirm-close-surface = false
 quit-after-last-window-closed = true
@@ -32,15 +33,9 @@ macos-option-as-alt = true
 auto-update = download
 auto-update-channel = stable
 
-# Map <C-number> to <C-b>number
-keybind = ctrl+1=text:\x02\x31
-keybind = ctrl+2=text:\x02\x32
-keybind = ctrl+3=text:\x02\x33
-keybind = ctrl+4=text:\x02\x34
-keybind = ctrl+5=text:\x02\x35
-keybind = ctrl+6=text:\x02\x36
-keybind = ctrl+7=text:\x02\x37
-keybind = ctrl+8=text:\x02\x38
-keybind = ctrl+9=text:\x02\x39
+quick-terminal-position = center
+quick-terminal-animation-duration = 0
+
+keybind = global:cmd+backquote=toggle_quick_terminal
 
 # vim: ft=config
