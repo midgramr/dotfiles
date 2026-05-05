@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # NOTE: This script should be idempotent
 
@@ -9,7 +9,7 @@ homebrew_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 command -v brew &>/dev/null || bash -c "$(curl -fsSL "$homebrew_url")"
 
 cat formulas.txt | xargs brew install
-cat packages.txt | xargs stow --dotfiles -R -t "$HOME" -v
+./resync.sh
 
 # Git
 git config --global core.pager delta
@@ -20,4 +20,4 @@ git config --global delta.navigate true
 tpm_path="$HOME/.tmux/plugins/tpm"
 ls "$tpm_path" &>/dev/null || git clone https://github.com/tmux-plugins/tpm "$tpm_path"
 
-# vim: ft=zsh
+# TODO: install fonts

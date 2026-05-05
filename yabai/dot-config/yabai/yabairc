@@ -1,0 +1,66 @@
+set -o pipefail
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Config
+yabai -m config \
+    layout bsp \
+    top_padding 4 \
+    bottom_padding 4 \
+    left_padding 4 \
+    right_padding 4 \
+    window_gap 4 \
+    window_shadow float \
+    external_bar all:34:0 \
+    insert_feedback_color 0xffe78a4f
+
+# Create initial spaces
+spaces=(
+    "terminal"
+    "personal"
+    "school"
+    "email"
+    "discord"
+    "misc"
+)
+for i in "${!spaces[@]}"; do
+    name="${spaces[i]}"
+    space=$((i + 1))
+    case "$name" in
+    email | misc)
+        layout="float"
+        ;;
+    *)
+        layout="bsp"
+        ;;
+    esac
+    if yabai -m query --spaces | jq '.[].index' | rg -q $space; then
+        yabai -m space "$space" --label "$name" --layout "$layout"
+    else
+        yabai -m space --create 1 --label "$name" --layout "$layout"
+    fi
+done
+sketchybar --trigger space_change
+
+# Rules
+yabai -m rule --add app="^Ghostty$" space=1
+yabai -m rule --add app="^Firefox$" space=2
+yabai -m rule --add app="^Thunderbird$" space=4
+yabai -m rule --add app="^Discord$" space=5
+yabai -m rule --add app="^(FaceTime|zoom\.us)$" space=6
+yabai -m rule --add app="^(Finder|System Settings|Calculator|Activity Monitor|Messages|Reminders)$" manage=off
+yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
+
+yabai -m rule --add app="^Claude$" scratchpad="claude"
+yabai -m rule --add app="^Music$" scratchpad="music"
+yabai -m rule --add app="^Obsidian$" scratchpad="obsidian"
+
+yabai -m rule --apply
+
+# Signals
+yabai -m signal --add event=space_created action="sketchybar --trigger space_change"
+yabai -m signal --add event=space_destroyed action="sketchybar --trigger space_change"
+yabai -m signal --add event=space_changed action="sketchybar --trigger space_change"
+
+# vim: ft=bash

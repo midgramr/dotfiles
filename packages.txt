@@ -1,13 +1,15 @@
 aerospace
 bin
+clang
 editorconfig
 ghostty
 gh
 git
 karabiner
 linearmouse
-llvm
 nvim
-ranger
+sketchybar
+skhd
 tmux
+yabai
 zsh

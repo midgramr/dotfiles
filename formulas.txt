@@ -8,10 +8,8 @@ gcc
 gh
 git-delta
 neovim
-ninja
 node
 python
-ranger
 tmux
 tree-sitter-cli
 sesh

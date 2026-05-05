@@ -1,0 +1,69 @@
+# General
+hyper - r : yabai --restart-service || yabai --start-service
+hyper - x : yabai --stop-service
+
+# Focus space
+meh - tab : yabai -m space --focus recent
+meh - 1 : yabai -m space --focus 1
+meh - 2 : yabai -m space --focus 2
+meh - 3 : yabai -m space --focus 3
+meh - 4 : yabai -m space --focus 4
+meh - 5 : yabai -m space --focus 5
+meh - 6 : yabai -m space --focus 6
+meh - 7 : yabai -m space --focus 7
+meh - 8 : yabai -m space --focus 8
+meh - 9 : yabai -m space --focus 9
+
+# Create/destroy spaces
+hyper - c : yabai -m space --create && yabai -m space --focus last
+hyper - d : cur=$(yabai -m query --spaces --space | jq '.index') &&\
+    (yabai -m space --focus $((cur - 1)) || yabai -m space --focus last) &&\
+    yabai -m space --destroy $cur
+
+# Toggle space properties
+# TODO: maybe put this behind a mode toggle
+hyper - b : [[ $(yabai -m query --spaces --space | jq '.type') == '"bsp"' ]] &&\
+    yabai -m space --layout float || yabai -m space --layout bsp
+
+# Window tree
+hyper - o : yabai -m space --mirror y-axis
+
+# Focus window
+meh - h : yabai -m window --focus west
+meh - j : yabai -m window --focus south
+meh - k : yabai -m window --focus north
+meh - l : yabai -m window --focus east
+meh - p : yabai -m window --focus stack.prev
+meh - n : yabai -m window --focus stack.next
+
+# Move window
+hyper - h : yabai -m window --swap west
+hyper - j : yabai -m window --swap south
+hyper - k : yabai -m window --swap north
+hyper - l : yabai -m window --swap east
+hyper - p : yabai -m window --swap stack.prev
+hyper - n : yabai -m window --swap stack.next
+hyper - 1 : yabai -m window --space 1 --focus
+hyper - 2 : yabai -m window --space 2 --focus
+hyper - 3 : yabai -m window --space 3 --focus
+hyper - 4 : yabai -m window --space 4 --focus
+hyper - 5 : yabai -m window --space 5 --focus
+hyper - 6 : yabai -m window --space 6 --focus
+hyper - 7 : yabai -m window --space 7 --focus
+hyper - 8 : yabai -m window --space 8 --focus
+hyper - 9 : yabai -m window --space 9 --focus
+
+# Toggle window properties
+meh - f : yabai -m window --toggle zoom-fullscreen
+hyper - f : yabai -m window --toggle float
+hyper - s : yabai -m window --toggle split
+
+# Apps
+meh - e : open "/System/Library/CoreServices/Finder.app"
+meh - m : open "/System/Applications/Messages.app"
+meh - r : open "/System/Applications/Reminders.app"
+meh - x : open "/System/Applications/System Settings.app"
+
+meh - a : yabai -m window --toggle music || open "/System/Applications/Music.app"
+meh - c : yabai -m window --toggle claude || open "/Applications/Claude.app"
+meh - o : yabai -m window --toggle obsidian || open "/Applications/Obsidian.app"
