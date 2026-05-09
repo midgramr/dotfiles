@@ -36,3 +36,5 @@ alias la='eza -gla'
 alias lD='eza -glD'
 alias lS='eza -gl -ssize'
 alias lT='eza -gl -snewest'
+
+# vim: ft=zsh

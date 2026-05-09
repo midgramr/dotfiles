@@ -1,6 +1,3 @@
-BFS_FLAGS="-exclude \( -name .git -o -name node_modules \) \
--mindepth 1 -printf '%P\\n'"
-
 fzf-nvim() {
     tmux set -p cursor-style bar
     eval "bfs $BFS_FLAGS" | fzf --scheme=path --bind 'enter:become(nvim {})'
@@ -24,3 +21,5 @@ zle -N zle-line-pre-redraw
 bindkey '^b' test-widget
 bindkey '^f' fzf-nvim
 bindkey '^z' fzf-z
+
+# vim: ft=zsh

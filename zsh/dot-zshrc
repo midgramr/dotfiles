@@ -1,6 +1,6 @@
 export ZSH_DIR="$HOME/.zsh"
 
-fd -e zsh . "$ZSH_DIR" | while read -r FILE; do
+fd -e sh . "$ZSH_DIR" | while read -r FILE; do
     source "$FILE"
 done
 

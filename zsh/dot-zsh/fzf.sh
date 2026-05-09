@@ -34,3 +34,5 @@ export FZF_DEFAULT_OPTS="\
 export FZF_ALT_C_COMMAND=""
 
 source <(fzf --zsh)
+
+# vim: ft=zsh
