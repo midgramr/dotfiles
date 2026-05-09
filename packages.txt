@@ -1,8 +1,6 @@
-aerospace
 bin
 clang
 editorconfig
-ghostty
 gh
 git
 karabiner
@@ -10,6 +8,6 @@ linearmouse
 nvim
 sketchybar
 skhd
-tmux
+wezterm
 yabai
 zsh
