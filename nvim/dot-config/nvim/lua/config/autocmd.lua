@@ -22,5 +22,24 @@ vim.api.nvim_create_autocmd('TermOpen', {
     vim.bo.bufhidden = 'unload'
     vim.bo.modified = false
     vim.bo.filetype = 'term'
+    vim.cmd 'startinsert'
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufLeave', {
+  desc = 'Save mode when leaving terminal window',
+  pattern = 'term://*',
+  callback = function()
+    vim.b.mode = vim.fn.mode()
+  end,
+})
+
+vim.api.nvim_create_autocmd('WinEnter', {
+  desc = 'Resume saved mode on terminal window re-entry',
+  pattern = 'term://*',
+  callback = function()
+    if vim.b.mode ~= nil and (vim.b.mode == 'i' or vim.b.mode == 't') then
+      vim.cmd 'startinsert'
+    end
   end,
 })

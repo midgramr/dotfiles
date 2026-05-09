@@ -1,6 +1,7 @@
 vim.pack.add({
   { src = utils.gh 'L3MON4D3/LuaSnip', version = 'v2.5.0', name = 'luasnip' },
   { src = utils.gh 'saghen/blink.cmp', version = 'v1.10.2' },
+  { src = utils.gh 'brenoprata10/nvim-highlight-colors' },
 }, { confirm = false })
 
 require('luasnip').setup()

@@ -1,6 +1,8 @@
 require 'utils'
-require 'config.options'
-require 'config.autocmds'
-require 'config.keymaps'
+
+require 'config.opt'
+require 'config.autocmd'
+require 'config.keymap'
+require 'config.autopair'
 require 'config.lsp'
 require 'config.pack'

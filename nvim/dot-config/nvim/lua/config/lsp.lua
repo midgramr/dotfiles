@@ -6,7 +6,7 @@ local lsps = vim
   :totable()
 
 vim.lsp.enable(lsps)
-vim.lsp.codelens.enable()
+vim.lsp.document_color.enable(false)
 
 vim.filetype.add {
   pattern = {
