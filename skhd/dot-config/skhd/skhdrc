@@ -37,12 +37,12 @@ meh - p : yabai -m window --focus stack.prev
 meh - n : yabai -m window --focus stack.next
 
 # Move window
-hyper - h : yabai -m window --swap west
-hyper - j : yabai -m window --swap south
-hyper - k : yabai -m window --swap north
-hyper - l : yabai -m window --swap east
-hyper - p : yabai -m window --swap stack.prev
-hyper - n : yabai -m window --swap stack.next
+hyper - h : yabai -m window --warp west
+hyper - j : yabai -m window --warp south
+hyper - k : yabai -m window --warp north
+hyper - l : yabai -m window --warp east
+hyper - p : yabai -m window --warp stack.prev
+hyper - n : yabai -m window --warp stack.next
 hyper - 1 : yabai -m window --space 1 --focus
 hyper - 2 : yabai -m window --space 2 --focus
 hyper - 3 : yabai -m window --space 3 --focus

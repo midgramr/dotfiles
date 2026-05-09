@@ -19,7 +19,6 @@ yabai -m config \
 spaces=(
     "terminal"
     "personal"
-    "school"
     "email"
     "discord"
     "misc"
@@ -44,19 +43,22 @@ done
 sketchybar --trigger space_change
 
 # Rules
-yabai -m rule --add app="^Ghostty$" space=1
-yabai -m rule --add app="^Firefox$" space=2
-yabai -m rule --add app="^Thunderbird$" space=4
-yabai -m rule --add app="^Discord$" space=5
-yabai -m rule --add app="^(FaceTime|zoom\.us)$" space=6
-yabai -m rule --add app="^(Finder|System Settings|Calculator|Activity Monitor|Messages|Reminders)$" manage=off
-yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
+yabai -m rule --add label="wezterm" app="^WezTerm$" space=1
+yabai -m rule --add label="firefox" app="^Firefox$" space=2
+yabai -m rule --add label="thunderbird" app="^Thunderbird$" space=3
+yabai -m rule --add label="discord" app="^Discord$" space=4
+yabai -m rule --add label="video" app="^(FaceTime|zoom\.us)$" space=5
+yabai -m rule --add label="misc" app="^(Finder|System Settings|Calculator|Activity Monitor|Messages|Reminders)$" manage=off
+yabai -m rule --add label="pip" app="^Firefox$" title="^Picture-in-Picture$" manage=off
 
-yabai -m rule --add app="^Claude$" scratchpad="claude"
-yabai -m rule --add app="^Music$" scratchpad="music"
-yabai -m rule --add app="^Obsidian$" scratchpad="obsidian"
+yabai -m rule --add label="claude" app="^Claude$" scratchpad="claude"
+yabai -m rule --add label="music" app="^Music$" scratchpad="music"
+yabai -m rule --add label="obsidian" app="^Obsidian$" scratchpad="obsidian"
 
 yabai -m rule --apply
+yabai -m rule --remove "firefox"
+yabai -m rule --remove "wezterm"
+yabai -m rule --remove "thunderbird"
 
 # Signals
 yabai -m signal --add event=space_created action="sketchybar --trigger space_change"
