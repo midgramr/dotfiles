@@ -58,6 +58,10 @@
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "smart-splits": {
+      "rev": "9053ebd394c38fe55fd2f4710daec27411c34fb9",
+      "src": "https://github.com/mrjones2014/smart-splits.nvim"
+    },
     "todo-comments": {
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"

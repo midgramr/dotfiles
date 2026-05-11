@@ -23,7 +23,11 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 vim.o.list = true
-vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = {
+  tab = '  ',
+  trail = '·',
+  nbsp = '␣',
+}
 
 vim.o.inccommand = 'split'
 
@@ -35,7 +39,12 @@ vim.o.winborder = 'rounded'
 
 vim.o.termguicolors = true
 
-vim.opt.guicursor = { 'n-v-c-sm:block', 'i-ci-ve:ver25', 'r-cr-o:hor20', 't:TermCursor' }
+vim.opt.guicursor = {
+  'n-v-c-sm:block',
+  'i-ci-ve:ver25',
+  'r-cr-o:hor20',
+  't:TermCursor',
+}
 
 vim.o.fillchars = 'eob: '
 

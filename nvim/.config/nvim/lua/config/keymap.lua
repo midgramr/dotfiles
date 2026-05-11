@@ -8,36 +8,6 @@ vim.keymap.set({ 'n', 't', 'i' }, '<M-\\>', function()
     return '<Cmd>hor Oil<CR>'
   end
 end, { desc = 'Open Oil in split', expr = true })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-h>', '<Cmd>winc h<CR>', { desc = 'Move to left window' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-j>', '<Cmd>winc j<CR>', { desc = 'Move to window below' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-k>', '<Cmd>winc k<CR>', { desc = 'Move to right window' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-l>', '<Cmd>winc l<CR>', { desc = 'Move to window above' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-=>', '<Cmd>winc =<CR>', { desc = 'Increase window height' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-]>', '<Cmd>res +1<CR>', { desc = 'Increase window height' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-[>', '<Cmd>res -1<CR>', { desc = 'Decrease window height' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-,>', '<Cmd>winc <<CR>', { desc = 'Decrease window width' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-.>', '<Cmd>winc ><CR>', { desc = 'Increase window width' })
-
--- Terminal
--- Overrides the builtin `term` command to set $TERM dynamically
-local function term()
-  vim.fn.jobstart(vim.o.shell, {
-    env = { TERM = vim.env.TERM },
-    term = true,
-  })
-end
-
-vim.keymap.set('t', '<M-Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-vim.keymap.set({ 'n', 't' }, '<C-t>', function()
-  local width = vim.api.nvim_win_get_width(0)
-  if width > 150 then
-    vim.cmd 'vert new'
-    term()
-  else
-    vim.cmd 'new'
-    term()
-  end
-end, { desc = 'Open terminal in split' })
 
 -- QOL
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>')

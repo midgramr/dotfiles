@@ -17,6 +17,7 @@ require('mason-tool-installer').setup {
     'docker-compose-language-service',
     'docker-language-server',
     'eslint-lsp',
+    'fish-lsp',
     'gh-actions-language-server',
     'gopls',
     'html-lsp',

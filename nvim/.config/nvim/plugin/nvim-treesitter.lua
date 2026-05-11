@@ -19,6 +19,7 @@ require('nvim-treesitter').install {
   'diff',
   'dockerfile',
   'editorconfig',
+  'fish',
   'git_config',
   'go',
   'html',
