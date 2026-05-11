@@ -2,10 +2,9 @@
 
 Todos:
 
-- Move from aerospace to yabai
-- Sketchybar
+- SBarLua
+- SketchyVim
 - Alfred (once I'm employed)
-- Change `dot-<name>` naming convention back to `.<name>`
 
 Setup notes:
 
