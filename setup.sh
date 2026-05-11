@@ -16,8 +16,4 @@ git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
 
-# Tmux
-tpm_path="$HOME/.tmux/plugins/tpm"
-ls "$tpm_path" &>/dev/null || git clone https://github.com/tmux-plugins/tpm "$tpm_path"
-
 # TODO: install fonts

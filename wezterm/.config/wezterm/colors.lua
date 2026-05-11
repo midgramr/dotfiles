@@ -38,9 +38,9 @@ module.colors = {
 
 function module.apply_to_config(config)
   config.colors = module.colors
-  config.char_select_bg_color = module.colors.background
+  config.char_select_bg_color = module.colors.tab_bar.background
   config.char_select_fg_color = module.colors.foreground
-  config.command_palette_bg_color =  module.colors.background
+  config.command_palette_bg_color =  module.colors.tab_bar.background
   config.command_palette_fg_color =  module.colors.foreground
 end
 

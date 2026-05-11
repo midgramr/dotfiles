@@ -3,6 +3,7 @@ bfs
 dust
 eza
 fd
+fish
 fzf
 gcc
 gh
@@ -10,7 +11,6 @@ git-delta
 neovim
 node
 python
-tmux
 tree-sitter-cli
 sesh
 stow

@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/Users/n1v3x/\x2ecargo/bin\x1e/usr/local/bin\x1e/Users/n1v3x/\x2elocal/bin\x1e/Applications/Obsidian\x2eapp/Contents/MacOS\x1e/Applications/kitty\x2eapp/Contents/MacOS
+SETUVAR --export fish_vi_key_bindings:\x1d

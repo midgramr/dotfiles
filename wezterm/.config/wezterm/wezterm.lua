@@ -4,9 +4,11 @@ local config = wezterm.config_builder()
 require('colors').apply_to_config(config)
 require('font').apply_to_config(config)
 require('keys').apply_to_config(config)
-require('tabline').apply_to_config(config)
-require('workspace').apply_to_config(config)
+require('plugins.splits').apply_to_config(config)
+require('plugins.tabline').apply_to_config(config)
+require('plugins.workspace').apply_to_config(config)
 
+config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.term = 'wezterm'
 config.window_close_confirmation = 'NeverPrompt'
 config.window_content_alignment = {
@@ -23,7 +25,5 @@ config.window_padding = {
   top = '0pt',
   bottom = '0pt',
 }
-
--- TODO: update color for inactive cursor
 
 return config

@@ -5,11 +5,13 @@ function module.plugin(repo)
   return wezterm.plugin.require('https://github.com/' .. repo)
 end
 
-function module.extend(list1, list2)
-  wezterm.log_info(list1)
-  for _, v in ipairs(list2) do
+function module.addkeys(config, keys)
+  if config.keys == nil then
+    config.keys = {}
+  end
+  for _, v in ipairs(keys) do
     wezterm.log_info(v)
-    table.insert(list1, v)
+    table.insert(config.keys, v)
   end
 end
 
