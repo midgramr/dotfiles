@@ -1,12 +1,11 @@
 local wezterm = require 'wezterm'
+local utils = require 'utils'
 local config = wezterm.config_builder()
 
 require('colors').apply_to_config(config)
 require('font').apply_to_config(config)
 require('keys').apply_to_config(config)
-require('plugins.splits').apply_to_config(config)
-require('plugins.tabline').apply_to_config(config)
-require('plugins.workspace').apply_to_config(config)
+utils.apply_plugins(config)
 
 config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.term = 'wezterm'

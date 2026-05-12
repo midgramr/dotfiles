@@ -6,7 +6,7 @@ workspace_switcher.zoxide_path = '/opt/homebrew/bin/zoxide'
 
 function module.apply_to_config(config)
   workspace_switcher.apply_to_config(config)
-  utils.addkeys(config, {
+  utils.add_keys(config, {
     {
       key = 'f',
       mods = 'META',

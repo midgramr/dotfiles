@@ -5,7 +5,7 @@ local module = {}
 function module.apply_to_config(config)
   local act = wezterm.action
 
-  utils.addkeys(config, {
+  utils.add_keys(config, {
     {
       key = 'k',
       mods = 'SUPER',
@@ -20,6 +20,11 @@ function module.apply_to_config(config)
       key = 'p',
       mods = 'SUPER',
       action = act.ActivateCommandPalette,
+    },
+    {
+      key = 'r',
+      mods = 'SUPER',
+      action = act.ReloadConfiguration,
     },
     {
       key = 'w',
