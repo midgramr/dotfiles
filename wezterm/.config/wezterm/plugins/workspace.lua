@@ -1,9 +1,12 @@
 local utils = require 'utils'
 local module = {}
 
+---@type SWS
 local workspace_switcher = utils.plugin 'MLFlexer/smart_workspace_switcher.wezterm'
 workspace_switcher.zoxide_path = '/opt/homebrew/bin/zoxide'
 
+---Apply workspace switcher config to global config
+---@param config Config global config
 function module.apply_to_config(config)
   workspace_switcher.apply_to_config(config)
   utils.add_keys(config, {

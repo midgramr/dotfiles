@@ -13,3 +13,4 @@ Setup notes:
 - Yabai has a non-scriptable setup (on new machines), since it involves disabling SIP
 - Dotfiles should include automatic font installation, namely JetBrainsMono and Overpass
 - Wezterm install (homebrew cask) + manual terminfo install
+- Install wez-types with luarocks

@@ -1,5 +1,6 @@
 local module = {}
 
+---Colorscheme colors
 module.colors = {
   foreground = '#d4be98',
   background = '#282828',
@@ -36,6 +37,8 @@ module.colors = {
   },
 }
 
+---Apply colors to global config
+---@param config Config global config
 function module.apply_to_config(config)
   config.colors = module.colors
   config.char_select_bg_color = module.colors.tab_bar.background

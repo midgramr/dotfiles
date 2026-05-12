@@ -1,3 +1,4 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
 local utils = require 'utils'
 local module = {}
@@ -12,24 +13,14 @@ resurrect.state_manager.set_encryption {
   public_key = 'age1zsxvxkjkxct49jn2lkng7h5tfd7mq5vzw92pa8etrm7uua0xfdrqjkau5n',
 }
 
--- loads the state whenever I create a new workspace
-wezterm.on('smart_workspace_switcher.workspace_switcher.created', function(window, _, label)
-  local workspace_state = resurrect.workspace_state
-
-  workspace_state.restore_workspace(resurrect.state_manager.load_state(label, 'workspace'), {
-    window = window,
-    relative = true,
-    restore_text = true,
-    on_pane_restore = resurrect.tab_state.default_on_pane_restore,
-  })
-end)
-
 -- Saves the state whenever I select a workspace
 wezterm.on('smart_workspace_switcher.workspace_switcher.selected', function()
   local workspace_state = resurrect.workspace_state
   resurrect.state_manager.save_state(workspace_state.get_workspace_state())
 end)
 
+---Apply resurrect config to global config
+---@param config Config global config
 function module.apply_to_config(config)
   utils.add_keys(config, {
     {

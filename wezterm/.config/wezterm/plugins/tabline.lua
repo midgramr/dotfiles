@@ -2,6 +2,7 @@ local utils = require 'utils'
 local colors = require 'colors'
 local module = {}
 
+---@type TablineWez
 local tabline = utils.plugin 'michaelbrusegard/tabline.wez'
 tabline.setup {
   options = {
@@ -48,6 +49,8 @@ tabline.setup {
   extensions = { 'smart_workspace_switcher' },
 }
 
+---Apply tabline config to global config
+---@param config Config global config
 function module.apply_to_config(config)
   tabline.apply_to_config(config)
   config.tab_bar_at_bottom = true

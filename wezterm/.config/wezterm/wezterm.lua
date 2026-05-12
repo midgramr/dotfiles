@@ -1,6 +1,8 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
-local utils = require 'utils'
+---@type Config
 local config = wezterm.config_builder()
+local utils = require 'utils'
 
 require('colors').apply_to_config(config)
 require('font').apply_to_config(config)

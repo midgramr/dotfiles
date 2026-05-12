@@ -1,7 +1,10 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
 local utils = require 'utils'
 local module = {}
 
+---Apply custom key bindings to global config
+---@param config Config global config
 function module.apply_to_config(config)
   local act = wezterm.action
 
