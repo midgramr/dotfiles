@@ -1,6 +1,6 @@
 -- Windows
 vim.keymap.set({ 'n', 't', 'i' }, '<M-q>', '<Cmd>q!<CR>', { desc = 'Quit window' })
-vim.keymap.set({ 'n', 't', 'i' }, '<M-\\>', function()
+vim.keymap.set({ 'n', 't', 'i' }, '<M-o>', function()
   local width = vim.api.nvim_win_get_width(0)
   if width > 150 then
     return '<Cmd>vert Oil<CR>'
