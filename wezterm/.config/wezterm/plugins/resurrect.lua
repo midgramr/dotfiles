@@ -13,12 +13,6 @@ resurrect.state_manager.set_encryption {
   public_key = 'age1zsxvxkjkxct49jn2lkng7h5tfd7mq5vzw92pa8etrm7uua0xfdrqjkau5n',
 }
 
--- Saves the state whenever I select a workspace
-wezterm.on('smart_workspace_switcher.workspace_switcher.selected', function()
-  local workspace_state = resurrect.workspace_state
-  resurrect.state_manager.save_state(workspace_state.get_workspace_state())
-end)
-
 ---Apply resurrect config to global config
 ---@param config Config global config
 function module.apply_to_config(config)

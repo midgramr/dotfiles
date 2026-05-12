@@ -8,7 +8,6 @@ workspace_switcher.zoxide_path = '/opt/homebrew/bin/zoxide'
 ---Apply workspace switcher config to global config
 ---@param config Config global config
 function module.apply_to_config(config)
-  workspace_switcher.apply_to_config(config)
   utils.add_keys(config, {
     {
       key = 'f',
