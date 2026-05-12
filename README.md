@@ -3,7 +3,6 @@
 Todos:
 
 - SBarLua
-- SketchyVim
 - Alfred (once I'm employed)
 
 Setup notes:
