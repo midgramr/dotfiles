@@ -4,6 +4,7 @@ Todos:
 
 - SBarLua
 - Alfred (once I'm employed)
+- Add type annotations to wezterm config
 
 Setup notes:
 
