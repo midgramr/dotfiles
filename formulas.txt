@@ -8,12 +8,12 @@ fzf
 gcc
 gh
 git-delta
+lua
+luarocks
 neovim
 node
 python
 tree-sitter-cli
-sesh
 stow
 zathura
 zoxide
-zsh-autosuggestions
