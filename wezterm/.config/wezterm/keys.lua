@@ -96,6 +96,11 @@ function module.apply_to_config(config)
     mods = 'NONE',
     action = act.Search 'CurrentSelectionOrEmptyString',
   })
+  table.insert(copy_mode, {
+    key = '?',
+    mods = 'NONE',
+    action = act.Search 'CurrentSelectionOrEmptyString',
+  })
 
   config.key_tables = {
     search_mode = search_mode,

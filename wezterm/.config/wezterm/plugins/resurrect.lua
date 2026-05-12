@@ -5,6 +5,12 @@ local module = {}
 local resurrect = utils.plugin 'MLFlexer/resurrect.wezterm'
 
 resurrect.state_manager.periodic_save()
+resurrect.state_manager.set_encryption {
+  enable = true,
+  method = '/opt/homebrew/bin/age',
+  private_key = os.getenv 'HOME' .. '/.secrets/age-key.txt',
+  public_key = 'age1zsxvxkjkxct49jn2lkng7h5tfd7mq5vzw92pa8etrm7uua0xfdrqjkau5n',
+}
 
 -- loads the state whenever I create a new workspace
 wezterm.on('smart_workspace_switcher.workspace_switcher.created', function(window, _, label)
@@ -27,7 +33,7 @@ end)
 function module.apply_to_config(config)
   utils.add_keys(config, {
     {
-      key = 'w',
+      key = 's',
       mods = 'META',
       action = wezterm.action_callback(function()
         resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
