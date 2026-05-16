@@ -28,4 +28,5 @@
 [mergetool]
 	keepBackup = false
 
-# vim: ft=gitconfig
+[bash]
+	showInformativeStatus = false
