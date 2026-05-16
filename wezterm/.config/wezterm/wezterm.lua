@@ -11,6 +11,7 @@ utils.apply_plugins(config)
 
 config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.term = 'wezterm'
+config.use_ime = false
 config.window_close_confirmation = 'NeverPrompt'
 config.window_content_alignment = {
   horizontal = 'Center',

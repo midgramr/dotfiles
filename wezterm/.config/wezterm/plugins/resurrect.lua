@@ -33,6 +33,8 @@ function module.apply_to_config(config)
           id = string.match(id, '([^/]+)$')
           id = string.match(id, '(.+)%..+$')
           local opts = {
+            window = pane:window(),
+            close_open_tabs = true,
             relative = true,
             restore_text = true,
             on_pane_restore = resurrect.tab_state.default_on_pane_restore,
