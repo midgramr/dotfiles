@@ -19,7 +19,13 @@ indent_size = 2
 [*.lua]
 indent_size = 2
 
-[{Makefile,*.go}]
+[{CMakeLists.txt,*.cmake}]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[*.go]
 indent_style = tab
 
 # vim: ft=editorconfig
