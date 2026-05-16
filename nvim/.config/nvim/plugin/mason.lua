@@ -25,12 +25,14 @@ require('mason-tool-installer').setup {
     'json-lsp',
     'lua-language-server',
     'marksman',
+    'neocmakelsp',
     'pyright',
     'texlab',
     'typescript-language-server',
 
     -- formatters
     'clang-format',
+    'gersemi',
     'mbake',
     'shfmt',
     'stylua',

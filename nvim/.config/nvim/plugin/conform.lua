@@ -10,6 +10,7 @@ conform.setup {
     zsh = { 'shfmt' },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
+    cmake = { 'gersemi' },
     tex = { 'tex-fmt' },
     lua = { 'stylua' },
     make = { 'bake' },
