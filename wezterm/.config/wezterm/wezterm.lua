@@ -13,19 +13,15 @@ config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.term = 'wezterm'
 config.use_ime = false
 config.window_close_confirmation = 'NeverPrompt'
-config.window_content_alignment = {
-  horizontal = 'Center',
-  vertical = 'Center',
-}
 config.window_decorations = 'RESIZE'
 config.window_frame = {
   font = wezterm.font 'Overpass',
 }
 config.window_padding = {
-  left = '2pt',
-  right = '2pt',
-  top = '0pt',
-  bottom = '0pt',
+  left = '4pt',
+  right = '4pt',
+  top = '2pt',
+  bottom = '2pt',
 }
 
 return config
