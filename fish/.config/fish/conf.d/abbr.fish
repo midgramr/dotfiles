@@ -1,5 +1,4 @@
 if status is-interactive
-    abbr -a bat bat --theme-dark gruvbox-dark
     abbr -a c cht.sh
     abbr -a d docker
     abbr -a da docker attach

@@ -1,5 +1,5 @@
+bat
 bin
-clang
 editorconfig
 fish
 gh

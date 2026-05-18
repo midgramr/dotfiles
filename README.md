@@ -4,13 +4,13 @@ Todos:
 
 - SBarLua
 - Alfred (once I'm employed)
-- Add type annotations to wezterm config
 
 Setup notes:
 
 - Sketchybar needs to be run as a brew service (look more into how this works)
-- Yabai and `skhd` has their own startup commands that add a `launchd` configuration file
+- Yabai and `skhd` have their own startup commands that add a `launchd` configuration file
 - Yabai has a non-scriptable setup (on new machines), since it involves disabling SIP
 - Dotfiles should include automatic font installation, namely JetBrainsMono and Overpass
 - Wezterm install (homebrew cask) + manual terminfo install
 - Install wez-types with luarocks
+- Rebuild bat cache for gruvbox-material theme
