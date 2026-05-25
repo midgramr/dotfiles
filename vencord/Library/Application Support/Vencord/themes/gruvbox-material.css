@@ -21,6 +21,9 @@
   --channel-text-area-placeholder: #928374;
   --chat-background-default: #32302f;
   --chat-text-muted: #928374;
+  --control-primary-text-active: #282828;
+  --control-primary-text-default: #282828;
+  --control-primary-text-hover: #282828;
   --control-secondary-text-default: #d4be98;
   --gradient-progress-pill-background: #5a524c;
   --icon-muted: #928374;
@@ -28,13 +31,15 @@
   --icon-subtle: #a89984;
   --input-placeholder-text-default: #928374;
   --interactive-background-active: #32302f;
-  --interactive-background-selected: #32302f;
+  --interactive-background-selected: #32302fa0;
   --interactive-background-hover: #32302fa0;
   --interactive-text-active: #d4be98;
   --interactive-text-default: #928374;
   --interactive-text-hover: #d4be98;
   --interactive-icon-default: #928374;
   --message-background-hover: #32302f;
+  --modal-background: #282828;
+  --modal-footer-background: #282828;
   --primary-400: #5a524c;
   --slider-track-background: #5a524c;
   --spine-default: #45403d;
@@ -44,22 +49,28 @@
   --text-subtle: #a89984;
   --user-profile-overlay-background: #45403d;
 
-  --background-brand: #7daea3;
+  --background-brand: #e78a4e;
+  --background-feedback-notification: #ea6962;
   --background-feedback-warning: #d8a65718;
-  --brand-500: #7daea3;
+  --brand-500: #e78a4e;
   --control-critical-primary-background-default: #ea6962;
   --control-connected-background-default: #a9b665;
-  --control-primary-background-default: #7daea3;
-  --control-primary-background-hover: #568a7f;
-  --control-primary-border-default: #7daea3;
+  --control-primary-background-active: #e78a4e;
+  --control-primary-background-default: #e78a4e;
+  --control-primary-background-hover: #eba16f;
+  --control-primary-border-default: #e78a4e;
   --icon-feedback-info: #7daea3;
   --icon-feedback-warning: #d8a657;
   --icon-positive-feedback: #89b482;
-  --radio-background-selected-default: #7daea3;
-  --reaction-background-reacted-default: #7daea330;
-  --reaction-border-reacted-default: #7daea3;
-  --text-brand: #7daea3;
-  --text-link: #7daea3;
+  --message-highlight-background-default: #e78a4e18;
+  --message-mentioned-background-default: #d8a65718;
+  --radio-background-selected-active: #eba16f;
+  --radio-background-selected-default: #e78a4e;
+  --radio-background-selected-hover: #eba16f;
+  --reaction-background-reacted-default: #e78a4e30;
+  --reaction-border-reacted-default: #e78a4e;
+  --text-brand: #e78a4e;
+  --text-link: #e78a4e;
 
   /* Code */
   --text-code: #d4be98;
@@ -114,27 +125,26 @@
   border-color: var(--border-subtle) !important;
 }
 
-.switchIndicator_a28278[style*="background-color: rgb(88, 101, 242)"] {
-  background-color: #7daea3 !important;
+.container_a28278:has(input:not(:checked)) [data-mana-component="switch"] {
+  background-color: #282828 !important;
 }
 
-.switchIndicator_a28278[style*="background-color: rgb(68, 82, 187)"] {
-  background-color: #568a7f !important;
+.container_a28278:has(input:checked) [data-mana-component="switch"] {
+  background-color: #e78a4e !important;
 }
 
-.pointerEvents__44b0c[fill="#45a366"] {
+*[fill="#45a366"] {
   fill: #89b482;
 }
 
-.pointerEvents__44b0c[fill="#ffc04e"] {
+*[fill="#ffc04e"] {
   fill: #d8a657;
 }
 
-.pointerEvents__44b0c[fill="#da3e44"] {
+*[fill="#da3e44"] {
   fill: #ea6962;
 }
 
 .status_a423bd[style*="background-color: rgb(69, 163, 102)"] {
   background-color: #89b482 !important;
 }
-

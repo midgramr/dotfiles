@@ -7,7 +7,7 @@
     "enabledThemes": [
         "gruvbox-material.css"
     ],
-    "enableReactDevtools": false,
+    "enableReactDevtools": true,
     "frameless": false,
     "transparent": false,
     "winCtrlQ": false,
@@ -363,7 +363,8 @@
             "canCollapseDmSection": false,
             "userBasedCategoryList": {
                 "290138806571499521": []
-            }
+            },
+            "pinOrder": 0
         },
         "PlainFolderIcon": {
             "enabled": false
@@ -599,7 +600,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1779691184455
+        "settingsSyncVersion": 1779750964768
     },
     "windowsMaterial": "none"
 }
