@@ -4,6 +4,7 @@ if status is-interactive
     fish_add_path -a "$HOME/.local/bin"
     fish_add_path -a "/Applications/Obsidian.app/Contents/MacOS"
     fish_add_path -a "/Applications/kitty.app/Contents/MacOS"
+    fish_add_path -a "/opt/homebrew/lib/ruby/gems/4.0.0/bin"
 
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
