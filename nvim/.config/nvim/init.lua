@@ -1,5 +1,4 @@
 require 'utils'
-
 require 'config.opt'
 require 'config.autocmd'
 require 'config.keymap'

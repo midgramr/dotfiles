@@ -12,7 +12,6 @@ yabai -m config \
     right_padding 4 \
     window_gap 4 \
     window_shadow float \
-    external_bar all:34:0 \
     insert_feedback_color 0xffe78a4f
 
 # Create initial spaces

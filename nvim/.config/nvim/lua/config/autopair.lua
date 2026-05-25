@@ -64,7 +64,6 @@ for left, right in pairs(combos) do
         return left
       end
     end, { expr = true })
-
     vim.keymap.set('i', right, function()
       local col = vim.api.nvim_win_get_cursor(0)[2]
       local line = vim.api.nvim_get_current_line()
