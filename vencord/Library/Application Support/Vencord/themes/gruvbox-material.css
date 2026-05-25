@@ -1,0 +1,140 @@
+/**
+ * @name Gruvbox Material
+ * @description Gruvbox Material theme for Discord
+ * @author midgramr
+ * @version 0.0.1
+*/
+
+.theme-dark {
+  --background-base-low: #242424;
+  --background-base-lower: #282828;
+  --background-base-lowest: #242424;
+  --background-code: #282828;
+  --background-mod-normal: #32302f;
+  --background-mod-strong: #45403d;
+  --background-surface-high: #32302f;
+  --background-surface-higher: #32302f;
+  --background-surface-highest: #45403d;
+  --card-background-default: #32302f;
+  --channels-default: #928374;
+  --channel-icon: #928374;
+  --channel-text-area-placeholder: #928374;
+  --chat-background-default: #32302f;
+  --chat-text-muted: #928374;
+  --control-secondary-text-default: #d4be98;
+  --gradient-progress-pill-background: #5a524c;
+  --icon-muted: #928374;
+  --icon-strong: #d4be98;
+  --icon-subtle: #a89984;
+  --input-placeholder-text-default: #928374;
+  --interactive-background-active: #32302f;
+  --interactive-background-selected: #32302f;
+  --interactive-background-hover: #32302fa0;
+  --interactive-text-active: #d4be98;
+  --interactive-text-default: #928374;
+  --interactive-text-hover: #d4be98;
+  --interactive-icon-default: #928374;
+  --message-background-hover: #32302f;
+  --primary-400: #5a524c;
+  --slider-track-background: #5a524c;
+  --spine-default: #45403d;
+  --text-default: #d4be98;
+  --text-muted: #928374;
+  --text-strong: #d4be98;
+  --text-subtle: #a89984;
+  --user-profile-overlay-background: #45403d;
+
+  --background-brand: #7daea3;
+  --background-feedback-warning: #d8a65718;
+  --brand-500: #7daea3;
+  --control-critical-primary-background-default: #ea6962;
+  --control-connected-background-default: #a9b665;
+  --control-primary-background-default: #7daea3;
+  --control-primary-background-hover: #568a7f;
+  --control-primary-border-default: #7daea3;
+  --icon-feedback-info: #7daea3;
+  --icon-feedback-warning: #d8a657;
+  --icon-positive-feedback: #89b482;
+  --radio-background-selected-default: #7daea3;
+  --reaction-background-reacted-default: #7daea330;
+  --reaction-border-reacted-default: #7daea3;
+  --text-brand: #7daea3;
+  --text-link: #7daea3;
+
+  /* Code */
+  --text-code: #d4be98;
+  --text-code-keyword: #ea6962;
+  --text-code-type: #d8a657;
+  --text-code-title: #a9b665;
+  --text-code-variable: #7daea3;
+  --text-code-attribute: #89b482;
+  --text-code-decorator: #d3869b;
+  --text-code-property: #7daea3;
+  --text-code-number: #d3869b;
+  --text-code-operator: #e78a4e;
+  --text-code-string: #a9b665;
+  --text-code-regexp: #a9b665;
+  --text-code-builtin: #89b482;
+  --text-code-comment: #928374;
+  --text-code-tag: #e78a4e;
+  --text-code-section: #e78a4e;
+  --text-code-bullet: #e78a4e;
+  --text-code-link: #7daea3;
+  --text-code-addition: #a9b665;
+  --background-code-addition: #34381b;
+  --text-code-deletion: #ea6962;
+  --background-code-deletion: #402120;
+
+  --border-subtle: #45403d;
+}
+
+.wrapper__72c38:not([data-read-only="true"]):has(input:focus, textarea:focus) {
+  --custom-input-focus-border-color: #7daea3 !important;
+}
+
+.vc-addon-badge {
+  background-color: #ea6962 !important;
+}
+
+:where(.card__73069) {
+  --__card-background-color: #32302f !important;
+}
+
+.panels__5e434 {
+  border-color: #45403d;
+}
+
+.sidebarListRounded__5e434 {
+  border-left-color: var(--border-subtle);
+  border-top-color: var(--border-subtle);
+}
+
+.container__133bf,
+.chat_f75fb0 {
+  border-color: var(--border-subtle) !important;
+}
+
+.switchIndicator_a28278[style*="background-color: rgb(88, 101, 242)"] {
+  background-color: #7daea3 !important;
+}
+
+.switchIndicator_a28278[style*="background-color: rgb(68, 82, 187)"] {
+  background-color: #568a7f !important;
+}
+
+.pointerEvents__44b0c[fill="#45a366"] {
+  fill: #89b482;
+}
+
+.pointerEvents__44b0c[fill="#ffc04e"] {
+  fill: #d8a657;
+}
+
+.pointerEvents__44b0c[fill="#da3e44"] {
+  fill: #ea6962;
+}
+
+.status_a423bd[style*="background-color: rgb(69, 163, 102)"] {
+  background-color: #89b482 !important;
+}
+

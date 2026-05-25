@@ -9,6 +9,7 @@ linearmouse
 nvim
 sketchybar
 skhd
+vencord
 wezterm
 yabai
 zsh
