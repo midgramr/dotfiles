@@ -40,6 +40,7 @@
   --message-background-hover: #32302f;
   --modal-background: #282828;
   --modal-footer-background: #282828;
+  --opacity-blurple-8: #45403d;
   --primary-400: #5a524c;
   --slider-track-background: #5a524c;
   --spine-default: #45403d;
@@ -49,10 +50,10 @@
   --text-subtle: #a89984;
   --user-profile-overlay-background: #45403d;
 
-  --background-brand: #e78a4e;
+  --background-brand: color-mix(in srgb, #e78a4e 85%, #282828 15%);
   --background-feedback-notification: #ea6962;
   --background-feedback-warning: #d8a65718;
-  --brand-500: #e78a4e;
+  --brand-500: color-mix(in srgb, #e78a4e 85%, #282828 15%);
   --control-critical-primary-background-default: #ea6962;
   --control-connected-background-default: #a9b665;
   --control-primary-background-active: #e78a4e;
@@ -62,6 +63,8 @@
   --icon-feedback-info: #7daea3;
   --icon-feedback-warning: #d8a657;
   --icon-positive-feedback: #89b482;
+  --mention-background: color-mix(in srgb, #7daea3 20%, #282828 80%);
+  --mention-foreground: color-mix(in srgb, #7daea3 20%, #e1d2b7 80%);
   --message-highlight-background-default: #e78a4e18;
   --message-mentioned-background-default: #d8a65718;
   --radio-background-selected-active: #eba16f;
@@ -100,7 +103,7 @@
 }
 
 .wrapper__72c38:not([data-read-only="true"]):has(input:focus, textarea:focus) {
-  --custom-input-focus-border-color: #7daea3 !important;
+  --custom-input-focus-border-color: #e78a4e !important;
 }
 
 .vc-addon-badge {
@@ -147,4 +150,8 @@
 
 .status_a423bd[style*="background-color: rgb(69, 163, 102)"] {
   background-color: #89b482 !important;
+}
+
+.newMessagesBar__0f481 {
+  color: #282828;
 }
