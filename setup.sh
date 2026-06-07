@@ -11,9 +11,6 @@ command -v brew &>/dev/null || bash -c "$(curl -fsSL "$homebrew_url")"
 cat formulas.txt | xargs brew install
 ./resync.sh
 
-# Git
-git config --global core.pager delta
-git config --global interactive.diffFilter 'delta --color-only'
-git config --global delta.navigate true
-
-# TODO: install fonts
+for script in $(ls setup); do
+    ./$script
+done

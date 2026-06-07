@@ -63,8 +63,8 @@
   --icon-feedback-info: #7daea3;
   --icon-feedback-warning: #d8a657;
   --icon-positive-feedback: #89b482;
-  --mention-background: color-mix(in srgb, #7daea3 20%, #282828 80%);
-  --mention-foreground: color-mix(in srgb, #7daea3 20%, #e1d2b7 80%);
+  --mention-background: color-mix(in srgb, #e78a4e 20%, #282828 80%);
+  --mention-foreground: color-mix(in srgb, #e78a4e 20%, #e1d2b7 80%);
   --message-highlight-background-default: #e78a4e18;
   --message-mentioned-background-default: #d8a65718;
   --radio-background-selected-active: #eba16f;
@@ -154,4 +154,18 @@
 
 .newMessagesBar__0f481 {
   color: #282828;
+}
+
+.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8,
+.wrapper__6e9f8:hover .childWrapper__6e9f8 {
+  color: #e1d2b7;
+}
+
+.addFriend__133bf {
+  color: #282828 !important;
+}
+
+.tabBar__133bf
+  .addFriend__133bf.addFriend__133bf.addFriend__133bf[aria-selected="true"] {
+  background-color: color-mix(in srgb, #e78a4e 45%, #282828 55%) !important;
 }
