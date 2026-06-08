@@ -1,3 +1,4 @@
+aerospace
 bat
 bin
 editorconfig
@@ -7,7 +8,6 @@ git
 karabiner
 linearmouse
 nvim
-skhd
 vencord
 wezterm
 zsh
