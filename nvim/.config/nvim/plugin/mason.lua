@@ -13,21 +13,16 @@ require('mason-tool-installer').setup {
     -- language servers
     'bash-language-server',
     'clangd',
-    'css-lsp',
     'docker-compose-language-service',
     'docker-language-server',
     'eslint-lsp',
     'fish-lsp',
-    'gh-actions-language-server',
-    'gopls',
     'html-lsp',
     'jdtls',
     'json-lsp',
     'lua-language-server',
     'marksman',
-    'neocmakelsp',
     'pyright',
-    'texlab',
     'typescript-language-server',
 
     -- formatters

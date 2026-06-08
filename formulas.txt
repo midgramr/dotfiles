@@ -15,5 +15,4 @@ node
 python
 tree-sitter-cli
 stow
-zathura
 zoxide

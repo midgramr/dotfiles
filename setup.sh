@@ -5,12 +5,12 @@
 set -ux
 
 # Install Homebrew
-homebrew_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
-command -v brew &>/dev/null || bash -c "$(curl -fsSL "$homebrew_url")"
+# homebrew_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+# command -v brew &>/dev/null || bash -c "$(curl -fsSL "$homebrew_url")"
 
-cat formulas.txt | xargs brew install
-./resync.sh
+# cat formulas.txt | xargs brew install
+# ./resync.sh
 
 for script in $(ls setup); do
-    ./$script
+    ./setup/$script
 done
