@@ -1,5 +1,4 @@
 if status is-interactive
-    abbr -a c cht.sh
     abbr -a d docker
     abbr -a da docker attach
     abbr -a dc docker compose

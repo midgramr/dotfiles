@@ -21,8 +21,8 @@ persistent-workspaces = [
     '1', # Browser
     '2', # Email
     '3', # Development
-    '4', # Notes
-    '5', # Slack
+    '4', # Slack
+    '5', # Notes
     '6', # Zoom
     '7', # Misc
     '8',
@@ -50,18 +50,22 @@ on-focus-changed = ['move-mouse window-lazy-center']
     run = ['move-node-to-workspace 3', 'workspace 3']
 
 [[on-window-detected]]
-    if.app-id = 'md.obsidian'
+    if.app-id = 'com.tinyspeck.slackmacgap'
     if.during-aerospace-startup = true
     run = ['move-node-to-workspace 4', 'workspace 4']
 
 [[on-window-detected]]
-    if.app-id = 'com.tinyspeck.slackmacgap'
+    if.app-id = 'md.obsidian'
     if.during-aerospace-startup = true
     run = ['move-node-to-workspace 5', 'workspace 5']
 
 [[on-window-detected]]
     if.app-name-regex-substring = 'zoom\.us'
     run = ['move-node-to-workspace 6', 'workspace 6', 'layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'com.anthropic.claudefordesktop'
+    run = ['layout floating']
 
 [key-mapping]
     preset = 'qwerty'

@@ -13,6 +13,7 @@ luarocks
 neovim
 node
 python
+rg
 tree-sitter-cli
 stow
 zoxide

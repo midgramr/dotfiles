@@ -1,10 +1,11 @@
 [user]
 	name = Kevin Zhang
-	email = kevzhang2022@gmail.com
+	email = kevin.zhang@thetradedesk.com
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	pager = delta
+	hooksPath = ~/.githooks
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -54,3 +55,7 @@
 	tool = nvimdiff2
 [mergetool]
 	keepBackup = false
+[git-util]
+	managed = true
+[include]
+	path = ~/.ttd/git-util/gitconfig

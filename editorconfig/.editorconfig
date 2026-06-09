@@ -13,7 +13,7 @@ indent_size = 2
 [*.{js,jsx,mjs,ts,tsx,mts,json}]
 indent_size = 2
 
-[*.{conf,yaml}]
+[*.{conf,yaml,yml}]
 indent_size = 2
 
 [*.lua]
