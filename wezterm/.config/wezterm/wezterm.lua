@@ -9,7 +9,7 @@ require('font').apply_to_config(config)
 require('keys').apply_to_config(config)
 utils.apply_plugins(config)
 
-config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
+config.default_prog = { 'fish', '-l' }
 config.term = 'wezterm'
 config.use_ime = false
 config.window_close_confirmation = 'NeverPrompt'
@@ -18,10 +18,10 @@ config.window_frame = {
   font = wezterm.font 'Overpass',
 }
 config.window_padding = {
-  left = '4pt',
-  right = '4pt',
-  top = '2pt',
-  bottom = '2pt',
+  left = '6pt',
+  right = '6pt',
+  top = '8pt',
+  bottom = '4pt',
 }
 
 return config

@@ -1,13 +1,6 @@
-aerospace
 bat
-bin
 editorconfig
 fish
-gh
 git
-karabiner
-linearmouse
 nvim
-vencord
 wezterm
-zsh

@@ -1,4 +1,5 @@
 if status is-interactive
+    abbr -a bat batcat
     abbr -a d docker
     abbr -a da docker attach
     abbr -a dc docker compose
@@ -6,7 +7,7 @@ if status is-interactive
     abbr -a db docker build
     abbr -a dr docker run
     abbr -a ds docker start
-    abbr -a fd fd -H -E .git
+    abbr -a fd fdfind
     abbr -a g git
     abbr -a ga git add
     abbr -a gaa git add --all
