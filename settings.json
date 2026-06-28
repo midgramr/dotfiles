@@ -1,0 +1,84 @@
+{
+  "env": {
+    "CLAUDE_CODE_SCROLL_SPEED": "2"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(kubectl --context=* get *)",
+      "Bash(kubectl --context=* describe *)",
+      "Bash(kubectl --context=* logs *)",
+      "Bash(kubectl --context=* top *)",
+      "Bash(kubeinfo get *)",
+      "mcp__grafana__get_alert_group",
+      "mcp__grafana__get_alert_rule_by_uid",
+      "mcp__grafana__get_assertions",
+      "mcp__grafana__get_current_oncall_users",
+      "mcp__grafana__get_dashboard_by_uid",
+      "mcp__grafana__get_dashboard_panel_queries",
+      "mcp__grafana__get_dashboard_property",
+      "mcp__grafana__get_dashboard_summary",
+      "mcp__grafana__get_datasource_by_name",
+      "mcp__grafana__get_datasource_by_uid",
+      "mcp__grafana__get_incident",
+      "mcp__grafana__get_oncall_shift",
+      "mcp__grafana__get_sift_analysis",
+      "mcp__grafana__get_sift_investigation",
+      "mcp__grafana__list_alert_groups",
+      "mcp__grafana__list_alert_rules",
+      "mcp__grafana__list_contact_points",
+      "mcp__grafana__list_datasources",
+      "mcp__grafana__list_incidents",
+      "mcp__grafana__list_loki_label_names",
+      "mcp__grafana__list_loki_label_values",
+      "mcp__grafana__list_oncall_schedules",
+      "mcp__grafana__list_oncall_teams",
+      "mcp__grafana__list_oncall_users",
+      "mcp__grafana__list_prometheus_label_names",
+      "mcp__grafana__list_prometheus_label_values",
+      "mcp__grafana__list_prometheus_metric_metadata",
+      "mcp__grafana__list_prometheus_metric_names",
+      "mcp__grafana__list_pyroscope_label_names",
+      "mcp__grafana__list_pyroscope_label_values",
+      "mcp__grafana__list_pyroscope_profile_types",
+      "mcp__grafana__list_sift_investigations",
+      "mcp__grafana__list_teams",
+      "mcp__grafana__list_users_by_org",
+      "mcp__grafana__query_loki_logs",
+      "mcp__grafana__query_loki_stats",
+      "mcp__grafana__query_prometheus",
+      "mcp__grafana__search_dashboards",
+      "mcp__grafana__search_folders",
+      "mcp__sumologic__sumo_search",
+      "mcp__claude_ai_TTD_Slack_MCP__slack_read_user_profile",
+      "mcp__claude_ai_TTD_Slack_MCP__slack_search_channels",
+      "mcp__claude_ai_TTD_Slack_MCP__slack_read_channel"
+    ],
+    "deny": [
+      "mcp__sourcegraph-ttd__sg_deepsearch"
+    ],
+    "defaultMode": "plan"
+  },
+  "hooks": {},
+  "worktree": {
+    "baseRef": "fresh"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "sh /home/kevin-zhang/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "jdtls-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "argus@ttd": true,
+    "gitlab@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "advisorModel": "opus",
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "theme": "custom:gruvbox-material",
+  "editorMode": "vim",
+  "preferredNotifChannel": "auto",
+  "autoCompactEnabled": true
+}

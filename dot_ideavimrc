@@ -1,0 +1,62 @@
+let mapleader=" "
+
+" Plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+"set anyobject
+set surround
+set commentary
+set matchit
+set mini-ai
+
+" Plugin settings
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" Global settings
+set showmode
+set so=10
+set nu
+set rnu
+set breakindent
+set incsearch
+set ignorecase
+set smartcase
+set clipboard=unnamedplus
+
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+" Keymaps
+map <leader>R :source ~/.ideavimrc<CR>
+
+map - <Action>(SelectInProjectView)
+
+map <M-CR> <Action>(GitLab.Open.In.Browser)
+
+map <leader>h <Action>(RecentFiles)
+map <C-f> <Action>(GotoFile)
+map <C-l> <Action>(FindInPath)
+
+map <M-q> <Action>(CloseContent)
+map <M-S-q> <Action>(CloseAllEditorsButActive)
+map <M-h> <Action>(PreviousTab)
+map <M-l> <Action>(NextTab)
+map <M-j> <Action>(MethodDown)
+map <M-k> <Action>(MethodUp)
+
+map gra <Action>(ShowIntentionActions)
+map grr <Action>(FindUsages)
+map gri <Action>(GotoImplementation)
+map grn <Action>(RenameElement)
+
+map ]c <Action>(GotoNextError)
+map [c <Action>(GotoPreviousError)
+
+map <leader>gb <Action>(Annotate)
+map <leader>gd <Action>(Compare.SameVersion)
+
+" vim: ft=vim

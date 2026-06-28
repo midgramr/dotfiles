@@ -1,0 +1,12 @@
+# Key repeat rate
+xset r rate 200 40
+
+# Monitor
+xrdb -merge ~/.Xresources
+xrandr --output DP-2 --mode 5120x2160
+
+# MIME handlers
+xdg-mime default /usr/share/applications/org.gnome.Evince.desktop application/pdf
+xdg-mime default /usr/share/applications/org.gnome.eog.desktop image/png image/jpeg image/gif image/webp image/tiff image/bmp
+
+# vim: ft=bash

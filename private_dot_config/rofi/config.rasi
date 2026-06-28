@@ -1,0 +1,73 @@
+configuration {
+	font: "Overpass 14";
+	show-icons: true;
+	terminal: "wezterm";
+	dpi: 1;
+	kb-remove-char-forward: "Delete";
+	kb-remove-to-eol: "";
+	kb-remove-to-sol: "";
+	kb-accept-entry: "Return,KP_Enter";
+	kb-row-up: "Up,Control+k";
+	kb-row-down: "Down,Control+j";
+	kb-page-prev: "Control+u";
+	kb-page-next: "Control+d";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+  drun {
+    display-name: ">";
+  }
+}
+
+* {
+  red: #ea6962;
+  orange: #e78a4e;
+  blue: #7daea3;
+  green: #a9b665;
+  foreground: #d4be98;
+  background: #282828;
+  lightbg: #32302f;
+  lightfg: #34381b;
+  selected-normal-foreground: #ddc7a1;
+  muted: #5a524c;
+  separator: #928374;
+
+  highlight: var(green);
+}
+window {
+  padding: 8;
+  width: 600;
+}
+listview  {
+  spacing: 0;
+  border: 2px solid 0px 0px;
+  border-color: var(separator);
+}
+element-icon {
+  padding: 0 4 0 0;
+}
+element {
+  padding: 4;
+}
+inputbar {
+  padding: 4;
+}
+entry {
+  text-color: var(selected-normal-foreground);
+  placeholder-color: var(muted);
+  blink: false;
+}
+prompt {
+  text-color: var(orange);
+}
+num-rows, num-filtered-rows, case-indicator, textbox-num-sep {
+  text-color: var(separator);
+}
+textbox-prompt-colon {
+  str: "";
+}

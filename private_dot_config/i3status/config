@@ -1,0 +1,32 @@
+general {
+   output_format = "i3bar"
+   separator = "  "
+   color_good = "#a9b665"
+   color_degraded = "#d8a657"
+   color_bad = "#ea6962"
+}
+
+order += "memory"
+order += "disk /"
+order += "volume master"
+order += "time"
+
+disk "/" {
+   format = "Disk %avail/ %total"
+}
+
+memory {
+    format = "Mem %used / %total"
+}
+
+volume master {
+    format = "♪: %volume"
+    format_muted = "♪: muted (%volume)"
+    device = "default"
+}
+
+time {
+    format = "%a %b %d %l:%M %p"
+}
+
+# vim: ft=conf

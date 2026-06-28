@@ -1,0 +1,25 @@
+[global]
+    width = 600
+    height = 200
+    origin = bottom-right
+    padding = 12
+    horizontal_padding = 12
+    frame_width = 1
+    gap_size = 8
+    separator_color = frame
+    font = "Overpass 12"
+    mouse_left_click = do_action
+    mouse_right_click = context
+    mouse_middle_click = close_current
+    background = "#32302f"
+    foreground = "#ddc7a1"
+    highlight = "#e78a4e"
+    frame_color = "#a89984"
+    history_length = 10
+
+[ignore-insync]
+appname = inSyncTray
+skip_display = true
+history_ignore = yes
+
+# vim: ft=dosini

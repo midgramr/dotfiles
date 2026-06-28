@@ -1,0 +1,24 @@
+vim.api.nvim_create_user_command('Packlist', function()
+  vim.pack.update(nil, { offline = true })
+end, { desc = 'List installed packages' })
+
+vim.api.nvim_create_user_command('Packupdate', function()
+  vim.pack.update()
+end, { desc = 'List installed packages' })
+
+vim.api.nvim_create_user_command('Packprune', function()
+  local nonactive = vim
+    .iter(vim.pack.get())
+    :filter(function(x)
+      return not x.active
+    end)
+    :map(function(x)
+      return x.spec.name
+    end)
+    :totable()
+  vim.pack.del(nonactive)
+end, { desc = 'Prune unused packages' })
+
+-- Builtin plugins
+vim.cmd.packadd 'nvim.difftool'
+vim.cmd.packadd 'nvim.undotree'

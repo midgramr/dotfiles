@@ -1,0 +1,5 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "workspace.library": ["/home/linuxbrew/.linuxbrew/share/lua/5.5/wezterm/types"],
+  "workspace.checkThirdParty": "Disable"
+}

@@ -1,0 +1,61 @@
+[user]
+	name = Kevin Zhang
+	email = kevin.zhang@thetradedesk.com
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	pager = delta
+	hooksPath = ~/.githooks
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+[filter-repo]
+	tool = fit-filter-repo
+[color]
+	ui = auto
+[alias]
+	ac = !git add . && git commit -m
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+    dark = true
+    syntax-theme = gruvbox-material
+    file-style = "#ddc7a1" bold
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    file-decoration-style = "#928374" ul
+    hunk-header-style = omit
+    inline-hint-style = syntax
+    minus-style = syntax "#402120"
+    minus-emph-style = "#282828" bold  "#ea6962"
+    minus-non-emph-style = syntax auto
+    plus-style = syntax "#34381b"
+    plus-emph-style = "#282828" bold "#a9b665"
+    plus-non-emph-style = syntax auto
+    whitespace-error-style = "#443840" reverse
+    commit-style = "#d8a657" bold
+    blame-code-style = syntax
+    blame-palette = "#282828" "#32302f"
+    merge-conflict-begin-symbol = ⌃
+    merge-conflict-end-symbol = ⌄
+    merge-conflict-ours-diff-header-style = "#d8a657" bold
+    merge-conflict-theirs-diff-header-style = "#d8a657" bold overline
+    merge-conflict-ours-diff-header-decoration-style = ""
+    merge-conflict-theirs-diff-header-decoration-style = ""
+
+[merge]
+	tool = nvimdiff2
+[mergetool]
+	keepBackup = false
+[git-util]
+	managed = true
+[include]
+	path = ~/.ttd/git-util/gitconfig

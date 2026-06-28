@@ -1,0 +1,6 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:3400
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_features:no\x2dkeyboard\x2dprotocols
+SETUVAR fish_user_paths:/usr/local/bin\x1e/home/kevin\x2dzhang/\x2elocal/bin\x1e/home/kevin\x2dzhang/\x2edotnet/tools\x1e/usr/local/share/dotnet

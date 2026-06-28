@@ -1,0 +1,7 @@
+require 'utils'
+require 'config.opt'
+require 'config.autocmd'
+require 'config.keymap'
+require 'config.autopair'
+require 'config.lsp'
+require 'config.pack'
