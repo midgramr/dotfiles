@@ -1,2 +1,7 @@
-settings.json
 secrets.fish
+
+{{ if eq .chezmoi.hostname "LLTUSMZ01KEHF" }}
+
+{{ else if eq .chezmoi.hostname "api" }}
+
+{{ end }}
