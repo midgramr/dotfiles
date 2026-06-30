@@ -4,14 +4,7 @@ local utils = require 'utils'
 local module = {}
 
 local resurrect = utils.plugin 'MLFlexer/resurrect.wezterm'
-
 resurrect.state_manager.periodic_save()
-resurrect.state_manager.set_encryption {
-  enable = true,
-  method = '/home/linuxbrew/.linuxbrew/bin/age',
-  private_key = os.getenv 'HOME' .. '/.secrets/age-key.txt',
-  public_key = 'age1zsxvxkjkxct49jn2lkng7h5tfd7mq5vzw92pa8etrm7uua0xfdrqjkau5n',
-}
 
 ---Apply resurrect config to global config
 ---@param config Config global config

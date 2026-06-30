@@ -3,7 +3,12 @@ local module = {}
 
 ---@type SWS
 local workspace_switcher = utils.plugin 'MLFlexer/smart_workspace_switcher.wezterm'
+
+{{ if eq .chezmoi.os "darwin" -}}
+workspace_switcher.zoxide_path = '/opt/homebrew/bin/zoxide'
+{{- else -}}
 workspace_switcher.zoxide_path = '/home/linuxbrew/.linuxbrew/bin/zoxide'
+{{- end }}
 
 ---Apply workspace switcher config to global config
 ---@param config Config global config

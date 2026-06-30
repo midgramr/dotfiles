@@ -17,11 +17,21 @@ config.window_decorations = 'RESIZE'
 config.window_frame = {
   font = wezterm.font 'Overpass',
 }
+
+{{ if eq .chezmoi.hostname "LLTUSMZ01KEHF" -}}
 config.window_padding = {
   left = '8pt',
   right = '6pt',
   top = '10pt',
   bottom = '10pt',
 }
+{{- else -}}
+config.window_padding = {
+  left = '4pt',
+  right = '4pt',
+  top = '2pt',
+  bottom = '2pt',
+}
+{{- end }}
 
 return config

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -eux
+
+brew install \
+    bat \
+    bfs \
+    dust \
+    fd \
+    fish \
+    fzf \
+    gcc \
+    gh \
+    git-delta \
+    lua \
+    luarocks \
+    neovim \
+    node \
+    python \
+    ripgrep \
+    tree-sitter-cli \
+    zoxide
+
+{{ if eq .chezmoi.os "linux" -}}
+sudo apt install -y \
+    copyq \
+    feh \
+    i3 \
+    imagemagick \
+    maim \
+    picom \
+    pulseaudio-utils
+
+sudo snap install \
+    obsidian \
+    slack
+{{- else -}}
+brew install --cask \
+    nikitabobko/tap/aerospace \
+    docker \
+    karabiner-elements \
+    linearmouse \
+    wezterm
+{{- end -}}

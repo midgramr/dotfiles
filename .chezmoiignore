@@ -1,2 +1,15 @@
-settings.json
-secrets.fish
+{{- if eq .chezmoi.os "darwin" -}}
+.wallpaper.jpg
+.Xmodmap
+.xprofile
+.Xresources
+copyq
+dunst
+i3
+i3status
+picom
+rofi
+.config/glab-cli
+{{- else -}}
+Library/Application\ Support/glab-cli
+{{- end -}}

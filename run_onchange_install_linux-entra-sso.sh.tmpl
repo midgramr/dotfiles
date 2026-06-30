@@ -1,0 +1,14 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+sudo apt install -y python3-gi python3-pydbus
+
+tempdir=$(mktemp -d)
+trap 'rm -rf "$tempdir"' EXIT
+
+cd "$tempdir"
+git clone https://github.com/siemens/linux-entra-sso.git
+cd linux-entra-sso
+
+make local-install-firefox
+{{- end -}}

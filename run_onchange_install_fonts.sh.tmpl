@@ -1,0 +1,17 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+mkdir -p ~/.fonts
+cd ~/.fonts
+
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip
+
+curl -LO https://github.com/RedHatOfficial/Overpass/releases/download/3.0.2/overpass-desktop-fonts.zip
+unzip overpass-desktop-fonts.zip
+mv overpass/* overpass-mono/* .
+
+rm -rf overpass overpass-mono *.zip
+
+fc-cache -fv
+{{- end -}}

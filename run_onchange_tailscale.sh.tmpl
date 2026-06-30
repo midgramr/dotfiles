@@ -1,0 +1,7 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+sudo tailscale down
+sudo tailscale set --posture-checking=true
+sudo tailscale up
+{{- end -}}
