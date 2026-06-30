@@ -1,0 +1,75 @@
+[table_header]
+fg = "#ddc7a1"
+bg = "#282828"
+
+[[table_headers]]
+fg = "#d8a657"
+bg = "#282828"
+
+[[table_headers]]
+fg = "#d3869b"
+bg = "#282828"
+
+[[table_headers]]
+fg = "#7daea3"
+bg = "#282828"
+
+[[rows]]
+fg = "#ddc7a1"
+bg = "#282828"
+
+[[rows]]
+fg = "#ddc7a1"
+bg = "#32302f"
+
+[row_highlight]
+fg = "#282828"
+bg = "#d8a657"
+
+[[table_tags]]
+fg = "#282828"
+bg = "#ea6962"
+
+[[table_tags]]
+fg = "#282828"
+bg = "#a9b665"
+
+[block]
+fg = "#d8a657"
+bg = "#282828"
+
+[block_tag]
+fg = "#282828"
+bg = "#d8a657"
+
+[text]
+fg = "#ddc7a1"
+bg = "#282828"
+
+[text_highlighted]
+fg = "#d3869b"
+bg = "#282828"
+
+[subtext]
+fg = "#928374"
+bg = "#282828"
+
+[error]
+fg = "#ddc7a1"
+bg = "#ea6962"
+
+[gutter]
+fg = "#d3869b"
+bg = "#282828"
+
+[[chart]]
+fg = "#d8a657"
+bg = "#282828"
+
+[[chart]]
+fg = "#d3869b"
+bg = "#282828"
+
+[[chart]]
+fg = "#7daea3"
+bg = "#282828"

@@ -1,4 +1,0 @@
-ci: pipeline ci
-co: mr checkout
-mv: mr view -w
-rv: repo view -w
