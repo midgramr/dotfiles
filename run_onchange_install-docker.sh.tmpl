@@ -1,6 +1,8 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+command -v docker &>/dev/null && exit 0
+
 # Add Docker's official GPG key:
 sudo apt update
 sudo apt install ca-certificates curl

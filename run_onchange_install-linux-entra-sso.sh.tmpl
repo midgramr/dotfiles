@@ -1,6 +1,8 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+ls ~/.mozilla &>/dev/null && exit 0
+
 sudo apt install -y python3-gi python3-pydbus
 
 tempdir=$(mktemp -d)

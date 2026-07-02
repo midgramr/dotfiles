@@ -88,7 +88,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec wezterm
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+$super+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -135,8 +135,8 @@ set $ws2 "2:IDE"
 set $ws3 "3:Slack"
 # notes
 set $ws4 "4:Notes"
-# zoom
-set $ws5 "5:Zoom"
+# claude
+set $ws5 "5:Claude"
 set $ws6 "6:Misc"
 
 bindsym $mod+1 workspace $ws1
@@ -164,10 +164,10 @@ assign [class="zoom"] $ws5
 
 for_window [class="zoom" title="^Meeting$"] resize set 4800 2000, move position center, layout stacking
 for_window [class="copyq"] move scratchpad
-for_window [class="Claude"] move scratchpad
+for_window [class="claude-desktop"] move scratchpad
 
 # Scratchpads
-bindsym $mod+c [class="Claude"] scratchpad show
+bindsym $mod+c [class="claude-desktop"] scratchpad show
 bindsym $mod+v [class="copyq"] scratchpad show
 
 bindsym $mod+$super+c reload
