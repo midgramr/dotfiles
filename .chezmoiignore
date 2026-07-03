@@ -3,12 +3,12 @@
 .Xmodmap
 .xprofile
 .Xresources
-copyq
-dunst
-i3
-i3status
-picom
-rofi
+.config/copyq
+.config/dunst
+.config/i3
+.config/i3status
+.config/picom
+.config/rofi
 .config/glab-cli
 {{- else -}}
 Library/Application\ Support/glab-cli
