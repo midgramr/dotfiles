@@ -12,7 +12,7 @@ utils.apply_plugins(config)
 {{ if eq .chezmoi.os "linux" -}}
 config.default_prog = { 'fish', '-l' }
 {{- else -}}
-config.default_prof = { '/opt/homebrew/bin/fish', '-l' }
+config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 {{- end }}
 config.term = 'wezterm'
 config.use_ime = false
