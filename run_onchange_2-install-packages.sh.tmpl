@@ -2,6 +2,8 @@
 
 set -eux
 
+brew update
+
 brew install \
     bat \
     bfs \
@@ -40,5 +42,8 @@ brew install --cask \
     docker \
     karabiner-elements \
     linearmouse \
-    wezterm
-{{- end -}}
+    wezterm || true
+{{- end }}
+
+brew upgrade
+brew cleanup

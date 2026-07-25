@@ -39,7 +39,6 @@ require('nvim-treesitter').install {
   'query',
   'regex',
   'scala',
-  'tmux',
   'toml',
   'typescript',
   'tsx',

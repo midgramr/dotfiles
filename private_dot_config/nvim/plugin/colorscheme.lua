@@ -15,9 +15,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end,
 })
 
-vim.g.gruvbox_material_enable_italic = true
-vim.g.gruvbox_material_enable_bold = true
-vim.g.gruvbox_material_float_style = 'blend'
-vim.g.gruvbox_material_disable_terminal_colors = true
-vim.g.gruvbox_material_current_word = 'bold'
-vim.cmd.colorscheme 'gruvbox-material'
+vim.g.everforest_enable_italic = true
+vim.g.everforest_enable_bold = true
+vim.g.everforest_float_style = 'blend'
+vim.g.everforest_disable_terminal_colors = true
+vim.g.everforest_current_word = 'bold'
+vim.cmd.colorscheme 'everforest'

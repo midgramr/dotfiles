@@ -2,38 +2,38 @@ local module = {}
 
 ---Colorscheme colors
 module.colors = {
-  foreground = '#d4be98',
-  background = '#282828',
-  cursor_bg = '#d7be98',
-  cursor_fg = '#282828',
-  cursor_border = '#d7be98',
-  selection_fg = '#282828',
-  selection_bg = '#d8a657',
-  scrollbar_thumb = '#928374',
-  split = '#928374',
+  foreground = '#d3c6aa',
+  background = '#2d353b',
+  cursor_bg = '#d3c6aa',
+  cursor_fg = '#2d353b',
+  cursor_border = '#d3c6aa',
+  selection_fg = '#2d353b',
+  selection_bg = '#a7c080',
+  scrollbar_thumb = '#7a8478',
+  split = '#7a8478',
   ansi = {
-    '#282828',
-    '#ea6962',
-    '#a9b665',
-    '#d8a657',
-    '#7daea3',
-    '#d3869b',
-    '#89b482',
-    '#d4be98',
+    '#2d353b',
+    '#e67e80',
+    '#a7c080',
+    '#dbbc7f',
+    '#7fbbb3',
+    '#d699b6',
+    '#83c092',
+    '#d3c6aa',
   },
   brights = {
-    '#7c6f64',
-    '#ea6962',
-    '#a9b665',
-    '#d8a657',
-    '#7daea3',
-    '#d3869b',
-    '#89b482',
-    '#ddc7a1',
+    '#7a8478',
+    '#e67e80',
+    '#a7c080',
+    '#dbbc7f',
+    '#7fbbb3',
+    '#d699b6',
+    '#83c092',
+    '#d3c6aa',
   },
-  compose_cursor = '#d8a657',
+  compose_cursor = '#a7c080',
   tab_bar = {
-    background = '#32302f',
+    background = '#a7c080',
   },
 }
 
@@ -45,6 +45,7 @@ function module.apply_to_config(config)
   config.char_select_fg_color = module.colors.foreground
   config.command_palette_bg_color = module.colors.tab_bar.background
   config.command_palette_fg_color = module.colors.foreground
+  config.front_end = 'WebGpu'
 end
 
 return module
