@@ -25,17 +25,17 @@ configuration {
 }
 
 * {
-  red: #ea6962;
-  orange: #e78a4e;
-  blue: #7daea3;
-  green: #a9b665;
-  foreground: #d4be98;
-  background: #282828;
-  lightbg: #32302f;
-  lightfg: #34381b;
-  selected-normal-foreground: #ddc7a1;
-  muted: #5a524c;
-  separator: #928374;
+  red: #e67e80;
+  orange: #e69875;
+  blue: #7fbbb3;
+  green: #a7c080;
+  foreground: #d3c6aa;
+  background: #2d353b;
+  lightbg: #343f44;
+  lightfg: #4a444e;
+  selected-normal-foreground: #dbbc7f;
+  muted: #7a8478;
+  separator: #859289;
 
   highlight: var(green);
 }
