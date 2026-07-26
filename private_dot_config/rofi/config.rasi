@@ -1,5 +1,5 @@
 configuration {
-	font: "Overpass 14";
+	font: "JetbrainsMono Nerd Font Mono SemiBold 12";
 	show-icons: true;
 	terminal: "wezterm";
 	dpi: 1;
@@ -41,7 +41,7 @@ configuration {
 }
 window {
   padding: 8;
-  width: 600;
+  width: 800;
   border: 2px;
   border-color: var(green);
 }
