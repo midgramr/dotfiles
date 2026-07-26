@@ -43,8 +43,10 @@ map <C-l> <Action>(FindInPath)
 
 map <M-q> <Action>(CloseContent)
 map <M-S-q> <Action>(CloseAllEditorsButActive)
-map <M-h> <Action>(PreviousTab)
-map <M-l> <Action>(NextTab)
+map <M-p> <Action>(PreviousTab)
+map <M-n> <Action>(NextTab)
+map <M-h> <C-w>h
+map <M-l> <C-w>l
 map <M-j> <Action>(MethodDown)
 map <M-k> <Action>(MethodUp)
 
@@ -58,5 +60,7 @@ map [c <Action>(GotoPreviousError)
 
 map <leader>gb <Action>(Annotate)
 map <leader>gd <Action>(Compare.SameVersion)
+
+map <leader>f <Action>(ReformatCode)
 
 " vim: ft=vim
