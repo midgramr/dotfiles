@@ -31,7 +31,7 @@ configuration {
   green: #a7c080;
   foreground: #d3c6aa;
   background: #2d353b;
-  lightbg: #343f44;
+  lightbg: #2d353b;
   lightfg: #4a444e;
   selected-normal-foreground: #dbbc7f;
   muted: #7a8478;
@@ -42,6 +42,8 @@ configuration {
 window {
   padding: 8;
   width: 600;
+  border: 2px;
+  border-color: var(green);
 }
 listview  {
   spacing: 0;

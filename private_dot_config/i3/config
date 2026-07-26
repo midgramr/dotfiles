@@ -6,21 +6,21 @@ set $alt Mod1
 set $super Mod4
 set $mod Mod5
 
-set $i3lockopts --inside-color=1b1b1b \
---ring-color=1b1b1b \
---insidever-color=1b1b1b \
---ringver-color=7daea3 \
---insidewrong-color=1b1b1b \
---ringwrong-color=e78a4e \
---line-color=282828 \
---keyhl-color=a9b665 \
---bshl-color=e78a4e \
---layout-color=d4be98 \
---time-color=d4be98 \
---verif-color=d4be98 \
---wrong-color=d4be98 \
---modif-color=d4be98 \
---greeter-color=d4be98 \
+set $i3lockopts --inside-color=2d353b \
+--ring-color=2d353b \
+--insidever-color=2d353b \
+--ringver-color=7fbbb3 \
+--insidewrong-color=2d353b \
+--ringwrong-color=e69875 \
+--line-color=232a2e \
+--keyhl-color=a7c080 \
+--bshl-color=e69875 \
+--layout-color=d3c6aa \
+--time-color=d3c6aa \
+--verif-color=d3c6aa \
+--wrong-color=d3c6aa \
+--modif-color=d3c6aa \
+--greeter-color=d3c6aa \
 --time-str='%l:%M %p' \
 --time-font=Overpass \
 --date-font=Overpass \
@@ -36,6 +36,10 @@ font pango:Overpass 12
 gaps inner 10
 gaps outer 2
 smart_gaps off
+
+# No titlebars, thin border
+default_border pixel 2
+default_floating_border pixel 2
 
 # Startup apps
 exec firefox
@@ -55,6 +59,7 @@ client.background       #2d353b
 focus_on_window_activation focus
 
 exec_always --no-startup-id picom --backend glx
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -136,7 +141,7 @@ set $ws1 "1:Browser"
 set $ws2 "2:IDE"
 set $ws3 "3:Slack"
 set $ws4 "4:Zoom"
-set $ws5 "4:Misc"
+set $ws5 "5:Misc"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -162,12 +167,12 @@ assign [class="zoom"] $ws4
 
 for_window [class="zoom" title="^Meeting$"] layout stacking
 for_window [class="zoom" instance="zoom" title="annotate_toolbar"] floating enable, resize set 200px 200px
-for_window [class="copyq"] move scratchpad
-for_window [class="com.anthropic.claude"] move scratchpad
-for_window [class="obsidian"] move scratchpad
+for_window [class="copyq"] border pixel 2, move scratchpad
+for_window [class="com.anthropic.Claude"] border pixel 2, move scratchpad
+for_window [class="obsidian"] border pixel 2, move scratchpad
 
 # Scratchpads
-bindsym $mod+c [class="com.anthropic.claude"] scratchpad show
+bindsym $mod+c [class="com.anthropic.Claude"] scratchpad show
 bindsym $mod+v [class="copyq"] scratchpad show
 bindsym $mod+o [class="obsidian"] scratchpad show
 
@@ -186,16 +191,20 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bar {
-    status_command i3status
-    separator_symbol "  "
-    tray_output none
-    colors {
-        background #232a2e
-        statusline #d3c6aa
-        focused_workspace #a7c080 #a7c080 #2d353b
-        inactive_workspace #343f44 #343f44 #d3c6aa
-        urgent_workspace #e69875 #e69875 #2d353b
-        binding_mode #7fbbb3 #7fbbb3 #2d353b
-    }
-}
+# bar {
+#     i3bar_command /usr/bin/polybar
+# }
+
+# bar {
+#     status_command i3status
+#     separator_symbol "  "
+#     tray_output none
+#     colors {
+#         background #232a2e
+#         statusline #d3c6aa
+#         focused_workspace #a7c080 #a7c080 #2d353b
+#         inactive_workspace #343f44 #343f44 #d3c6aa
+#         urgent_workspace #e69875 #e69875 #2d353b
+#         binding_mode #7fbbb3 #7fbbb3 #2d353b
+#     }
+# }

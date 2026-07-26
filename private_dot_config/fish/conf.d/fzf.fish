@@ -1,12 +1,12 @@
 if status is-interactive
-    set -l fg0 '#d4be98'
-    set -l bg0 '#282828'
-    set -l yellow '#d8a657'
-    set -l green '#a9b665'
-    set -l blue '#7daea3'
-    set -l bg_green '#34381b'
-    set -l orange '#e78a4e'
-    set -l gray '#a89984'
+    set -l fg0 '#d3c6aa'
+    set -l bg0 '#2d353b'
+    set -l yellow '#dbbc7f'
+    set -l green '#a7c080'
+    set -l blue '#7fbbb3'
+    set -l bg_green '#425047'
+    set -l orange '#e69875'
+    set -l gray '#859289'
 
     set -l colors (string join ',' \
         "fg:$fg0" \

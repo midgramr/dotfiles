@@ -19,11 +19,9 @@ config.window_frame = {
 
 {{ if eq .chezmoi.hostname "LLTUSMZ01KEHF" -}}
 config.default_prog = { 'fish', '-l' }
-config.window_padding = {
-  left = '8pt',
-  right = '6pt',
-  top = '10pt',
-  bottom = '10pt',
+config.window_content_alignment = {
+  horizontal = 'Center',
+  vertical = 'Center'
 }
 {{- else -}}
 config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
