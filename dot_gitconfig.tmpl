@@ -5,9 +5,9 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	pager = delta
-{{ if eq .chezmoi.hostname "api" "LLTUSMZ01KEHF" -}}
+{{- if eq .chezmoi.hostname "api" "LLTUSMZ01KEHF" }}
 	hooksPath = ~/.githooks
-{{- end }}
+{{ end -}}
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -26,30 +26,30 @@
 [delta]
 	navigate = true
     dark = true
-    syntax-theme = gruvbox-material
-    file-style = "#ddc7a1" bold
+    syntax-theme = everforest
+    file-style = "#d3c6aa" bold
     file-added-label = [+]
     file-copied-label = [==]
     file-modified-label = [*]
     file-removed-label = [-]
     file-renamed-label = [->]
-    file-decoration-style = "#928374" ul
+    file-decoration-style = "#859289" ul
     hunk-header-style = omit
     inline-hint-style = syntax
-    minus-style = syntax "#402120"
-    minus-emph-style = "#282828" bold  "#ea6962"
+    minus-style = syntax "#514045"
+    minus-emph-style = "#2d353b" bold  "#e67e80"
     minus-non-emph-style = syntax auto
-    plus-style = syntax "#34381b"
-    plus-emph-style = "#282828" bold "#a9b665"
+    plus-style = syntax "#425047"
+    plus-emph-style = "#2d353b" bold "#a7c080"
     plus-non-emph-style = syntax auto
-    whitespace-error-style = "#443840" reverse
-    commit-style = "#d8a657" bold
+    whitespace-error-style = "#514045" reverse
+    commit-style = "#dbbc7f" bold
     blame-code-style = syntax
-    blame-palette = "#282828" "#32302f"
+    blame-palette = "#2d353b" "#343f44"
     merge-conflict-begin-symbol = ⌃
     merge-conflict-end-symbol = ⌄
-    merge-conflict-ours-diff-header-style = "#d8a657" bold
-    merge-conflict-theirs-diff-header-style = "#d8a657" bold overline
+    merge-conflict-ours-diff-header-style = "#dbbc7f" bold
+    merge-conflict-theirs-diff-header-style = "#dbbc7f" bold overline
     merge-conflict-ours-diff-header-decoration-style = ""
     merge-conflict-theirs-diff-header-decoration-style = ""
 
