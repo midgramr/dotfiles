@@ -36,7 +36,6 @@ font pango:Overpass 12
 exec firefox
 exec wezterm
 exec slack
-exec obsidian
 exec claude-desktop
 exec copyq
 
@@ -127,17 +126,11 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# browser
 set $ws1 "1:Browser"
-# terminal/intellij (stack)
 set $ws2 "2:IDE"
-# slack
 set $ws3 "3:Slack"
-# notes
-set $ws4 "4:Notes"
-# claude
-set $ws5 "5:Claude"
-set $ws6 "6:Misc"
+set $ws4 "4:Zoom"
+set $ws5 "4:Misc"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -159,10 +152,10 @@ bindsym $mod+Tab workspace back_and_forth
 assign [class="firefox_firefox"] $ws1
 assign [class="org.wezfurlong.wezterm"] $ws2
 assign [class="slack"] $ws3
-assign [class="obsidian"] $ws4
-assign [class="zoom"] $ws5
+assign [class="zoom"] $ws4
 
-for_window [class="zoom" title="^Meeting$"] resize set 4800 2000, move position center, layout stacking
+for_window [class="zoom" title="^Meeting$"] layout stacking
+for_window [class="zoom" instance="zoom" title="annotate_toolbar"] floating enable, resize set 200px 200px
 for_window [class="copyq"] move scratchpad
 for_window [class="claude-desktop"] move scratchpad
 
