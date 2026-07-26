@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "darwin" -}}
+.wallpaper.jpg
+.Xmodmap
+.xprofile
+.Xresources
+.config/copyq
+.config/dunst
+.config/i3
+.config/i3status
+.config/picom
+.config/rofi
+.config/glab-cli
+{{ if eq .chezmoi.hostname "api" -}}
+.config/gh
+.config/skhd
+.config/yabai
+{{- else -}}
+.aerospace.toml
+{{- end -}}
+{{- else -}}
+Library/Application\ Support/glab-cli
+.aerospace.toml
+{{- end -}}

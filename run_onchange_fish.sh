@@ -1,7 +1,3 @@
-#!/home/linuxbrew/.linuxbrew/bin/fish
+#!/usr/bin/env fish
 
-if not functions -q fisher
-    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-    and fisher install jorgebucaran/fisher
-    and fisher install jorgebucaran/nvm.fish
-end
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | fish -c "source && fisher install jorgebucaran/fisher && fisher install jorgebucaran/nvm.fish" || true

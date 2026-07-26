@@ -1,0 +1,44 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.11.1",
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb031",
+          "productName" : "LIFT",
+          "serialNumber" : "7944E2F1",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 2,
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : 0.04
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "serialNumber" : "FM7H6B0AJ9900003MF+ARBN",
+          "vendorID" : "0x0"
+        }
+      },
+      "pointer" : {
+        "acceleration" : "unset",
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : 0.1021
+      }
+    }
+  ]
+}
