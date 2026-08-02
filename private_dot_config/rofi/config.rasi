@@ -29,17 +29,18 @@ configuration {
   orange: #e69875;
   blue: #7fbbb3;
   green: #a7c080;
-  foreground: #d3c6aa;
+  foreground: #9da9a0;
   background: #2d353b;
   lightbg: #2d353b;
   lightfg: #4a444e;
-  selected-normal-foreground: #dbbc7f;
+  selected-normal-foreground: #d3c6aa;
   muted: #7a8478;
   separator: #859289;
 
   highlight: var(green);
 }
 window {
+  background-color: var(background);
   padding: 8;
   width: 800;
   border: 2px;

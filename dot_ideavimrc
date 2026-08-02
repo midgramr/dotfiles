@@ -39,7 +39,7 @@ map <M-CR> <Action>(GitLab.Open.In.Browser)
 
 map <leader>h <Action>(RecentFiles)
 map <C-f> <Action>(GotoFile)
-map <C-l> <Action>(FindInPath)
+map <C-l> <Action>(TextSearchAction)
 
 map <M-q> <Action>(CloseContent)
 map <M-S-q> <Action>(CloseAllEditorsButActive)
@@ -55,8 +55,8 @@ map grr <Action>(FindUsages)
 map gri <Action>(GotoImplementation)
 map grn <Action>(RenameElement)
 
-map ]c <Action>(GotoNextError)
-map [c <Action>(GotoPreviousError)
+map ]c <Action>(NextDiff)
+map [c <Action>(PreviousDiff)
 
 map <leader>gb <Action>(Annotate)
 map <leader>gd <Action>(Compare.SameVersion)

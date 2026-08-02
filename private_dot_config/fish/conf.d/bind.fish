@@ -1,5 +1,4 @@
 if status is-interactive
-    bind -M insert ctrl-g 'git diff' repaint
-    bind -M insert ctrl-f fzf_nvim
-    bind -M insert ctrl-z fzf_z
+    bind -M insert \cf fzf_nvim
+    bind -M insert \cz fzf_z
 end

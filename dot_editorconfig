@@ -31,4 +31,7 @@ indent_style = tab
 [*.rasi]
 indent_size = 2
 
+[*.scala]
+indent_size = 2
+
 # vim: ft=editorconfig

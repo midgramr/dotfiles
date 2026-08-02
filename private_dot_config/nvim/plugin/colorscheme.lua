@@ -20,4 +20,5 @@ vim.g.everforest_enable_bold = true
 vim.g.everforest_float_style = 'blend'
 vim.g.everforest_disable_terminal_colors = true
 vim.g.everforest_current_word = 'bold'
+vim.g.everforest_transparent_background = 1
 vim.cmd.colorscheme 'everforest'

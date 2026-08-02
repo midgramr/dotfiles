@@ -9,11 +9,6 @@ require('font').apply_to_config(config)
 require('keys').apply_to_config(config)
 utils.apply_plugins(config)
 
-{{ if eq .chezmoi.os "linux" -}}
-config.default_prog = { 'fish', '-l' }
-{{- else -}}
-config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
-{{- end }}
 config.term = 'wezterm'
 config.use_ime = false
 config.window_close_confirmation = 'NeverPrompt'
