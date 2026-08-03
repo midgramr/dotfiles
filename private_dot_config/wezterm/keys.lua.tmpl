@@ -9,6 +9,29 @@ function module.apply_to_config(config)
   local act = wezterm.action
 
   utils.add_keys(config, {
+    {{ if eq .chezmoi.hostname "LLTUSMZ01KEHF" -}}
+    {
+      key = '[',
+      mods = 'META',
+      action = act.ScrollToPrompt(-1),
+    },
+    {
+      key = ']',
+      mods = 'META',
+      action = act.ScrollToPrompt(1),
+    },
+    {{- else -}}
+    {
+      key = '[',
+      mods = 'SUPER',
+      action = act.ScrollToPrompt(-1),
+    },
+    {
+      key = ']',
+      mods = 'SUPER',
+      action = act.ScrollToPrompt(1),
+    },
+    {{- end }}
     {
       key = 'k',
       mods = 'SUPER',
@@ -43,16 +66,6 @@ function module.apply_to_config(config)
       key = 'x',
       mods = 'SUPER',
       action = act.ActivateCopyMode,
-    },
-    {
-      key = '[',
-      mods = 'SUPER',
-      action = act.ScrollToPrompt(-1),
-    },
-    {
-      key = ']',
-      mods = 'SUPER',
-      action = act.ScrollToPrompt(1),
     },
     {
       key = '\\',
