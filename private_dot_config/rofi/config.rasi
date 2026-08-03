@@ -35,7 +35,7 @@ configuration {
   lightfg: #4a444e;
   selected-normal-foreground: #d3c6aa;
   muted: #7a8478;
-  separator: #859289;
+  separator: #56635f;
 
   highlight: var(green);
 }
@@ -44,7 +44,7 @@ window {
   padding: 8;
   width: 800;
   border: 2px;
-  border-color: var(green);
+  border-color: var(separator);
 }
 listview  {
   spacing: 0;
