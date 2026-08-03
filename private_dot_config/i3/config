@@ -52,7 +52,7 @@ exec copyq
 # Color options
 client.focused          #a7c080 #a7c080 #2d353b #a7c080 #a7c080
 client.focused_inactive #a7c080 #a7c080 #2d353b #a7c080 #a7c080
-client.unfocused        #232a2e #232a2e #d3c6aa #232a2e #232a2e
+client.unfocused        #475258 #475258 #d3c6aa #475258 #475258
 client.urgent           #ddbc7f #ddbc7f #2d353b #ddbc7f #ddbc7f
 client.background       #2d353b
 
@@ -174,7 +174,7 @@ assign [class="zoom"] $ws4
 for_window [class="zoom" title="^Meeting$"] resize set 4800 2000, move position center, floating enable
 for_window [class="zoom" instance="zoom" title="annotate_toolbar"] floating enable, resize set 200 200
 for_window [class="zoom" title="^Zoom Workplace"] floating enable
-for_window [class="copyq"] border pixel 2, move scratchpad
+for_window [class="copyq"] border pixel 2, move scratchpad, resize set 800 800
 for_window [class="com.anthropic.Claude"] border pixel 2, move scratchpad
 for_window [class="obsidian"] border pixel 2, move scratchpad
 for_window [class="jetbrains-idea" window_type="dialog"] floating enable
