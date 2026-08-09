@@ -11,13 +11,6 @@
 .config/rofi
 .config/glab-cli
 .claude/hooks
-{{ if eq .chezmoi.hostname "api" -}}
-.config/gh
-.config/skhd
-.config/yabai
-{{- else -}}
-.aerospace.toml
-{{- end -}}
 {{- else -}}
 Library/Application\ Support/glab-cli
 .config/gh
@@ -25,5 +18,4 @@ Library/Application\ Support/glab-cli
 .config/yabai
 .config/karabiner
 .config/linearmouse
-.aerospace.toml
 {{- end -}}
