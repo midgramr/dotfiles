@@ -1,0 +1,45 @@
+packages:
+  common:
+    brews:
+      - "bat"
+      - "bfs"
+      - "bun"
+      - "coursier/formulas/coursier"
+      - "dust"
+      - "fd"
+      - "fish"
+      - "fzf"
+      - "gcc"
+      - "gh"
+      - "git-delta"
+      - "lua"
+      - "luarocks"
+      - "neovim"
+      - "node"
+      - "openjdk@21"
+      - "python"
+      - "ripgrep"
+      - "tree-sitter-cli"
+      - "zoxide"
+  darwin:
+    taps:
+      - "nikitabobko/tap"
+    casks:
+      - "nikitabobko/tap/aerospace"
+      - "docker-desktop"
+      - "karabiner-elements"
+      - "linearmouse"
+      - "wezterm"
+  linux:
+    apts:
+      - "copyq"
+      - "feh"
+      - "i3"
+      - "imagemagick"
+      - "maim"
+      - "picom"
+      - "polybar"
+      - "pulseaudio-utils"
+    snaps:
+      - "obsidian"
+      - "slack"

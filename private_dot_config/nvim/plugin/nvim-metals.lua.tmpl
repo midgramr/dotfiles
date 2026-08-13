@@ -17,7 +17,11 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = ft,
   group = group,
   callback = function()
-    vim.env.JAVA_HOME = vim.fn.expand('/opt/homebrew/CEllar/openjdk@21/21.0.12')
+    {{ if eq .chezmoi.os "linux" -}}
+    vim.env.JAVA_HOME = vim.fn.expand('/home/linuxbrew/.linuxbrew/Cellar/openjdk@21/21.0.12')
+    {{- else -}}
+    vim.env.JAVA_HOME = vim.fn.expand('/opt/homebrew/Cellar/openjdk@21/21.0.12')
+    {{- end }}
     vim.opt_global.shortmess:remove 'F'
     require('metals').initialize_or_attach(metals_config)
   end,

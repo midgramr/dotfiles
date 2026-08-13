@@ -4,47 +4,26 @@ set -eux
 
 brew update
 
-brew install \
-    bat \
-    bfs \
-    dust \
-    fd \
-    fish \
-    fzf \
-    gcc \
-    gh \
-    git-delta \
-    lua \
-    luarocks \
-    neovim \
-    node \
-    python \
-    ripgrep \
-    tree-sitter-cli \
-    zoxide
-
-{{ if eq .chezmoi.os "linux" -}}
+brew bundle install --file=/dev/stdin <<EOF
+{{ range .packages.common.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ if eq .chezmoi.os "darwin" -}}
+{{ range .packages.darwin.taps -}}
+tap {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ end -}}
+EOF
+{{ if eq .chezmoi.os "linux" }}
 sudo apt install -y \
-    copyq \
-    feh \
-    i3 \
-    imagemagick \
-    maim \
-    picom \
-    polybar \
-    pulseaudio-utils
+{{ range $index, $apt := .packages.linux.apts }}{{ if $index }} \
+{{ end }}    {{ $apt | quote }}{{ end }}
 
 sudo snap install \
-    obsidian \
-    slack
-{{- else -}}
-brew install --cask \
-    nikitabobko/tap/aerospace \
-    docker \
-    karabiner-elements \
-    linearmouse \
-    wezterm || true
-{{- end }}
-
-brew upgrade
+{{ range $index, $snap := .packages.linux.snaps }}{{ if $index }} \
+{{ end }}    {{ $snap | quote }}{{ end }}
+{{ end }}
 brew cleanup
