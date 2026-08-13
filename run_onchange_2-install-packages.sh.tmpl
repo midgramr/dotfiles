@@ -4,7 +4,19 @@ set -eux
 
 brew update
 
+# Homebrew refuses to load formulae from third-party taps until they are trusted
+{{ range .packages.common.taps -}}
+brew trust {{ . | quote }}
+{{ end -}}
+{{ if eq .chezmoi.os "darwin" -}}
+{{ range .packages.darwin.taps -}}
+brew trust {{ . | quote }}
+{{ end -}}
+{{ end }}
 brew bundle install --file=/dev/stdin <<EOF
+{{ range .packages.common.taps -}}
+tap {{ . | quote }}
+{{ end -}}
 {{ range .packages.common.brews -}}
 brew {{ . | quote }}
 {{ end -}}

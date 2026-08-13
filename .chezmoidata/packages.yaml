@@ -1,5 +1,7 @@
 packages:
   common:
+    taps:
+      - "coursier/formulas"
     brews:
       - "bat"
       - "bfs"
