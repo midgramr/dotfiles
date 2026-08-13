@@ -13,6 +13,15 @@ require('fzf-lua').setup {
       },
     },
   },
+  keymap = {
+    builtin = {
+      ['<M-S-r>'] = 'preview-reset',
+      ['<M-d>'] = 'preview-page-down',
+      ['<M-u>'] = 'preview-page-up',
+      ['<M-j>'] = 'preview-down',
+      ['<M-k>'] = 'preview-up',
+    },
+  },
   fzf_opts = {
     ['--layout'] = 'reverse',
   },
