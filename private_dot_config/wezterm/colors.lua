@@ -33,7 +33,7 @@ module.colors = {
   },
   compose_cursor = '#a7c080',
   tab_bar = {
-    background = '#a7c080',
+    background = '#3d484d',
   },
 }
 

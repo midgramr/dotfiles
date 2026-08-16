@@ -11,6 +11,7 @@ conform.setup {
     c = { 'clang-format' },
     cpp = { 'clang-format' },
     cmake = { 'gersemi' },
+    java = { 'palantir-java-format' },
     tex = { 'tex-fmt' },
     lua = { 'stylua' },
     make = { 'bake' },

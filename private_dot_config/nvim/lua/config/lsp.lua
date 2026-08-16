@@ -1,3 +1,6 @@
+-- Multiple language servers require JDK > 8
+vim.env.JAVA_HOME = vim.fn.expand('/home/linuxbrew/.linuxbrew/Cellar/openjdk@21/21.0.12')
+
 local lsps = vim
   .iter(vim.fs.dir(vim.fn.stdpath 'config' .. '/lsp'))
   :map(function(file)

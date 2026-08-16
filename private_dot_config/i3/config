@@ -171,7 +171,7 @@ assign [class="org.wezfurlong.wezterm"] $ws2
 assign [class="slack"] $ws3
 assign [class="zoom"] $ws4
 
-for_window [class="zoom" title="^Meeting$"] resize set 4800 2000, move position center, floating enable
+for_window [class="zoom" title="^(Meeting|Webinar)$"] resize set 4800 2000, move position center, floating enable
 for_window [class="zoom" instance="zoom" title="annotate_toolbar"] floating enable, resize set 200 200
 for_window [class="zoom" title="^Zoom Workplace"] floating enable
 for_window [class="copyq"] border pixel 2, move scratchpad, resize set 800 800

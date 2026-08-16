@@ -27,6 +27,7 @@ require('nvim-treesitter').install {
   'java',
   'javascript',
   'json',
+  'jsonnet',
   'jsx',
   'latex',
   'lua',
@@ -58,5 +59,12 @@ vim.api.nvim_create_autocmd('FileType', {
       -- vim.wo.foldmethod = 'expr'
       vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'scala',
+  callback = function()
+    vim.bo.indentexpr = ''
   end,
 })

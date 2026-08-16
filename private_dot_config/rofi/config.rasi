@@ -1,5 +1,5 @@
 configuration {
-	font: "JetbrainsMono Nerd Font Mono SemiBold 12";
+	font: "Overpass 14";
 	show-icons: true;
 	terminal: "wezterm";
 	dpi: 1;
@@ -11,6 +11,7 @@ configuration {
 	kb-row-down: "Down,Control+j";
 	kb-page-prev: "Control+u";
 	kb-page-next: "Control+d";
+	kb-cancel: "Escape,Hyper+d";
   timeout {
       action: "kb-cancel";
       delay:  0;

@@ -57,3 +57,4 @@ vim.o.showmode = false
 vim.g.health = { style = 'float' }
 
 require('vim._core.ui2').enable()
+
