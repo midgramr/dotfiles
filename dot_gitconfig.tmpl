@@ -5,9 +5,6 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	pager = delta
-{{ if eq .chezmoi.hostname "api" "LLTUSMZ01KEHF" }}
-	hooksPath = ~/.githooks
-{{ end }}
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
