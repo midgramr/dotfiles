@@ -44,6 +44,7 @@ tabline.setup {
   },
   sections = {
     tab_active = { 'index', { 'process', padding = { left = 0, right = 1 } } },
+    tabline_x = { '' },
     tabline_y = { '' },
   },
   extensions = { 'smart_workspace_switcher' },
