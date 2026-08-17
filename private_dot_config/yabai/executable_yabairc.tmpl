@@ -21,6 +21,7 @@ spaces=(
     "IDE"
     "Slack"
     "Email"
+    "Zoom"
     "Misc"
 )
 {{- else -}}
@@ -36,9 +37,6 @@ for i in "${!spaces[@]}"; do
     name="${spaces[i]}"
     space=$((i + 1))
     case "$name" in
-    email | misc)
-        layout="float"
-        ;;
     *)
         layout="bsp"
         ;;
@@ -55,6 +53,7 @@ sketchybar --trigger space_change
 {{ if eq .chezmoi.hostname "api" -}}
 yabai -m rule --add label="slack" app="^Slack$" space=3
 yabai -m rule --add label="outlook" app="^Microsoft Outlook$" space=4
+yabai -m rule --add label="zoom" app="^Zoom$" space=5
 {{- else -}}
 yabai -m rule --add label="discord" app="^Discord$" space=3
 {{- end }}
@@ -71,3 +70,5 @@ yabai -m rule --add label="obsidian" app="^Obsidian$" scratchpad="obsidian"
 yabai -m rule --apply
 yabai -m rule --remove "firefox"
 yabai -m rule --remove "wezterm"
+
+# vim: ft=bash
