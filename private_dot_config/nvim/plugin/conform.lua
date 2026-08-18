@@ -15,7 +15,7 @@ conform.setup {
     tex = { 'tex-fmt' },
     lua = { 'stylua' },
     make = { 'bake' },
-    sql = { 'sqruff' },
+    sql = { 'sqlfmt' },
     ['_'] = { 'prettier' },
   },
   format_on_save = nil,
