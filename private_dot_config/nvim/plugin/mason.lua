@@ -32,6 +32,7 @@ require('mason-tool-installer').setup {
     'mbake',
     'palantir-java-format',
     'shfmt',
+    'sqruff',
     'stylua',
     'tex-fmt',
   },
