@@ -5,41 +5,8 @@ vim.pack.add({
 
 ---@diagnostic disable: missing-fields
 require('fzf-lua').setup {
-  winopts = {
-    preview = {
-      winopts = {
-        number = false,
-        relativenumber = false,
-      },
-    },
-  },
-  keymap = {
-    builtin = {
-      ['<M-S-r>'] = 'preview-reset',
-      ['<M-d>'] = 'preview-page-down',
-      ['<M-u>'] = 'preview-page-up',
-      ['<M-j>'] = 'preview-down',
-      ['<M-k>'] = 'preview-up',
-    },
-  },
   fzf_opts = {
     ['--layout'] = 'reverse',
-  },
-  hls = {
-    border = 'TelescopeBorder',
-    help_border = 'TelescopeBorder',
-    preview_border = 'TelescopeBorder',
-    cursorline = 'CursorLine',
-    header_bind = 'Blue',
-    header_text = 'Red',
-    path_colnr = 'Blue',
-    path_linenr = 'Green',
-    buf_flag_cur = 'Red',
-    buf_flag_alt = 'Blue',
-    tab_title = 'Blue',
-    tab_marker = 'ModeMsg',
-    live_prompt = 'Purple',
-    live_sym = 'Purple',
   },
   ---@diagnostic disable: assign-type-mismatch
   fzf_colors = {
@@ -63,6 +30,42 @@ require('fzf-lua').setup {
     formatter = 'path.filename_first',
     cwd_header = true,
     cwd_prompt = false,
+  },
+  grep = {
+    git_icons = true,
+  },
+  hls = {
+    border = 'TelescopeBorder',
+    help_border = 'TelescopeBorder',
+    preview_border = 'TelescopeBorder',
+    cursorline = 'CursorLine',
+    header_bind = 'Blue',
+    header_text = 'Red',
+    path_colnr = 'Blue',
+    path_linenr = 'Green',
+    buf_flag_cur = 'Red',
+    buf_flag_alt = 'Blue',
+    tab_title = 'Blue',
+    tab_marker = 'ModeMsg',
+    live_prompt = 'Purple',
+    live_sym = 'Purple',
+  },
+  keymap = {
+    builtin = {
+      ['<M-S-r>'] = 'preview-reset',
+      ['<M-d>'] = 'preview-page-down',
+      ['<M-u>'] = 'preview-page-up',
+      ['<M-j>'] = 'preview-down',
+      ['<M-k>'] = 'preview-up',
+    },
+  },
+  winopts = {
+    preview = {
+      winopts = {
+        number = false,
+        relativenumber = false,
+      },
+    },
   },
   zoxide = {
     scope = 'win',

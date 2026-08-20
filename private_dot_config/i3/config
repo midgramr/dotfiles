@@ -168,8 +168,8 @@ bindsym $mod+Tab workspace back_and_forth
 # Window assignments
 assign [class="firefox_firefox"] $ws1
 assign [class="org.wezfurlong.wezterm"] $ws2
-assign [class="slack"] $ws3
-assign [class="zoom"] $ws4
+assign [class="slack"] $ws4
+assign [class="zoom"] $ws5
 
 for_window [class="zoom" title="^(Meeting|Webinar)$"] resize set 4800 2000, move position center, floating enable
 for_window [class="zoom" instance="zoom" title="annotate_toolbar"] floating enable, resize set 200 200

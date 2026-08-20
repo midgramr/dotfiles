@@ -15,6 +15,7 @@ packages:
       - "gh"
       - "git-delta"
       - "go"
+      - "kubectl"
       - "lua"
       - "luarocks"
       - "neovim"
