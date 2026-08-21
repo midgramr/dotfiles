@@ -1,21 +1,11 @@
 {{- if eq .chezmoi.os "darwin" -}}
 .wallpaper.jpg
-.Xmodmap
+.X{modmap,resources}
 .xprofile
-.Xresources
-.config/copyq
-.config/dunst
-.config/i3
-.config/i3status
-.config/picom
-.config/rofi
-.config/glab-cli
+.config/{copyq,dunst,i3,i3status,picom,rofi,glab-cli}
+.config/fish/functions/{audio,call,music}.fish
 .claude/hooks
 {{- else -}}
 Library/Application\ Support/glab-cli
-.config/gh
-.config/skhd
-.config/yabai
-.config/karabiner
-.config/linearmouse
+.config/{gh,skhd,yabai,karabiner,linearmouse}
 {{- end -}}

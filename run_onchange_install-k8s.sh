@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
+# krew
 begin
   set -x; set temp_dir (mktemp -d); cd "$temp_dir" &&
   set OS (uname | tr '[:upper:]' '[:lower:]') &&
