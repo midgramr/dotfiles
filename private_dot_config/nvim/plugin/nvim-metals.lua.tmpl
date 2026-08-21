@@ -7,9 +7,17 @@ local ft = { 'scala', 'sbt', 'java' }
 
 local metals_config = require('metals').bare_config()
 metals_config.init_options.statusBarProvider = 'off'
+
+{{ if eq .chezmoi.os "linux" -}}
+local jdk21 = '/home/linuxbrew/.linuxbrew/opt/openjdk@21/libexec'
+{{- else -}}
+local jdk21 = '/opt/homebrew/opt/openjdk@21/libexec'
+{{- end }}
+
 metals_config.settings = {
   serverVersion = '2.0.0-M2',
   serverProperties = { '-Xmx4g' },
+  javaHome = jdk21,
 }
 
 local group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
@@ -17,11 +25,7 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = ft,
   group = group,
   callback = function()
-    {{ if eq .chezmoi.os "linux" -}}
-    vim.env.JAVA_HOME = vim.fn.expand('/home/linuxbrew/.linuxbrew/Cellar/openjdk@21/21.0.12')
-    {{- else -}}
-    vim.env.JAVA_HOME = vim.fn.expand('/opt/homebrew/Cellar/openjdk@21/21.0.12')
-    {{- end }}
+    vim.env.JAVA_HOME = jdk21
     require('metals').initialize_or_attach(metals_config)
   end,
 })
