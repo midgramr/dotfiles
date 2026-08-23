@@ -33,7 +33,7 @@ set $i3lockopts --inside-color=2d353b \
 font pango:Overpass 12
 
 # Gaps between windows and screen edge
-gaps inner 8
+gaps inner 6
 gaps outer 2
 smart_gaps off
 

@@ -31,6 +31,7 @@ require('mason-tool-installer').setup {
     'gersemi',
     'mbake',
     'palantir-java-format',
+    'prettier',
     'ruff',
     'shfmt',
     'sqlfmt',

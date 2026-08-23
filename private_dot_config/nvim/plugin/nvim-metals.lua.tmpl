@@ -13,6 +13,7 @@ local jdk21 = '/home/linuxbrew/.linuxbrew/opt/openjdk@21/libexec'
 {{- else -}}
 local jdk21 = '/opt/homebrew/opt/openjdk@21/libexec'
 {{- end }}
+vim.env.JAVA_HOME = jdk21
 
 metals_config.settings = {
   serverVersion = '2.0.0-M2',
@@ -25,7 +26,6 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = ft,
   group = group,
   callback = function()
-    vim.env.JAVA_HOME = jdk21
     require('metals').initialize_or_attach(metals_config)
   end,
 })

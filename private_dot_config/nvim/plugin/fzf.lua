@@ -33,6 +33,7 @@ require('fzf-lua').setup {
   },
   grep = {
     git_icons = true,
+    hidden = true,
   },
   hls = {
     border = 'TelescopeBorder',

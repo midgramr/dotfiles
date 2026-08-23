@@ -27,4 +27,7 @@ if status is-interactive
     abbr -a gst git status
     abbr -a gsw git switch
     abbr -a gwt git worktree
+    abbr -a kl kubectl
+    abbr -a kx kubectx
+    abbr -a ke kubens
 end
