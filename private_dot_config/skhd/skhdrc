@@ -65,5 +65,5 @@ meh - r : open "/System/Applications/Reminders.app"
 meh - x : open "/System/Applications/System Settings.app"
 
 meh - a : yabai -m window --toggle music || open "/System/Applications/Music.app"
-meh - c : yabai -m window --toggle claude || open "/Applications/Claude.app"
+meh - c : yabai -m window --toggle chatgpt || open "/Applications/ChatGPT.app"
 meh - o : yabai -m window --toggle obsidian || open "/Applications/Obsidian.app"

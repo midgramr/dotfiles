@@ -1,0 +1,65 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#A6C07FFF",
+        "font" : "Overpass",
+        "color" : "#859288FF"
+      },
+      "shortcut" : {
+        "size" : 14,
+        "colorSelected" : "#859188FF",
+        "font" : "Overpass",
+        "color" : "#859188FF"
+      },
+      "backgroundSelected" : "#424F46FF",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#A6C07FFF",
+        "font" : "Overpass",
+        "color" : "#D5CAAAFF"
+      },
+      "iconPaddingHorizontal" : 7,
+      "roundness" : 8,
+      "paddingVertical" : 6,
+      "iconSize" : 33
+    },
+    "search" : {
+      "backgroundSelected" : "#533A48FF",
+      "paddingHorizontal" : 7,
+      "spacing" : 9,
+      "text" : {
+        "size" : 16,
+        "colorSelected" : "#D3C6A9FF",
+        "font" : "Overpass",
+        "color" : "#D6CAAAFF"
+      },
+      "background" : "#343E44FF",
+      "roundness" : 8,
+      "paddingVertical" : 10
+    },
+    "window" : {
+      "color" : "#2D353AFF",
+      "paddingHorizontal" : 9,
+      "width" : 700,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 0,
+      "roundness" : 14,
+      "paddingVertical" : 9
+    },
+    "credit" : "midgramr",
+    "visualEffectMode" : 2,
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#859188FF",
+      "thickness" : 2
+    },
+    "name" : "Everforest"
+  }
+}
