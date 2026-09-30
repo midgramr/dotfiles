@@ -30,10 +30,10 @@ configuration {
   orange: #e69875;
   blue: #7fbbb3;
   green: #a7c080;
-  foreground: #9da9a0;
+  foreground: #d3c6aa;
   background: #2d353b;
   lightbg: #2d353b;
-  lightfg: #4a444e;
+  lightfg: #425047;
   selected-normal-foreground: #d3c6aa;
   muted: #7a8478;
   separator: #56635f;
@@ -49,21 +49,28 @@ window {
 }
 listview  {
   spacing: 0;
-  border: 2px solid 0px 0px;
+  border: none;
   border-color: var(separator);
 }
 element-icon {
   padding: 0 4 0 0;
 }
 element {
-  padding: 4;
+  padding: 4px 4px;
 }
 inputbar {
-  padding: 4;
+  children: [ entry ];
+  background-color: #343f44;
+  padding: 8px 4px;
+  margin: 0px 0px 4px;
 }
 entry {
+  // font: "Overpass 22";
+  background-color: transparent;
   text-color: var(selected-normal-foreground);
+  placeholder: "Search…";
   placeholder-color: var(muted);
+  cursor-color: var(green);
   blink: false;
 }
 prompt {

@@ -19,9 +19,6 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_create_autocmd('TermOpen', {
   desc = 'Override terminal buffer options',
   callback = function()
-    if vim.env.KITTY_SCROLLBACK_NVIM == 'true' then
-      return
-    end
     vim.bo.bufhidden = 'unload'
     vim.bo.modified = false
     vim.bo.filetype = 'term'

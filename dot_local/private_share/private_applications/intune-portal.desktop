@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Microsoft Intune
+Comment=Microsoft Intune
+Exec=/home/kevin-zhang/.local/bin/intune-portal-wrapper.sh
+Icon=intune
+Terminal=false

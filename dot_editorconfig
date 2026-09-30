@@ -10,10 +10,10 @@ indent_style = space
 [*.{html,css}]
 indent_size = 2
 
-[*.{js,jsx,mjs,ts,tsx,mts,json}]
+[*.{js,jsx,mjs,ts,tsx,mts,json,jsonc}]
 indent_size = 2
 
-[*.{conf,yaml,yml}]
+[.clangd,*.{conf,yaml,yml}]
 indent_size = 2
 
 [*.lua]
@@ -35,6 +35,9 @@ indent_size = 2
 indent_size = 2
 
 [*.sql]
+indent_size = 2
+
+[*.c]
 indent_size = 2
 
 # vim: ft=editorconfig

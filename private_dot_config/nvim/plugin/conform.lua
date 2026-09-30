@@ -30,6 +30,6 @@ conform.setup {
   format_on_save = nil,
 }
 
-vim.keymap.set('n', '<Leader>f', function()
+vim.keymap.set({'n', 'v'}, '<Leader>f', function()
   conform.format { async = true, lsp_format = 'fallback' }
 end, { desc = '[F]ormat buffer' })

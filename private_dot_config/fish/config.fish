@@ -6,7 +6,3 @@ if status is-interactive
     set -g fish_cursor_visual block
     fish_vi_key_bindings
 end
-
-
-# opencode
-fish_add_path /Users/n1v3x/.opencode/bin
