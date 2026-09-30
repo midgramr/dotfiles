@@ -1,6 +1,6 @@
 geninclude shell-env.sh
 
-shell {{ if eq .chezmoi.os "darwin" }}{{ if eq .chezmoi.arch "arm64" }}/opt/homebrew{{ else }}/usr/local{{ end }}/bin/fish{{ else }}/usr/bin/fish{{ end }} -l
+shell {{ lookPath "fish" }} -l
 term xterm-kitty
 confirm_os_window_close 0
 {{ if eq .chezmoi.os "darwin" -}}
@@ -54,7 +54,7 @@ color14 #83c092
 color15 #d3c6aa
 
 tab_bar_edge bottom
-tab_bar_margin_width 4
+tab_bar_margin_width {{ if eq .chezmoi.os "linux" }}0{{ else }}4{{ end }}
 tab_bar_min_tabs 1
 tab_bar_style custom
 tab_separator ""
