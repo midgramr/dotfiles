@@ -7,3 +7,6 @@ if status is-interactive
     fish_vi_key_bindings
 end
 
+
+# opencode
+fish_add_path /Users/n1v3x/.opencode/bin

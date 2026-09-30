@@ -55,6 +55,7 @@ hyper - 9 : yabai -m window --space 9 --focus
 
 # Toggle window properties
 meh - f : yabai -m window --toggle zoom-fullscreen
+meh - t : yabai -m window --grid 4:4:0:0:3:3
 hyper - f : yabai -m window --toggle float
 hyper - s : yabai -m window --toggle split
 
@@ -66,4 +67,4 @@ meh - x : open "/System/Applications/System Settings.app"
 
 meh - a : yabai -m window --toggle music || open "/System/Applications/Music.app"
 meh - c : yabai -m window --toggle chatgpt || open "/Applications/ChatGPT.app"
-meh - o : yabai -m window --toggle obsidian || open "/Applications/Obsidian.app"
+# meh - o : yabai -m window --toggle obsidian || open "/Applications/Obsidian.app"

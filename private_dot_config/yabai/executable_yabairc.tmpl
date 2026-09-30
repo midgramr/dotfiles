@@ -60,12 +60,14 @@ yabai -m rule --add label="discord" app="^Discord$" space=3
 
 yabai -m rule --add label="firefox" app="^Firefox$" space=1
 yabai -m rule --add label="wezterm" app="^WezTerm$" space=2
-yabai -m rule --add label="misc" app="^(FaceTime|Finder|System Settings|Calculator|Activity Monitor|Messages|Reminders|Riot Client)$" manage=off
+yabai -m rule --add label="misc" app="^(FaceTime|Finder|System Settings|Calculator|Activity Monitor|Messages|Reminders|Riot Client|Dictionary)$" manage=off
 yabai -m rule --add label="pip" app="^Firefox$" title="^Picture-in-Picture$" manage=off
 
-yabai -m rule --add label="claude" app="^Claude$" scratchpad="claude"
+yabai -m rule --add label="chatgpt" app="^ChatGPT$" scratchpad="chatgpt"
 yabai -m rule --add label="music" app="^Music$" scratchpad="music"
+{{ if eq .chezmoi.hostname "LLTUSMZ01KEHF" -}}
 yabai -m rule --add label="obsidian" app="^Obsidian$" scratchpad="obsidian"
+{{- end }}
 
 yabai -m rule --apply
 yabai -m rule --remove "firefox"
