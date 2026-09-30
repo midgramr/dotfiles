@@ -1,0 +1,145 @@
+env read_from_shell=PATH FZF_DEFAULT_OPTS
+
+shell {{ if eq .chezmoi.os "darwin" }}{{ if eq .chezmoi.arch "arm64" }}/opt/homebrew{{ else }}/usr/local{{ end }}/bin/fish{{ else }}/usr/bin/fish{{ end }} -l
+term xterm-kitty
+confirm_os_window_close 0
+{{ if eq .chezmoi.os "darwin" -}}
+hide_window_decorations titlebar-only
+macos_window_resizable yes
+macos_option_as_alt both
+macos_show_window_title_in none
+{{ else -}}
+hide_window_decorations yes
+{{ end -}}
+window_padding_width 2
+window_margin_width 0
+window_border_width 0.1
+shell_integration enabled
+mouse_hide_wait -1
+
+font_family family="JetBrainsMono Nerd Font Mono" style=Regular
+font_size 13
+bold_font auto
+italic_font auto
+bold_italic_font auto
+
+foreground #d3c6aa
+background #2d353b
+cursor #d3c6aa
+cursor_text_color #2d353b
+selection_foreground #2d353b
+selection_background #a7c080
+active_border_color #4f585e
+inactive_border_color #4f585e
+scrollbar_handle_color #4f585e
+
+color0 #2d353b
+color1 #e67e80
+color2 #a7c080
+color3 #dbbc7f
+color4 #7fbbb3
+color5 #d699b6
+color6 #83c092
+color7 #d3c6aa
+color8 #7a8478
+color9 #e67e80
+color10 #a7c080
+color11 #dbbc7f
+color12 #7fbbb3
+color13 #d699b6
+color14 #83c092
+color15 #d3c6aa
+
+tab_bar_edge bottom
+tab_bar_margin_width 4
+tab_bar_min_tabs 1
+tab_bar_style custom
+tab_separator ""
+tab_bar_background #343f44
+active_tab_foreground #d3c6aa
+active_tab_background #475258
+inactive_tab_foreground #7a8478
+inactive_tab_background #343f44
+active_tab_font_style normal
+inactive_tab_font_style normal
+tab_title_template " {index} {tab.active_exe} "
+tab_bar_filter session:~ or session:^$
+box_drawing_scale 0.001, 0.5, 1.5, 2
+
+enabled_layouts splits
+map super+[ scroll_to_prompt -1
+map super+] scroll_to_prompt 1
+map super+k select_tab
+map super+l debug_config
+map super+p command_palette
+map super+r load_config_file
+map super+w close_window
+map super+shift+w close_tab
+map super+x kitty_scrollback_nvim
+map super+f search_scrollback
+map alt+backslash launch --location=vsplit --cwd=current
+map alt+- launch --location=hsplit --cwd=current
+map alt+equal layout_action equalize
+map super+t new_tab_with_cwd
+
+# kitty-scrollback.nvim provides the Neovim scrollback overlay.
+action_alias kitty_scrollback_nvim kitten {{ .chezmoi.homeDir }}/.local/share/nvim/site/pack/core/opt/kitty-scrollback.nvim/python/kitty_scrollback_nvim.py
+map kitty_mod+h kitty_scrollback_nvim
+
+map alt+tab goto_session -1
+map alt+f launch --type=overlay $HOME/.local/bin/kitty-zoxide-sessions.py --auto-close --ansi
+
+# smart-splits.nvim and kitty-scrollback.nvim use this local socket.
+allow_remote_control socket-only
+listen_on unix:${HOME}/.config/kitty/control-{kitty_pid}
+map alt+1 goto_tab 1
+map super+1 goto_tab 1
+map ctrl+alt+1 kitten move_tab.py 1
+map alt+2 goto_tab 2
+map super+2 goto_tab 2
+map ctrl+alt+2 kitten move_tab.py 2
+map alt+3 goto_tab 3
+map super+3 goto_tab 3
+map ctrl+alt+3 kitten move_tab.py 3
+map alt+4 goto_tab 4
+map super+4 goto_tab 4
+map ctrl+alt+4 kitten move_tab.py 4
+map alt+5 goto_tab 5
+map super+5 goto_tab 5
+map ctrl+alt+5 kitten move_tab.py 5
+map alt+6 goto_tab 6
+map super+6 goto_tab 6
+map ctrl+alt+6 kitten move_tab.py 6
+map alt+7 goto_tab 7
+map super+7 goto_tab 7
+map ctrl+alt+7 kitten move_tab.py 7
+map alt+8 goto_tab 8
+map super+8 goto_tab 8
+map ctrl+alt+8 kitten move_tab.py 8
+map alt+9 goto_tab 9
+map super+9 goto_tab 9
+map ctrl+alt+9 kitten move_tab.py 9
+map alt+h neighboring_window left
+map ctrl+alt+h move_window left
+map ctrl+alt+shift+h combine : goto_layout splits : layout_action move_to_screen_edge left
+map alt+shift+h kitten relative_resize.py left 3 alt+shift+h
+map --when-focus-on var:IS_NVIM alt+h
+map --when-focus-on var:IS_NVIM alt+shift+h
+map alt+j neighboring_window down
+map ctrl+alt+j move_window down
+map ctrl+alt+shift+j combine : goto_layout splits : layout_action move_to_screen_edge bottom
+map alt+shift+j kitten relative_resize.py down 3 alt+shift+j
+map --when-focus-on var:IS_NVIM alt+j
+map --when-focus-on var:IS_NVIM alt+shift+j
+map alt+k neighboring_window up
+map ctrl+alt+k move_window up
+map ctrl+alt+shift+k combine : goto_layout splits : layout_action move_to_screen_edge top
+map alt+shift+k kitten relative_resize.py up 3 alt+shift+k
+map --when-focus-on var:IS_NVIM alt+k
+map --when-focus-on var:IS_NVIM alt+shift+k
+map alt+l neighboring_window right
+map ctrl+alt+l move_window right
+map ctrl+alt+shift+l combine : goto_layout splits : layout_action move_to_screen_edge right
+map alt+shift+l kitten relative_resize.py right 3 alt+shift+l
+map --when-focus-on var:IS_NVIM alt+l
+map --when-focus-on var:IS_NVIM alt+shift+l
