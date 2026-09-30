@@ -1,4 +1,4 @@
-env read_from_shell=PATH FZF_DEFAULT_OPTS
+geninclude shell-env.sh
 
 shell {{ if eq .chezmoi.os "darwin" }}{{ if eq .chezmoi.arch "arm64" }}/opt/homebrew{{ else }}/usr/local{{ end }}/bin/fish{{ else }}/usr/bin/fish{{ end }} -l
 term xterm-kitty
@@ -16,6 +16,7 @@ window_margin_width 0
 window_border_width 0.1
 shell_integration enabled
 mouse_hide_wait -1
+scrollback_pager_history_size 5
 
 font_family family="JetBrainsMono Nerd Font Mono" style=Regular
 font_size 13
@@ -91,7 +92,7 @@ map alt+f launch --type=overlay $HOME/.local/bin/kitty-zoxide-sessions.py --auto
 
 # smart-splits.nvim and kitty-scrollback.nvim use this local socket.
 allow_remote_control socket-only
-listen_on unix:${HOME}/.config/kitty/control-{kitty_pid}
+listen_on {{ if eq .chezmoi.os "linux" }}unix:@kitty-{kitty_pid}{{ else }}unix:kitty-{kitty_pid}{{ end }}
 map alt+1 goto_tab 1
 map super+1 goto_tab 1
 map ctrl+alt+1 kitten move_tab.py 1

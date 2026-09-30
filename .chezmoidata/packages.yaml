@@ -33,8 +33,8 @@ packages:
       - "nikitabobko/tap/aerospace"
       - "docker-desktop"
       - "karabiner-elements"
+      - "kitty"
       - "linearmouse"
-      - "wezterm"
   linux:
     apts:
       - "copyq"
