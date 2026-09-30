@@ -1,4 +1,4 @@
-from kitty.fast_data_types import wcswidth
+from kitty.fast_data_types import get_boss, wcswidth
 from kitty.tab_bar import as_rgb, draw_tab_with_separator
 
 
@@ -8,8 +8,13 @@ tab_widths = {}
 def draw_tab(draw_data, screen, tab, before, max_tab_length, index, is_last, extra_data):
     if extra_data.for_layout and index == 1:
         tab_widths[tab.os_window_id] = []
-    if index == 1 and tab.active_session_name:
-        label = f" 󰉋 {tab.active_session_name} "
+    session_name = ''
+    if index == 1:
+        manager = get_boss().os_window_map.get(tab.os_window_id)
+        if manager is not None and manager.active_tab is not None:
+            session_name = manager.active_tab.active_session_name
+    if session_name:
+        label = f" 󰉋 {session_name} "
         available = max(0, max_tab_length - 5)
         if wcswidth(label) > available:
             while label and wcswidth(label + '…') > available:
