@@ -1,6 +1,7 @@
 geninclude shell-env.sh
 
 shell {{ lookPath "fish" }} -l
+startup_session default.kitty-session
 term xterm-kitty
 confirm_os_window_close 0
 {{ if eq .chezmoi.os "darwin" -}}
