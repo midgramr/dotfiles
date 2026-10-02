@@ -43,7 +43,7 @@ default_floating_border pixel 2
 
 # Startup apps
 exec firefox
-exec wezterm
+exec kitty
 exec slack
 exec chatgpt
 exec obsidian
@@ -100,7 +100,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+$super+q kill
