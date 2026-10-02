@@ -37,5 +37,8 @@ Assume the defaults below on every request. They only need restating when I want
 
 ### Config updates
 
-- If a config is tracked in chezmoi, automatically sync any updates after you make them. If the
-  Chezmoi source is a template file, the template will require manual updates (not `chezmoi re-add`).
+- **Sync changes to chezmoi.** If a config is tracked in chezmoi, automatically sync any updates
+  after you make them. If the Chezmoi source is a template file, the template will require manual
+  updates (not `chezmoi re-add`).
+- **Avoid machine-specific config paths.** If a config file is tracked by chezmoi, **do not** use
+  machine-specific paths. Always resolve paths using a chezmoi template, or create one if needed.

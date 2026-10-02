@@ -1,7 +1,7 @@
 geninclude shell-env.sh
 
 shell {{ lookPath "fish" }} -l
-startup_session default.kitty-session
+startup_session $HOME/.local/share/kitty-sessions/default.kitty-session
 term xterm-kitty
 confirm_os_window_close 0
 {{ if eq .chezmoi.os "darwin" -}}
@@ -87,7 +87,7 @@ map alt+equal layout_action equalize
 map super+t new_tab_with_cwd
 
 # kitty-scrollback.nvim provides the Neovim scrollback overlay.
-action_alias kitty_scrollback_nvim kitten {{ .chezmoi.homeDir }}/.local/share/nvim/site/pack/core/opt/kitty-scrollback.nvim/python/kitty_scrollback_nvim.py
+action_alias kitty_scrollback_nvim kitten $HOME/.local/share/nvim/site/pack/core/opt/kitty-scrollback.nvim/python/kitty_scrollback_nvim.py
 map kitty_mod+h kitty_scrollback_nvim
 
 map alt+tab goto_session -1
