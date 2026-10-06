@@ -46,7 +46,7 @@ exec firefox
 exec kitty
 exec slack
 exec chatgpt
-exec obsidian
+exec /snap/bin/obsidian
 exec copyq
 
 # Color options
