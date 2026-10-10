@@ -1,0 +1,204 @@
+/* Everforest medium dark — Firefox 157.0, macOS, 2026-10-05.
+ * Palette: sainnhe/everforest (MIT), supplied autoload/everforest.vim.
+ * UI mapping follows colors/everforest.vim: warm text, green selections,
+ * muted secondary text, and raised popup surfaces.
+ * Variable names checked against the installed Firefox 157 stylesheets.
+ * Migration: https://blog.mozilla.org/addons/2026/09/29/nova-is-here-what-changes-for-your-firefox-theme/
+ * Reference: https://firefox-source-docs.mozilla.org/toolkit/themes/shared/design-system/docs/README.design-tokens.stories.html
+ */
+
+@media not (forced-colors: active) {
+  :root {
+    color-scheme: dark !important;
+    --uc-ef-dim: #232a2e;
+    --uc-ef-bg0: #2d353b;
+    --uc-ef-bg1: #343f44;
+    --uc-ef-bg2: #3d484d;
+    --uc-ef-bg3: #475258;
+    --uc-ef-bg4: #4f585e;
+    --uc-ef-visual: #543a48;
+    --uc-ef-greenbg: #425047;
+    --uc-ef-fg: #d3c6aa;
+    --uc-ef-muted: #9da9a0;
+    --uc-ef-green: #a7c080;
+    --uc-ef-aqua: #83c092;
+    --uc-ef-blue: #7fbbb3;
+
+    /* Important overrides take precedence over the installed theme. */
+
+    /* Browser frame and toolbars */
+    --toolbox-background-color: var(--uc-ef-bg0) !important;
+    --toolbox-background-color-inactive: var(--uc-ef-bg0) !important;
+    --toolbox-text-color: var(--uc-ef-fg) !important;
+    --toolbox-text-color-inactive: var(--uc-ef-muted) !important;
+    --toolbar-background-color: var(--uc-ef-bg0) !important;
+    --toolbar-text-color: var(--uc-ef-fg) !important;
+    --toolbarbutton-icon-fill: var(--uc-ef-fg) !important;
+    --toolbarbutton-icon-fill-attention: var(--uc-ef-green) !important;
+    --toolbarbutton-icon-fill-attention-text: var(--uc-ef-dim) !important;
+    --toolbarbutton-background-color-hover: var(--uc-ef-bg1) !important;
+    --toolbarbutton-background-color-active: var(--uc-ef-bg2) !important;
+    --chrome-content-separator-color: var(--uc-ef-bg2) !important;
+    --tabs-navbar-separator-color: var(--uc-ef-bg2) !important;
+
+    /* Address bar and suggestions */
+    --toolbar-field-background-color: var(--uc-ef-bg1) !important;
+    --toolbar-field-background-color-focus: var(--uc-ef-bg1) !important;
+    --toolbar-field-text-color: var(--uc-ef-fg) !important;
+    --toolbar-field-text-color-focus: var(--uc-ef-fg) !important;
+    --lwt-toolbar-field-highlight: var(--uc-ef-visual) !important;
+    --lwt-toolbar-field-highlight-text: var(--uc-ef-fg) !important;
+    --toolbar-field-border-color: var(--uc-ef-bg2) !important;
+    --toolbar-field-border-color-focus: var(--uc-ef-bg4) !important;
+    --urlbar-background-color: var(--uc-ef-bg1) !important;
+    --urlbar-background-color-focus: var(--uc-ef-bg1) !important;
+    --urlbar-box-background-color: var(--uc-ef-bg2) !important;
+    --urlbar-box-background-color-hover: var(--uc-ef-bg3) !important;
+    --urlbar-box-background-color-active: var(--uc-ef-bg2) !important;
+    --urlbar-box-background-color-focus: var(--uc-ef-bg2) !important;
+    --urlbar-box-text-color: var(--uc-ef-fg) !important;
+    --urlbarview-background-color-hover: var(--uc-ef-bg2) !important;
+    --urlbarview-background-color-selected: var(--uc-ef-greenbg) !important;
+    --urlbarview-text-color-selected: var(--uc-ef-fg) !important;
+    --urlbarview-text-color-secondary: var(--uc-ef-muted) !important;
+    --urlbarview-text-color-action: var(--uc-ef-aqua) !important;
+    --urlbarview-separator-color: var(--uc-ef-bg3) !important;
+
+    /* Tabs and sidebar */
+    --tab-background-color-hover: var(--uc-ef-bg1) !important;
+    --tab-background-color-selected: var(--uc-ef-greenbg) !important;
+    --tab-text-color-selected: var(--uc-ef-fg) !important;
+    --tab-border-color-selected: var(--uc-ef-green) !important;
+    --tab-border-color-accent: image(var(--uc-ef-green)) !important;
+    --tab-loading-fill: var(--uc-ef-green) !important;
+    --sidebar-background-color: var(--uc-ef-bg0) !important;
+    --sidebar-text-color: var(--uc-ef-fg) !important;
+    --sidebar-border-color: var(--uc-ef-bg2) !important;
+
+    /* Panels, controls, and shared design tokens */
+    --background-color-canvas: var(--uc-ef-bg0) !important;
+    --background-color-box: var(--uc-ef-bg1) !important;
+    --background-color-dimmed: var(--uc-ef-bg2) !important;
+    --background-color-dimmed-further: var(--uc-ef-bg3) !important;
+    --background-color-list-item-hover: var(--uc-ef-bg2) !important;
+    --text-color: var(--uc-ef-fg) !important;
+    --text-color-deemphasized: var(--uc-ef-muted) !important;
+    --border-color: var(--uc-ef-bg3) !important;
+    --border-color-deemphasized: var(--uc-ef-bg2) !important;
+    --border-color-interactive: var(--uc-ef-muted) !important;
+    --panel-background-color: var(--uc-ef-bg1) !important;
+    --popup-background-color: var(--uc-ef-bg1) !important;
+    --button-background-color-ghost-hover: var(--uc-ef-bg2) !important;
+    --button-background-color-ghost-active: var(--uc-ef-bg3) !important;
+    --button-text-color-ghost: var(--uc-ef-fg) !important;
+    --button-text-color-ghost-hover: var(--uc-ef-fg) !important;
+    --button-text-color-ghost-active: var(--uc-ef-fg) !important;
+    --icon-color-accent-primary-desaturated: var(--uc-ef-aqua) !important;
+    --panel-text-color: var(--uc-ef-fg) !important;
+    --panel-border-color: var(--uc-ef-bg3) !important;
+    --popup-border-color: var(--uc-ef-bg3) !important;
+    --input-text-background-color: var(--uc-ef-bg0) !important;
+    --input-text-color: var(--uc-ef-fg) !important;
+    --button-background-color: var(--uc-ef-bg2) !important;
+    --button-background-color-hover: var(--uc-ef-bg3) !important;
+    --button-background-color-active: var(--uc-ef-bg2) !important;
+    --button-text-color: var(--uc-ef-fg) !important;
+    --button-text-color-primary: var(--uc-ef-dim) !important;
+    --color-accent-primary: var(--uc-ef-green) !important;
+    --color-accent-primary-hover: var(--uc-ef-aqua) !important;
+    --color-accent-primary-active: var(--uc-ef-blue) !important;
+    --color-accent-primary-selected: var(--uc-ef-bg2) !important;
+    --color-accent-attention: var(--uc-ef-aqua) !important;
+    --focus-outline-color: var(--uc-ef-green) !important;
+    --link-color: var(--uc-ef-blue) !important;
+    --link-color-hover: var(--uc-ef-aqua) !important;
+    --link-color-active: var(--uc-ef-green) !important;
+    --toolbox-background-gradient: none !important;
+    --tab-selected-color-scheme: dark !important;
+  }
+
+  /* Keep search fields' normal border when focused. */
+  #urlbar, #searchbar, #searchbar-new {
+    --urlbar-input-container-border-width-open: var(--urlbar-input-container-border-width) !important;
+    --urlbar-background-box-shadow-open: none !important;
+    --toolbar-field-border-color-focus: var(--uc-ef-bg2) !important;
+    --focus-outline-color: transparent !important;
+  }
+
+  .urlbar-input::selection,
+  .searchbar-textbox::selection,
+  #searchbar input::selection {
+    background-color: var(--uc-ef-visual) !important;
+    color: var(--uc-ef-fg) !important;
+  }
+
+  /* These components can set their own values below the document root. */
+  #urlbar {
+    color: var(--uc-ef-fg) !important;
+    --urlbarview-text-color-secondary: var(--uc-ef-muted) !important;
+    --urlbarview-text-color-action: var(--uc-ef-aqua) !important;
+    --urlbar-background-color: var(--uc-ef-bg1) !important;
+    --urlbar-background-color-focus: var(--uc-ef-bg1) !important;
+    --urlbarview-background-color-hover: var(--uc-ef-bg2) !important;
+    --urlbarview-background-color-selected: var(--uc-ef-greenbg) !important;
+    --urlbarview-text-color-selected: var(--uc-ef-fg) !important;
+  }
+
+  .searchmode-switcher {
+    --button-background-color-muted: var(--uc-ef-bg2) !important;
+    --button-background-color-muted-hover: var(--uc-ef-bg3) !important;
+    --button-background-color-muted-active: var(--uc-ef-greenbg) !important;
+    --button-background-color-muted-selected: var(--uc-ef-greenbg) !important;
+    --button-text-color-muted: var(--uc-ef-fg) !important;
+    --button-text-color-muted-hover: var(--uc-ef-fg) !important;
+    --button-text-color-muted-active: var(--uc-ef-fg) !important;
+    --button-text-color-muted-selected: var(--uc-ef-fg) !important;
+  }
+
+  #navigator-toolbox {
+    background-image: none !important;
+    background-color: var(--uc-ef-bg0) !important;
+    color: var(--uc-ef-fg) !important;
+  }
+
+  #nav-bar, #PersonalToolbar {
+    background-color: var(--uc-ef-bg0) !important;
+    color: var(--uc-ef-fg) !important;
+  }
+
+  @media not -moz-pref("sidebar.verticalTabs") {
+    #TabsToolbar {
+      background-color: var(--uc-ef-dim) !important;
+    }
+
+    #TabsToolbar .tabbrowser-tab:not(:hover) .tab-background:not([selected], [multiselected]) {
+      background: transparent !important;
+    }
+  }
+
+  @media -moz-pref("sidebar.verticalTabs") {
+    #tabbrowser-tabs[orient="vertical"] {
+      --tab-background-color: var(--uc-ef-bg0) !important;
+    }
+  }
+
+  /* Nova paints the expand-on-hover surface on the sidebar container. */
+  #sidebar-container, #sidebar-main, #sidebar-box {
+    --sidebar-launcher-surface-color: var(--uc-ef-bg0) !important;
+    --sidebar-border-color: var(--uc-ef-bg2) !important;
+    --button-background-color-ghost: var(--uc-ef-bg0) !important;
+    background-color: var(--uc-ef-bg0) !important;
+    color: var(--uc-ef-fg) !important;
+  }
+
+  panel {
+    --button-background-color: transparent !important;
+    --button-background-color-disabled: transparent !important;
+    --button-background-color-menu: transparent !important;
+    --button-background-color-menu-disabled: transparent !important;
+  }
+
+  #appMenu-popup toolbarbutton.subviewbutton:not([disabled]):hover {
+    background-color: var(--uc-ef-bg2) !important;
+  }
+}

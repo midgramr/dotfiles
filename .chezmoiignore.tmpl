@@ -6,7 +6,13 @@
 .config/fish/functions/{audio,call,music}.fish
 .claude/hooks
 .ssh
+{{- if ne .chezmoi.fqdnHostname "Kevins-MacBook-Pro.local" }}
+Library/Application Support/Firefox/Profiles/p3pf8yvz.default-release/chrome/{userChrome.css,userContent.css}
+Library/Mobile Documents/iCloud~md~obsidian/Documents/Stuff/.obsidian/themes/Everforest/{theme.css,manifest.json}
+{{- end }}
 {{- else -}}
 Library/Application\ Support/glab-cli
 .config/{gh,skhd,yabai,karabiner,linearmouse}
+Library/Application Support/Firefox/Profiles/p3pf8yvz.default-release/chrome/{userChrome.css,userContent.css}
+Library/Mobile Documents/iCloud~md~obsidian/Documents/Stuff/.obsidian/themes/Everforest/{theme.css,manifest.json}
 {{- end -}}

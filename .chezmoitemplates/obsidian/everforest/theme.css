@@ -1,0 +1,139 @@
+.theme-dark {
+  /* Bases */
+  --color-base-00: #2d353b;
+  --color-base-05: #2d353b;
+  --color-base-10: #343f44;
+  --color-base-20: #343f44;
+  --color-base-25: #3d484d;
+  --color-base-30: #3d484d;
+  --color-base-35: #475258;
+  --color-base-40: #475258;
+  --color-base-50: #859289;
+  --color-base-60: #859289;
+  --color-base-70: #a29d8d;
+  --color-base-100: #d3c6aa;
+
+  /* Accent color */
+  --accent-h: 83.44;
+  --accent-s: 33.68%;
+  --accent-l: 62.75%;
+
+  /* Extended colors */
+  --color-black0: #1e2326;
+  --color-black1: #272e33;
+  --color-black2: #2e383c;
+  --color-black3: #2a3137;
+  --color-red: #e67e80;
+  --color-orange: #e69875;
+  --color-yellow: #dbbc7f;
+  --color-green: #a7c080;
+  --color-cyan: #83c092;
+  --color-blue: #7fbbb3;
+  --color-purple: #d699b6;
+  --color-pink: #d699b6;
+
+  --color-red-rgb: 230, 126, 128;
+  --color-orange-rgb: 230, 152, 117;
+  --color-yellow-rgb: 219, 188, 127;
+  --color-green-rgb: 167, 192, 128;
+  --color-cyan-rgb: 131, 192, 146;
+  --color-blue-rgb: 127, 187, 179;
+  --color-purple-rgb: 214, 153, 182;
+  --color-pink-rgb: 214, 153, 182;
+
+  /* Surface colors */
+  --background-modifier-message: var(--color-black0);
+  --titlebar-background-focused: var(--color-black1);
+  --titlebar-background: var(--color-black1);
+
+  /* Text colors */
+  --text-on-accent: #1e2326;
+  --tab-text-color: var(--tab-text-color-focused);
+
+  /* Fonts */
+  --font-interface-theme: "Overpass Nerd Font";
+  --font-text-theme: "Overpass Nerd Font";
+  --font-monospace-theme: "JetbrainsMono Nerd Font Mono";
+
+  /* Code */
+  --code-keyword: var(--color-red);
+  --code-string: var(--color-cyan);
+  --code-property: var(--color-green);
+}
+
+.is-mobile.theme-dark {
+  --color-base-00: #2d353b;
+  --color-base-10: #272e33;
+  --color-base-20: #2d353b;
+  --color-base-30: #272e33;
+
+  --color-black3: #2d353b;
+
+  --nav-item-background-hover: var(--color-base-10);
+  --background-modifier-hover: var(--color-base-10);
+}
+
+.modal-sidebar {
+  --background-modifier-form-field: var(--color-base-25);
+}
+
+.workspace-sidedock-vault-profile,
+.workspace-leaf,
+.status-bar {
+  background-color: var(--color-black2) !important;
+  /* color: #7a8478; */
+}
+
+.tooltip {
+  color: var(--color-base-100);
+}
+
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle {
+  border-inline-end-style: unset;
+}
+
+.workspace-leaf-resize-handle:hover {
+  background-color: unset;
+  border-color: inherit;
+}
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  border-inline-start-style: unset;
+}
+
+.workspace-leaf,
+.workspace-sidedock-vault-profile {
+  border-right: 1px solid var(--color-base-30);
+}
+
+.HyperMD-header-1 {
+  color: rgb(var(--color-red-rgb), 0.85);
+}
+
+.HyperMD-header-2 {
+  color: rgb(var(--color-orange-rgb), 0.85);
+}
+
+.HyperMD-header-3 {
+  color: rgb(var(--color-yellow-rgb), 0.85);
+}
+
+.HyperMD-header-4 {
+  color: rgb(var(--color-green-rgb), 0.85);
+}
+
+.HyperMD-header-5 {
+  color: rgb(var(--color-blue-rgb), 0.85);
+}
+
+.HyperMD-header-6 {
+  color: rgb(var(--color-purple-rgb), 0.85);
+}
+
+.cm-formatting {
+  color: inherit;
+}
+
+.theme-dark .markdown-rendered mark,
+.theme-dark .cm-s-obsidian span.cm-highlight {
+  background-color: rgba(var(--color-yellow-rgb), 0.35);
+}

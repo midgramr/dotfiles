@@ -1,0 +1,311 @@
+/* Everforest medium dark — Firefox 157.0, 2026-10-05.
+ * Palette: sainnhe/everforest (MIT), supplied everforest.vim files.
+ * Page styling is limited to built-in pages.
+ * about:blank is excluded from page styling because websites embed it.
+ * Modern Firefox design tokens checked against the installed stylesheets.
+ */
+
+@-moz-document regexp("about:(?!blank(?:[?#].*)?$).*"),
+  url-prefix("chrome://browser/content/preferences/"),
+  url-prefix("chrome://mozapps/content/preferences/"),
+  url("chrome://mozapps/content/extensions/aboutaddons.html")
+{
+  @media not (forced-colors: active) {
+    :root {
+      color-scheme: dark !important;
+      --uc-ef-dim: #232a2e;
+      --uc-ef-bg0: #2d353b;
+      --uc-ef-bg1: #343f44;
+      --uc-ef-bg2: #3d484d;
+      --uc-ef-bg3: #475258;
+      --uc-ef-bg4: #4f585e;
+      --uc-ef-visual: #543a48;
+      --uc-ef-greenbg: #425047;
+      --uc-ef-fg: #d3c6aa;
+      --uc-ef-muted: #9da9a0;
+      --uc-ef-green: #a7c080;
+      --uc-ef-aqua: #83c092;
+      --uc-ef-blue: #7fbbb3;
+      --uc-ef-red: #e67e80;
+      --uc-ef-yellow: #dbbc7f;
+
+      --background-color-canvas: var(--uc-ef-bg0) !important;
+      --table-row-background-color: var(--uc-ef-bg0) !important;
+      --background-color-box: var(--uc-ef-bg1) !important;
+      --background-color-box-info: var(--uc-ef-bg1) !important;
+      --input-text-background-color: var(--uc-ef-bg1) !important;
+      --panel-background-color: var(--uc-ef-bg1) !important;
+      --popup-background-color: var(--uc-ef-bg1) !important;
+      --button-text-color-ghost: var(--uc-ef-fg) !important;
+      --button-text-color-ghost-hover: var(--uc-ef-fg) !important;
+      --button-text-color-ghost-active: var(--uc-ef-fg) !important;
+      --icon-color-accent-primary-desaturated: var(--uc-ef-aqua) !important;
+      --card-background-color: var(--uc-ef-bg1) !important;
+      --table-row-background-color-alternate: var(--uc-ef-bg1) !important;
+      --background-color-dimmed: var(--uc-ef-bg2) !important;
+      --background-color-list-item-hover: var(--uc-ef-bg2) !important;
+      --button-background-color: var(--uc-ef-bg2) !important;
+      --button-background-color-disabled: var(--uc-ef-bg2) !important;
+      --button-background-color-ghost-hover: var(--uc-ef-bg2) !important;
+      --background-color-dimmed-further: var(--uc-ef-bg3) !important;
+      --button-background-color-hover: var(--uc-ef-bg3) !important;
+      --button-background-color-ghost-active: var(--uc-ef-bg3) !important;
+      --border-color: var(--uc-ef-bg3) !important;
+      --border-color-deemphasized: var(--uc-ef-bg3) !important;
+      --panel-border-color: var(--uc-ef-bg3) !important;
+      --card-border-color: var(--uc-ef-bg3) !important;
+      --input-border-color: var(--uc-ef-bg3) !important;
+      --focus-outline-color: var(--uc-ef-bg4) !important;
+      --button-background-color-active: var(--uc-ef-greenbg) !important;
+      --color-accent-primary-selected: var(--uc-ef-greenbg) !important;
+      --text-color: var(--uc-ef-fg) !important;
+      --text-color-list-item-hover: var(--uc-ef-fg) !important;
+      --text-color-accent-primary-selected: var(--uc-ef-fg) !important;
+      --button-text-color: var(--uc-ef-fg) !important;
+      --button-text-color-hover: var(--uc-ef-fg) !important;
+      --button-text-color-active: var(--uc-ef-fg) !important;
+      --input-text-color: var(--uc-ef-fg) !important;
+      --panel-text-color: var(--uc-ef-fg) !important;
+      --text-color-deemphasized: var(--uc-ef-muted) !important;
+      --text-color-disabled: var(--uc-ef-muted) !important;
+      --button-text-color-disabled: var(--uc-ef-muted) !important;
+      --color-accent-primary: var(--uc-ef-green) !important;
+      --button-background-color-primary: var(--uc-ef-green) !important;
+      --icon-color-success: var(--uc-ef-green) !important;
+      --color-accent-primary-hover: var(--uc-ef-aqua) !important;
+      --button-background-color-primary-hover: var(--uc-ef-aqua) !important;
+      --link-color-hover: var(--uc-ef-aqua) !important;
+      --color-accent-primary-active: var(--uc-ef-blue) !important;
+      --button-background-color-primary-active: var(--uc-ef-blue) !important;
+      --link-color: var(--uc-ef-blue) !important;
+      --link-color-active: var(--uc-ef-blue) !important;
+      --button-text-color-primary: var(--uc-ef-dim) !important;
+      --button-text-color-primary-hover: var(--uc-ef-dim) !important;
+      --button-text-color-primary-active: var(--uc-ef-dim) !important;
+      --table-header-text-color: var(--uc-ef-dim) !important;
+      --text-color-error: var(--uc-ef-red) !important;
+      --icon-color-critical: var(--uc-ef-red) !important;
+      --icon-color-warning: var(--uc-ef-yellow) !important;
+      background-color: var(--uc-ef-bg0) !important;
+      color: var(--uc-ef-fg) !important;
+      accent-color: var(--uc-ef-green) !important;
+    }
+
+    body {
+      background-color: var(--uc-ef-bg0) !important;
+      color: var(--uc-ef-fg) !important;
+    }
+
+    ::selection {
+      background-color: var(--uc-ef-visual) !important;
+      color: var(--uc-ef-fg) !important;
+    }
+
+    input:is([type="search"], [type="text"], [type="url"], :not([type])),
+    textarea {
+      background-color: var(--uc-ef-bg1) !important;
+      color: var(--uc-ef-fg) !important;
+      caret-color: var(--uc-ef-fg) !important;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--uc-ef-bg4) !important;
+      outline-color: var(--uc-ef-bg4) !important;
+    }
+  }
+}
+
+@-moz-document url-prefix("about:preferences"),
+  url-prefix("chrome://browser/content/preferences/") {
+  @media not (forced-colors: active) {
+    #categories moz-page-nav-button {
+      --page-nav-button-background-color: transparent !important;
+      --page-nav-button-background-color-selected: var(--uc-ef-greenbg) !important;
+      --page-nav-button-background-color-hover: var(--uc-ef-bg1) !important;
+      --page-nav-button-background-color-active: var(--uc-ef-bg1) !important;
+      --page-nav-button-text-color: var(--uc-ef-fg) !important;
+      --page-nav-button-text-color-selected: var(--uc-ef-fg) !important;
+      --page-nav-button-text-color-hover: var(--uc-ef-fg) !important;
+      --page-nav-button-text-color-active: var(--uc-ef-fg) !important;
+      --page-nav-button-indicator-background-color: var(--uc-ef-green) !important;
+    }
+
+    #categories moz-page-nav-button:hover {
+      --page-nav-button-background-color-selected: var(--uc-ef-greenbg) !important;
+    }
+  }
+}
+
+@-moz-document url-prefix("about:firefoxview") {
+  @media not (forced-colors: active) {
+    :root {
+      --fxview-background-color: var(--uc-ef-bg0) !important;
+      --fxview-background-color-secondary: var(--uc-ef-bg1) !important;
+      --fxview-element-background-hover: var(--uc-ef-bg2) !important;
+      --fxview-element-background-active: var(--uc-ef-bg3) !important;
+      --fxview-primary-action-background: var(--uc-ef-green) !important;
+    }
+
+    moz-page-nav moz-page-nav-button {
+      --page-nav-button-background-color: transparent !important;
+      --page-nav-button-background-color-selected: var(--uc-ef-greenbg) !important;
+      --page-nav-button-background-color-hover: var(--uc-ef-bg1) !important;
+      --page-nav-button-background-color-active: var(--uc-ef-bg1) !important;
+      --page-nav-button-text-color: var(--uc-ef-fg) !important;
+      --page-nav-button-text-color-selected: var(--uc-ef-fg) !important;
+      --page-nav-button-text-color-hover: var(--uc-ef-fg) !important;
+      --page-nav-button-text-color-active: var(--uc-ef-fg) !important;
+      --page-nav-button-indicator-background-color: var(--uc-ef-green) !important;
+    }
+
+    card-container {
+      --button-background-color-ghost: var(--uc-ef-bg1) !important;
+    }
+  }
+}
+
+/* Firefox start screen — Neovim-inspired typography, native search. */
+@-moz-document url("about:home"), url("about:newtab") {
+  @media not (forced-colors: active) {
+    :root {
+      --toolbox-background-gradient: none !important;
+      --newtab-background-color: #2d353b !important;
+      --newtab-background-color-secondary: #343f44 !important;
+      --newtab-text-primary-color: #d3c6aa !important;
+      --newtab-text-secondary-color: #7fbbb3 !important;
+      --newtab-primary-action-background: #a7c080 !important;
+      --font-size-root: 17px !important;
+      --box-shadow-level-3: none !important;
+    }
+
+    html, body {
+      background: #2d353b !important;
+      margin: 0 !important;
+      min-height: 100vh !important;
+      font-family: JetBrainsMono Nerd Font Mono !important;
+    }
+
+    /* Keep the native search subtree and flatten its layout containers. */
+    #root:has(.search-wrapper) :not(:has(.search-wrapper)):not(.search-wrapper):not(.search-wrapper *) {
+      display: none !important;
+    }
+
+    #root :has(.search-wrapper) {
+      display: contents !important;
+    }
+
+    .search-wrapper {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      justify-content: center !important;
+      position: relative !important;
+      inset: auto !important;
+      transform: none !important;
+      width: min(56ch, calc(100vw - 48px)) !important;
+      max-width: none !important;
+      margin: 0 auto !important;
+      padding: max(48px, calc(50vh - 240px)) 0 48px !important;
+      font: 14px/1.8 JetBrainsMono Nerd Font Mono !important;
+      color: #d3c6aa !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .search-wrapper .logo-and-wordmark-wrapper {
+      display: none !important;
+    }
+
+    .search-wrapper::before {
+      content: "Firefox";
+      display: block;
+      padding: 100px 0 12px;
+      border-bottom: 1px solid #4f585e;
+      color: #a7c080;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    .search-wrapper .search-inner-wrapper {
+      display: block !important;
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 12px 0 !important;
+      border-bottom: 1px solid #4f585e;
+      text-align: center;
+      font: inherit !important;
+      line-height: 1.6 !important;
+    }
+
+    .search-wrapper .search-inner-wrapper > * {
+      display: none !important;
+    }
+
+    .search-wrapper .search-inner-wrapper::before {
+      content: "The fast, private browser that keeps you safe";
+      display: block;
+      color: #d3c6aa;
+    }
+
+    .search-wrapper .search-inner-wrapper::after {
+      content: "󰈹";
+      position: absolute;
+      bottom: calc(100% + 48px);
+      left: 0;
+      width: 100%;
+      font-family: "JetBrainsMono Nerd Font Mono";
+      font-size: 48px;
+      line-height: 1;
+      color: #a7c080;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .search-wrapper content-search-handoff-ui {
+      font-family: JetBrainsMono Nerd Font Mono !important;
+      --content-search-handoff-ui-background-color: #343f44 !important;
+      --content-search-handoff-ui-color: #d3c6aa !important;
+      --content-search-handoff-ui-fill: #7fbbb3 !important;
+      --content-search-handoff-ui-caret-color: #a7c080 !important;
+      --content-search-handoff-ui-border-radius: 16px !important;
+      --content-search-handoff-ui-unfocused-border-color: #4f585e !important;
+      --content-search-handoff-ui-fakefocus-border-color: #a7c080 !important;
+      --content-search-handoff-ui-fakefocus-box-shadow-inner: transparent !important;
+      --content-search-handoff-ui-fakefocus-box-shadow-outer: transparent !important;
+    }
+
+    .search-inner-wrapper moz-urlbar {
+      font-family: JetBrainsMono Nerd Font Mono !important;
+      --toolbar-field-background-color: #343f44 !important;
+      --toolbar-field-text-color: #d3c6aa !important;
+      --toolbar-field-border-color: #4f585e !important;
+      --toolbar-field-background-color-focus: #343f44 !important;
+      --toolbar-field-text-color-focus: #d3c6aa !important;
+      --toolbar-field-border-color-focus: #a7c080 !important;
+      --toolbarbutton-border-radius: 16px !important;
+      --urlbar-border-radius: 16px !important;
+    }
+
+    .search-wrapper::after {
+      content: "⌘ L\9 focus the address bar\A ⌘ T\9 open a new tab\A ⌘ W\9 close this tab\A ⌘ ⇧ P\9 open a private window";
+      display: block;
+      white-space: pre;
+      tab-size: 8;
+      width: max-content;
+      align-self: center;
+      justify-self: center;
+      text-align: left;
+      padding: 12px 0;
+      color: #7fbbb3;
+      font: inherit;
+      line-height: 2;
+    }
+
+    @media (max-width: 480px) {
+      .search-wrapper { font-size: 13px !important; }
+    }
+  }
+}
