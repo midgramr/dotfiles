@@ -3,7 +3,7 @@
   --color-base-00: #2d353b;
   --color-base-05: #2d353b;
   --color-base-10: #343f44;
-  --color-base-20: #343f44;
+  --color-base-20: #313940;
   --color-base-25: #3d484d;
   --color-base-30: #3d484d;
   --color-base-35: #475258;
@@ -77,12 +77,12 @@
   --background-modifier-form-field: var(--color-base-25);
 }
 
-.workspace-sidedock-vault-profile,
-.workspace-leaf,
-.status-bar {
-  background-color: var(--color-black2) !important;
-  /* color: #7a8478; */
-}
+/* .workspace-sidedock-vault-profile, */
+/* .workspace-leaf, */
+/* .status-bar { */
+/*   background-color: #313940 !important; */
+/*   /* color: #7a8478; */ */
+/* } */
 
 .tooltip {
   color: var(--color-base-100);
