@@ -18,10 +18,14 @@
     "npm:@juicesharp/rpiv-todo",
     "npm:openwiki",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-everforest"
+    "npm:pi-everforest",
+    "npm:pi-mcp-adapter"
   ],
   "theme": "everforest-dark-medium",
   "modelThinkingLevels": {
     "openrouter/z-ai/glm-5.3-flash": "low"
-  }
+  },
+  "extensions": [
+    "-builtin:mcp"
+  ]
 }

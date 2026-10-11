@@ -6,7 +6,6 @@ packages:
       - "bat"
       - "bfs"
       - "bun"
-      - "coursier/formulas/coursier"
       - "dust"
       - "fd"
       - "fish"
