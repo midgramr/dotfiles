@@ -22,6 +22,7 @@ packages:
       - "neovim"
       - "node"
       - "openjdk@21"
+      - "pi-coding-agent"
       - "python"
       - "ripgrep"
       - "tree-sitter-cli"
