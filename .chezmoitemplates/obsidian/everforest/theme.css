@@ -23,6 +23,7 @@
   --color-black1: #272e33;
   --color-black2: #2e383c;
   --color-black3: #2a3137;
+  --color-green-bg: #425047;
   --color-red: #e67e80;
   --color-orange: #e69875;
   --color-yellow: #dbbc7f;
@@ -45,6 +46,8 @@
   --background-modifier-message: var(--color-black0);
   --titlebar-background-focused: var(--color-black1);
   --titlebar-background: var(--color-black1);
+  --background-modifier-hover: var(--color-green-bg);
+  --nav-item-background-hover: var(--color-green-bg);
 
   /* Text colors */
   --text-on-accent: #1e2326;
@@ -68,21 +71,11 @@
   --color-base-30: #272e33;
 
   --color-black3: #2d353b;
-
-  --nav-item-background-hover: var(--color-base-10);
-  --background-modifier-hover: var(--color-base-10);
 }
 
 .modal-sidebar {
   --background-modifier-form-field: var(--color-base-25);
 }
-
-/* .workspace-sidedock-vault-profile, */
-/* .workspace-leaf, */
-/* .status-bar { */
-/*   background-color: #313940 !important; */
-/*   /* color: #7a8478; */ */
-/* } */
 
 .tooltip {
   color: var(--color-base-100);

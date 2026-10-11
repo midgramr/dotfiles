@@ -6,4 +6,11 @@ if status is-interactive
     set -g fish_cursor_replace_one underscore
     set -g fish_cursor_visual block
     fish_vi_key_bindings
+
+    switch (uname)
+        case Darwin
+            bind \cp 'pwd | pbcopy'
+        case Linux
+            bind \cp 'pwd | xsel -b'
+    end
 end
