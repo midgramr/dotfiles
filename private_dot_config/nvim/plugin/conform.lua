@@ -10,7 +10,6 @@ conform.setup {
     zsh = { 'shfmt' },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
-    cmake = { 'gersemi' },
     java = { 'palantir-java-format' },
     python = { 'ruff' },
     tex = { 'tex-fmt' },

@@ -31,7 +31,8 @@ packages:
     taps:
       - "nikitabobko/tap"
     casks:
-      - "nikitabobko/tap/aerospace"
+      - "chatgpt"
+      - "codex"
       - "docker-desktop"
       - "karabiner-elements"
       - "kitty"

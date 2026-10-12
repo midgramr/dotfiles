@@ -21,10 +21,15 @@
 snap/firefox
 Documents/TTD
 {{- if ne .chezmoi.fqdnHostname "Kevins-MacBook-Pro.local" }}
-Library/Application Support/Firefox/Profiles/p3pf8yvz.default-release/chrome/{userChrome.css,userContent.css}
-Library/Mobile Documents/iCloud~md~obsidian/Documents/Stuff/.obsidian/themes/Everforest/{theme.css,manifest.json}
+Library/Application Support/Firefox/Profiles/p3pf8yvz.default-release
+Library/Mobile Documents/iCloud~md~obsidian
+{{- end }}
+{{- if ne .chezmoi.fqdnHostname "api.localhost.thetradedesk.com" }}
+Library/Application Support/Firefox/Profiles/vchfx72x.default-release-1785635925644/chrome/{userChrome.css,userContent.css}
+Work/.obsidian/themes/Everforest/{theme.css,manifest.json}
 {{- end }}
 {{- else -}}
 Library
+Work/.obsidian/themes/Everforest/{theme.css,manifest.json}
 .config/{gh,skhd,yabai,karabiner,linearmouse}
 {{- end -}}

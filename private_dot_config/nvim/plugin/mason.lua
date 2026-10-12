@@ -28,7 +28,6 @@ require('mason-tool-installer').setup {
 
     -- formatters
     'clang-format',
-    'gersemi',
     'mbake',
     'palantir-java-format',
     'prettier',
