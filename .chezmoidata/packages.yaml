@@ -1,7 +1,8 @@
 packages:
   common:
     taps:
-      - "coursier/formulas"
+    casks:
+      - "codex"
     brews:
       - "bat"
       - "bfs"

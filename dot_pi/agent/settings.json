@@ -11,7 +11,7 @@
   "transport": "auto",
   "hideThinkingBlock": false,
   "defaultProvider": "openrouter",
-  "defaultModel": "z-ai/glm-5.3-flash",
+  "defaultModel": "deepseek/deepseek-v4.1-flash",
   "packages": [
     "npm:pi-vim",
     "npm:pi-web-access",
@@ -23,9 +23,8 @@
   ],
   "theme": "everforest-dark-medium",
   "modelThinkingLevels": {
-    "openrouter/z-ai/glm-5.3-flash": "low"
+    "openrouter/z-ai/glm-5.3-flash": "low",
+    "openrouter/deepseek/deepseek-v4.1-flash": "low"
   },
-  "extensions": [
-    "-builtin:mcp"
-  ]
+  "extensions": ["-builtin:mcp"]
 }

@@ -1,4 +1,15 @@
-{{- if eq .chezmoi.os "darwin" -}}
+# Codex-generated skills and machine-local runtime state.
+.codex/skills/.system
+.codex/**/__pycache__
+.codex/**/*.pyc
+.codex/{auth.json,installation_id,version.json,.sandbox_migration,.sqlite-maintenance.lock}
+.codex/{*.sqlite,*.sqlite-*,history.jsonl,session_index.jsonl,transcription-history.jsonl}
+.codex/{.codex-global-state.json*,models_cache.json*,cloud-config-bundle-cache.json,external_agent_session_imports.json}
+.codex/{sessions,memories,logs,cache,tmp,.tmp,sqlite,shell_snapshots,rollout-migrations}
+.codex/{ipc,app-server-control,app-server-daemon,cross-instance-locks,mcp-oauth-locks,thread-writer-locks,tui-thread-reference-capabilities}
+.codex/{plugins,packages,vendor_imports,attachments,generated_images,visualizations,computer-use,editor,node_repl,dictation-history,pets,automations}
+
+{{ if eq .chezmoi.os "darwin" -}}
 .wallpaper.jpg
 .X{modmap,resources}
 .xprofile
@@ -7,13 +18,13 @@
 .claude/hooks
 .ssh
 .pi/agent/{auth.json,models-store.json,npm,sessions}
+snap/firefox
+Documents/TTD
 {{- if ne .chezmoi.fqdnHostname "Kevins-MacBook-Pro.local" }}
 Library/Application Support/Firefox/Profiles/p3pf8yvz.default-release/chrome/{userChrome.css,userContent.css}
 Library/Mobile Documents/iCloud~md~obsidian/Documents/Stuff/.obsidian/themes/Everforest/{theme.css,manifest.json}
 {{- end }}
 {{- else -}}
-Library/Application\ Support/glab-cli
+Library
 .config/{gh,skhd,yabai,karabiner,linearmouse}
-Library/Application Support/Firefox/Profiles/p3pf8yvz.default-release/chrome/{userChrome.css,userContent.css}
-Library/Mobile Documents/iCloud~md~obsidian/Documents/Stuff/.obsidian/themes/Everforest/{theme.css,manifest.json}
 {{- end -}}
