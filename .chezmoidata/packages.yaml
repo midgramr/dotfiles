@@ -1,12 +1,12 @@
 packages:
   common:
     taps:
-      - "coursier/formulas"
+    casks:
+      - "codex"
     brews:
       - "bat"
       - "bfs"
       - "bun"
-      - "coursier/formulas/coursier"
       - "dust"
       - "fd"
       - "fish"
