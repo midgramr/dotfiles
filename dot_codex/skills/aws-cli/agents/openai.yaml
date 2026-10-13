@@ -1,0 +1,3 @@
+interface:
+  display_name: "AWS CLI"
+  short_description: "Use AWS CLI with help-driven command discovery"
