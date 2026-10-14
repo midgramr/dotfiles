@@ -1,6 +1,6 @@
 ---
 name: aws-cli
-description: Use the AWS CLI to inspect, manage, or troubleshoot AWS resources and S3 files. Apply when running or composing aws commands; not for general AWS architecture or SDK coding without CLI work.
+description: Use the AWS CLI to inspect, manage, or troubleshoot AWS resources, especially S3 files and EMR clusters and jobs. Apply when running or composing aws commands; not for general AWS architecture or SDK coding without CLI work.
 ---
 
 # AWS CLI
@@ -46,20 +46,11 @@ For complex inputs, use a JSON file with `--cli-input-json file://request.json` 
 
 Leave automatic pagination enabled for complete inventories. `--no-paginate` can return only the first service page; `--page-size` changes request size, while `--max-items` caps CLI output. When deliberately limiting results, report the limit and use documented `--starting-token` continuation where supported. Do not interchange CLI continuation tokens with service-specific tokens. With `--output text`, queries can run per page; prefer JSON for global sorting, counts, or selecting an overall first result.
 
-## S3 operations
+## Frequent workflows: S3 and EMR
 
-Use `aws s3` for file transfers and convenient listings; use `aws s3api` for structured API results and bucket/object metadata. S3 keys are literal prefixes, not filesystem directories.
-
-```bash
-aws s3 ls s3://BUCKET/PREFIX/ --profile PROFILE
-aws s3api list-objects-v2 --bucket BUCKET --prefix PREFIX/ --profile PROFILE --output json
-aws s3api head-object --bucket BUCKET --key KEY --profile PROFILE --output json
-aws s3 cp s3://BUCKET/KEY ./local-file --profile PROFILE
-```
-
-Replace placeholders and include the selected region where appropriate. `head-object` inspects metadata; it does not download content. High-level `s3` output does not necessarily follow API JSON/query behavior; use `s3api` for reliable structured inspection.
-
-For recursive copying, syncing, or deletion, inspect the exact source, destination, prefix, and include/exclude filters. Preview with `--dryrun` when supported before executing the authorized operation. `sync --delete` removes destination entries absent from the source; include it only when that deletion is intended. Other services may use `--dry-run`, return a special success error, or have no preview flag: check help rather than assuming a universal option.
+- For S3 work, read [references/s3.md](references/s3.md): prefix discovery, metadata, bounded reads, copy/sync filters, versions, deletion, and access diagnosis.
+- For EMR work, read [references/emr.md](references/emr.md): cluster selection and configuration, step inspection, Spark/YARN logs, submission, monitoring, and lifecycle changes. It also distinguishes EMR on EC2 from Serverless and EKS.
+- For EMR logs or artifacts stored in S3, use both references as needed.
 
 ## Execute and verify
 
