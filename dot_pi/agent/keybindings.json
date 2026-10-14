@@ -1,5 +1,9 @@
 {
   "app.session.new": "ctrl+l",
   "app.model.select": "ctrl+p",
-  "app.model.cycleForward": []
+  "app.model.cycleForward": [],
+  "tui.altScreen.lineUp": "ctrl+k",
+  "tui.altScreen.lineDown": "ctrl+j",
+  "tui.altScreen.halfPageUp": "alt+pageUp",
+  "tui.altScreen.halfPageDown": "alt+pageDown"
 }
