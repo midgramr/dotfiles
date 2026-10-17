@@ -184,8 +184,10 @@
 
   /* Nova derives the ghost background from --button-background-color, which
    * above is the raised button surface rather than the tab. Keep the tab close
-   * button flush with its tab at rest; hover/active still give feedback. */
-  .tab-close-button {
+   * and media (audio/video) buttons flush with their tab at rest; hover/active
+   * still give feedback. */
+  .tab-close-button,
+  .tab-audio-button {
     --button-background-color-ghost: transparent !important;
   }
 
