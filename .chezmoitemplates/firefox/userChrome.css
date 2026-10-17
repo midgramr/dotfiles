@@ -182,6 +182,13 @@
     }
   }
 
+  /* Nova derives the ghost background from --button-background-color, which
+   * above is the raised button surface rather than the tab. Keep the tab close
+   * button flush with its tab at rest; hover/active still give feedback. */
+  .tab-close-button {
+    --button-background-color-ghost: transparent !important;
+  }
+
   /* Nova paints the expand-on-hover surface on the sidebar container. */
   #sidebar-container, #sidebar-main, #sidebar-box {
     --sidebar-launcher-surface-color: var(--uc-ef-bg0) !important;

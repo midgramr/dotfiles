@@ -13,18 +13,21 @@
   "defaultProvider": "openrouter",
   "defaultModel": "deepseek/deepseek-v4.1-flash",
   "packages": [
-    "npm:pi-vim",
     "npm:pi-web-access",
     "npm:@juicesharp/rpiv-todo",
     "npm:openwiki",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-everforest",
-    "npm:pi-mcp-adapter"
+    "npm:pi-mcp-adapter",
+    "npm:pi-paster",
+    "npm:pi-vimmode"
   ],
   "theme": "everforest-dark-medium",
   "modelThinkingLevels": {
     "openrouter/z-ai/glm-5.3-flash": "low",
     "openrouter/deepseek/deepseek-v4.1-flash": "low"
   },
-  "extensions": ["-builtin:mcp"]
+  "extensions": [
+    "-builtin:mcp"
+  ]
 }
