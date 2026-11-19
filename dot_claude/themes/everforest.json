@@ -10,14 +10,11 @@
 
     "claude": "#e69875",
     "claudeShimmer": "#dbbc7f",
-    "claudeBlue_FOR_SYSTEM_SPINNER": "#7fbbb3",
-    "claudeBlueShimmer_FOR_SYSTEM_SPINNER": "#83c092",
 
     "suggestion": "#7fbbb3",
     "permission": "#7fbbb3",
     "permissionShimmer": "#83c092",
     "remember": "#d699b6",
-    "background": "#83c092",
 
     "success": "#a7c080",
     "error": "#e67e80",
@@ -29,15 +26,11 @@
     "promptBorderShimmer": "#859289",
     "planMode": "#83c092",
     "autoAccept": "#d699b6",
-    "autoAcceptShimmer": "#d699b6",
     "bashBorder": "#e69875",
     "ide": "#7fbbb3",
     "fastMode": "#e69875",
     "fastModeShimmer": "#dbbc7f",
-    "skill": "#d699b6",
     "effortUltra": "#d699b6",
-    "professionalBlue": "#7fbbb3",
-    "chromeYellow": "#dbbc7f",
 
     "diffAdded": "#3c4841",
     "diffRemoved": "#493b40",
@@ -50,14 +43,13 @@
     "rate_limit_empty": "#475258",
     "briefLabelYou": "#7fbbb3",
     "briefLabelClaude": "#e69875",
-    "clawd_body": "#e69875",
-    "clawd_background": "#2d353b",
 
     "userMessageBackground": "#343f44",
     "userMessageBackgroundHover": "#475258",
     "bashMessageBackgroundColor": "#343f44",
     "memoryBackgroundColor": "#343f44",
     "selectionBg": "#475258",
+    "composerSidebarBackground": "#232a2e",
 
     "red_FOR_SUBAGENTS_ONLY": "#e67e80",
     "blue_FOR_SUBAGENTS_ONLY": "#7fbbb3",
