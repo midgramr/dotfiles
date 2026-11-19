@@ -1,6 +1,6 @@
-/* Everforest medium dark — Firefox 157.0, macOS, 2026-10-05.
- * Palette: sainnhe/everforest (MIT), supplied autoload/everforest.vim.
- * UI mapping follows colors/everforest.vim: warm text, green selections,
+/* Cendre hard — Firefox 157.0, macOS, 2026-10-05.
+ * Palette: Aejkatappaja/cendre (MIT), lua/cendre/palette.lua.
+ * UI mapping follows extras/firefox: warm text, ember accents,
  * muted secondary text, and raised popup surfaces.
  * Variable names checked against the installed Firefox 157 stylesheets.
  * Migration: https://blog.mozilla.org/addons/2026/09/29/nova-is-here-what-changes-for-your-firefox-theme/
@@ -10,109 +10,109 @@
 @media not (forced-colors: active) {
   :root {
     color-scheme: dark !important;
-    --uc-ef-dim: #232a2e;
-    --uc-ef-bg0: #2d353b;
-    --uc-ef-bg1: #343f44;
-    --uc-ef-bg2: #3d484d;
-    --uc-ef-bg3: #475258;
-    --uc-ef-bg4: #4f585e;
-    --uc-ef-visual: #543a48;
-    --uc-ef-greenbg: #425047;
-    --uc-ef-fg: #d3c6aa;
-    --uc-ef-muted: #9da9a0;
-    --uc-ef-green: #a7c080;
-    --uc-ef-aqua: #83c092;
-    --uc-ef-blue: #7fbbb3;
+    --uc-cendre-deep: #0f0c0a;
+    --uc-cendre-bg0: #171311;
+    --uc-cendre-bg1: #201b19;
+    --uc-cendre-bg2: #2a2422;
+    --uc-cendre-bg3: #362f2c;
+    --uc-cendre-bg4: #463e3a;
+    --uc-cendre-visual: #3d2b23;
+    --uc-cendre-sel: #2a2422;
+    --uc-cendre-fg: #e6d5c2;
+    --uc-cendre-muted: #a09384;
+    --uc-cendre-ember: #ea9875;
+    --uc-cendre-brass: #fcba81;
+    --uc-cendre-frost: #4e89a2;
 
     /* Important overrides take precedence over the installed theme. */
 
     /* Browser frame and toolbars */
-    --toolbox-background-color: var(--uc-ef-bg0) !important;
-    --toolbox-background-color-inactive: var(--uc-ef-bg0) !important;
-    --toolbox-text-color: var(--uc-ef-fg) !important;
-    --toolbox-text-color-inactive: var(--uc-ef-muted) !important;
-    --toolbar-background-color: var(--uc-ef-bg0) !important;
-    --toolbar-text-color: var(--uc-ef-fg) !important;
-    --toolbarbutton-icon-fill: var(--uc-ef-fg) !important;
-    --toolbarbutton-icon-fill-attention: var(--uc-ef-green) !important;
-    --toolbarbutton-icon-fill-attention-text: var(--uc-ef-dim) !important;
-    --toolbarbutton-background-color-hover: var(--uc-ef-bg1) !important;
-    --toolbarbutton-background-color-active: var(--uc-ef-bg2) !important;
-    --chrome-content-separator-color: var(--uc-ef-bg2) !important;
-    --tabs-navbar-separator-color: var(--uc-ef-bg2) !important;
+    --toolbox-background-color: var(--uc-cendre-bg0) !important;
+    --toolbox-background-color-inactive: var(--uc-cendre-bg0) !important;
+    --toolbox-text-color: var(--uc-cendre-fg) !important;
+    --toolbox-text-color-inactive: var(--uc-cendre-muted) !important;
+    --toolbar-background-color: var(--uc-cendre-bg0) !important;
+    --toolbar-text-color: var(--uc-cendre-fg) !important;
+    --toolbarbutton-icon-fill: var(--uc-cendre-fg) !important;
+    --toolbarbutton-icon-fill-attention: var(--uc-cendre-ember) !important;
+    --toolbarbutton-icon-fill-attention-text: var(--uc-cendre-deep) !important;
+    --toolbarbutton-background-color-hover: var(--uc-cendre-bg1) !important;
+    --toolbarbutton-background-color-active: var(--uc-cendre-bg2) !important;
+    --chrome-content-separator-color: var(--uc-cendre-bg2) !important;
+    --tabs-navbar-separator-color: var(--uc-cendre-bg2) !important;
 
     /* Address bar and suggestions */
-    --toolbar-field-background-color: var(--uc-ef-bg1) !important;
-    --toolbar-field-background-color-focus: var(--uc-ef-bg1) !important;
-    --toolbar-field-text-color: var(--uc-ef-fg) !important;
-    --toolbar-field-text-color-focus: var(--uc-ef-fg) !important;
-    --lwt-toolbar-field-highlight: var(--uc-ef-visual) !important;
-    --lwt-toolbar-field-highlight-text: var(--uc-ef-fg) !important;
-    --toolbar-field-border-color: var(--uc-ef-bg2) !important;
-    --toolbar-field-border-color-focus: var(--uc-ef-bg4) !important;
-    --urlbar-background-color: var(--uc-ef-bg1) !important;
-    --urlbar-background-color-focus: var(--uc-ef-bg1) !important;
-    --urlbar-box-background-color: var(--uc-ef-bg2) !important;
-    --urlbar-box-background-color-hover: var(--uc-ef-bg3) !important;
-    --urlbar-box-background-color-active: var(--uc-ef-bg2) !important;
-    --urlbar-box-background-color-focus: var(--uc-ef-bg2) !important;
-    --urlbar-box-text-color: var(--uc-ef-fg) !important;
-    --urlbarview-background-color-hover: var(--uc-ef-bg2) !important;
-    --urlbarview-background-color-selected: var(--uc-ef-greenbg) !important;
-    --urlbarview-text-color-selected: var(--uc-ef-fg) !important;
-    --urlbarview-text-color-secondary: var(--uc-ef-muted) !important;
-    --urlbarview-text-color-action: var(--uc-ef-aqua) !important;
-    --urlbarview-separator-color: var(--uc-ef-bg3) !important;
+    --toolbar-field-background-color: var(--uc-cendre-bg1) !important;
+    --toolbar-field-background-color-focus: var(--uc-cendre-bg1) !important;
+    --toolbar-field-text-color: var(--uc-cendre-fg) !important;
+    --toolbar-field-text-color-focus: var(--uc-cendre-fg) !important;
+    --lwt-toolbar-field-highlight: var(--uc-cendre-visual) !important;
+    --lwt-toolbar-field-highlight-text: var(--uc-cendre-fg) !important;
+    --toolbar-field-border-color: var(--uc-cendre-bg2) !important;
+    --toolbar-field-border-color-focus: var(--uc-cendre-bg4) !important;
+    --urlbar-background-color: var(--uc-cendre-bg1) !important;
+    --urlbar-background-color-focus: var(--uc-cendre-bg1) !important;
+    --urlbar-box-background-color: var(--uc-cendre-bg2) !important;
+    --urlbar-box-background-color-hover: var(--uc-cendre-bg3) !important;
+    --urlbar-box-background-color-active: var(--uc-cendre-bg2) !important;
+    --urlbar-box-background-color-focus: var(--uc-cendre-bg2) !important;
+    --urlbar-box-text-color: var(--uc-cendre-fg) !important;
+    --urlbarview-background-color-hover: var(--uc-cendre-bg2) !important;
+    --urlbarview-background-color-selected: var(--uc-cendre-sel) !important;
+    --urlbarview-text-color-selected: var(--uc-cendre-fg) !important;
+    --urlbarview-text-color-secondary: var(--uc-cendre-muted) !important;
+    --urlbarview-text-color-action: var(--uc-cendre-brass) !important;
+    --urlbarview-separator-color: var(--uc-cendre-bg3) !important;
 
     /* Tabs and sidebar */
-    --tab-background-color-hover: var(--uc-ef-bg1) !important;
-    --tab-background-color-selected: var(--uc-ef-greenbg) !important;
-    --tab-text-color-selected: var(--uc-ef-fg) !important;
-    --tab-border-color-selected: var(--uc-ef-green) !important;
-    --tab-border-color-accent: image(var(--uc-ef-green)) !important;
-    --tab-loading-fill: var(--uc-ef-green) !important;
-    --sidebar-background-color: var(--uc-ef-bg0) !important;
-    --sidebar-text-color: var(--uc-ef-fg) !important;
-    --sidebar-border-color: var(--uc-ef-bg2) !important;
+    --tab-background-color-hover: var(--uc-cendre-bg1) !important;
+    --tab-background-color-selected: var(--uc-cendre-sel) !important;
+    --tab-text-color-selected: var(--uc-cendre-fg) !important;
+    --tab-border-color-selected: var(--uc-cendre-ember) !important;
+    --tab-border-color-accent: image(var(--uc-cendre-ember)) !important;
+    --tab-loading-fill: var(--uc-cendre-ember) !important;
+    --sidebar-background-color: var(--uc-cendre-bg0) !important;
+    --sidebar-text-color: var(--uc-cendre-fg) !important;
+    --sidebar-border-color: var(--uc-cendre-bg2) !important;
 
     /* Panels, controls, and shared design tokens */
-    --background-color-canvas: var(--uc-ef-bg0) !important;
-    --background-color-box: var(--uc-ef-bg1) !important;
-    --background-color-dimmed: var(--uc-ef-bg2) !important;
-    --background-color-dimmed-further: var(--uc-ef-bg3) !important;
-    --background-color-list-item-hover: var(--uc-ef-bg2) !important;
-    --text-color: var(--uc-ef-fg) !important;
-    --text-color-deemphasized: var(--uc-ef-muted) !important;
-    --border-color: var(--uc-ef-bg3) !important;
-    --border-color-deemphasized: var(--uc-ef-bg2) !important;
-    --border-color-interactive: var(--uc-ef-muted) !important;
-    --panel-background-color: var(--uc-ef-bg1) !important;
-    --popup-background-color: var(--uc-ef-bg1) !important;
-    --button-background-color-ghost-hover: var(--uc-ef-bg2) !important;
-    --button-background-color-ghost-active: var(--uc-ef-bg3) !important;
-    --button-text-color-ghost: var(--uc-ef-fg) !important;
-    --button-text-color-ghost-hover: var(--uc-ef-fg) !important;
-    --button-text-color-ghost-active: var(--uc-ef-fg) !important;
-    --icon-color-accent-primary-desaturated: var(--uc-ef-aqua) !important;
-    --panel-text-color: var(--uc-ef-fg) !important;
-    --panel-border-color: var(--uc-ef-bg3) !important;
-    --popup-border-color: var(--uc-ef-bg3) !important;
-    --input-text-background-color: var(--uc-ef-bg0) !important;
-    --input-text-color: var(--uc-ef-fg) !important;
-    --button-background-color: var(--uc-ef-bg2) !important;
-    --button-background-color-hover: var(--uc-ef-bg3) !important;
-    --button-background-color-active: var(--uc-ef-bg2) !important;
-    --button-text-color: var(--uc-ef-fg) !important;
-    --button-text-color-primary: var(--uc-ef-dim) !important;
-    --color-accent-primary: var(--uc-ef-green) !important;
-    --color-accent-primary-hover: var(--uc-ef-aqua) !important;
-    --color-accent-primary-active: var(--uc-ef-blue) !important;
-    --color-accent-primary-selected: var(--uc-ef-bg2) !important;
-    --color-accent-attention: var(--uc-ef-aqua) !important;
-    --focus-outline-color: var(--uc-ef-green) !important;
-    --link-color: var(--uc-ef-blue) !important;
-    --link-color-hover: var(--uc-ef-aqua) !important;
-    --link-color-active: var(--uc-ef-green) !important;
+    --background-color-canvas: var(--uc-cendre-bg0) !important;
+    --background-color-box: var(--uc-cendre-bg1) !important;
+    --background-color-dimmed: var(--uc-cendre-bg2) !important;
+    --background-color-dimmed-further: var(--uc-cendre-bg3) !important;
+    --background-color-list-item-hover: var(--uc-cendre-bg2) !important;
+    --text-color: var(--uc-cendre-fg) !important;
+    --text-color-deemphasized: var(--uc-cendre-muted) !important;
+    --border-color: var(--uc-cendre-bg3) !important;
+    --border-color-deemphasized: var(--uc-cendre-bg2) !important;
+    --border-color-interactive: var(--uc-cendre-muted) !important;
+    --panel-background-color: var(--uc-cendre-bg1) !important;
+    --popup-background-color: var(--uc-cendre-bg1) !important;
+    --button-background-color-ghost-hover: var(--uc-cendre-bg2) !important;
+    --button-background-color-ghost-active: var(--uc-cendre-bg3) !important;
+    --button-text-color-ghost: var(--uc-cendre-fg) !important;
+    --button-text-color-ghost-hover: var(--uc-cendre-fg) !important;
+    --button-text-color-ghost-active: var(--uc-cendre-fg) !important;
+    --icon-color-accent-primary-desaturated: var(--uc-cendre-brass) !important;
+    --panel-text-color: var(--uc-cendre-fg) !important;
+    --panel-border-color: var(--uc-cendre-bg3) !important;
+    --popup-border-color: var(--uc-cendre-bg3) !important;
+    --input-text-background-color: var(--uc-cendre-bg0) !important;
+    --input-text-color: var(--uc-cendre-fg) !important;
+    --button-background-color: var(--uc-cendre-bg2) !important;
+    --button-background-color-hover: var(--uc-cendre-bg3) !important;
+    --button-background-color-active: var(--uc-cendre-bg2) !important;
+    --button-text-color: var(--uc-cendre-fg) !important;
+    --button-text-color-primary: var(--uc-cendre-deep) !important;
+    --color-accent-primary: var(--uc-cendre-ember) !important;
+    --color-accent-primary-hover: var(--uc-cendre-brass) !important;
+    --color-accent-primary-active: var(--uc-cendre-frost) !important;
+    --color-accent-primary-selected: var(--uc-cendre-bg2) !important;
+    --color-accent-attention: var(--uc-cendre-brass) !important;
+    --focus-outline-color: var(--uc-cendre-ember) !important;
+    --link-color: var(--uc-cendre-frost) !important;
+    --link-color-hover: var(--uc-cendre-brass) !important;
+    --link-color-active: var(--uc-cendre-ember) !important;
     --toolbox-background-gradient: none !important;
     --tab-selected-color-scheme: dark !important;
   }
@@ -121,54 +121,54 @@
   #urlbar, #searchbar, #searchbar-new {
     --urlbar-input-container-border-width-open: var(--urlbar-input-container-border-width) !important;
     --urlbar-background-box-shadow-open: none !important;
-    --toolbar-field-border-color-focus: var(--uc-ef-bg2) !important;
+    --toolbar-field-border-color-focus: var(--uc-cendre-bg2) !important;
     --focus-outline-color: transparent !important;
   }
 
   .urlbar-input::selection,
   .searchbar-textbox::selection,
   #searchbar input::selection {
-    background-color: var(--uc-ef-visual) !important;
-    color: var(--uc-ef-fg) !important;
+    background-color: var(--uc-cendre-visual) !important;
+    color: var(--uc-cendre-fg) !important;
   }
 
   /* These components can set their own values below the document root. */
   #urlbar {
-    color: var(--uc-ef-fg) !important;
-    --urlbarview-text-color-secondary: var(--uc-ef-muted) !important;
-    --urlbarview-text-color-action: var(--uc-ef-aqua) !important;
-    --urlbar-background-color: var(--uc-ef-bg1) !important;
-    --urlbar-background-color-focus: var(--uc-ef-bg1) !important;
-    --urlbarview-background-color-hover: var(--uc-ef-bg2) !important;
-    --urlbarview-background-color-selected: var(--uc-ef-greenbg) !important;
-    --urlbarview-text-color-selected: var(--uc-ef-fg) !important;
+    color: var(--uc-cendre-fg) !important;
+    --urlbarview-text-color-secondary: var(--uc-cendre-muted) !important;
+    --urlbarview-text-color-action: var(--uc-cendre-brass) !important;
+    --urlbar-background-color: var(--uc-cendre-bg1) !important;
+    --urlbar-background-color-focus: var(--uc-cendre-bg1) !important;
+    --urlbarview-background-color-hover: var(--uc-cendre-bg2) !important;
+    --urlbarview-background-color-selected: var(--uc-cendre-sel) !important;
+    --urlbarview-text-color-selected: var(--uc-cendre-fg) !important;
   }
 
   .searchmode-switcher {
-    --button-background-color-muted: var(--uc-ef-bg2) !important;
-    --button-background-color-muted-hover: var(--uc-ef-bg3) !important;
-    --button-background-color-muted-active: var(--uc-ef-greenbg) !important;
-    --button-background-color-muted-selected: var(--uc-ef-greenbg) !important;
-    --button-text-color-muted: var(--uc-ef-fg) !important;
-    --button-text-color-muted-hover: var(--uc-ef-fg) !important;
-    --button-text-color-muted-active: var(--uc-ef-fg) !important;
-    --button-text-color-muted-selected: var(--uc-ef-fg) !important;
+    --button-background-color-muted: var(--uc-cendre-bg2) !important;
+    --button-background-color-muted-hover: var(--uc-cendre-bg3) !important;
+    --button-background-color-muted-active: var(--uc-cendre-sel) !important;
+    --button-background-color-muted-selected: var(--uc-cendre-sel) !important;
+    --button-text-color-muted: var(--uc-cendre-fg) !important;
+    --button-text-color-muted-hover: var(--uc-cendre-fg) !important;
+    --button-text-color-muted-active: var(--uc-cendre-fg) !important;
+    --button-text-color-muted-selected: var(--uc-cendre-fg) !important;
   }
 
   #navigator-toolbox {
     background-image: none !important;
-    background-color: var(--uc-ef-bg0) !important;
-    color: var(--uc-ef-fg) !important;
+    background-color: var(--uc-cendre-bg0) !important;
+    color: var(--uc-cendre-fg) !important;
   }
 
   #nav-bar, #PersonalToolbar {
-    background-color: var(--uc-ef-bg0) !important;
-    color: var(--uc-ef-fg) !important;
+    background-color: var(--uc-cendre-bg0) !important;
+    color: var(--uc-cendre-fg) !important;
   }
 
   @media not -moz-pref("sidebar.verticalTabs") {
     #TabsToolbar {
-      background-color: var(--uc-ef-dim) !important;
+      background-color: var(--uc-cendre-deep) !important;
     }
 
     #TabsToolbar .tabbrowser-tab:not(:hover) .tab-background:not([selected], [multiselected]) {
@@ -178,7 +178,7 @@
 
   @media -moz-pref("sidebar.verticalTabs") {
     #tabbrowser-tabs[orient="vertical"] {
-      --tab-background-color: var(--uc-ef-bg0) !important;
+      --tab-background-color: var(--uc-cendre-bg0) !important;
     }
   }
 
@@ -193,11 +193,11 @@
 
   /* Nova paints the expand-on-hover surface on the sidebar container. */
   #sidebar-container, #sidebar-main, #sidebar-box {
-    --sidebar-launcher-surface-color: var(--uc-ef-bg0) !important;
-    --sidebar-border-color: var(--uc-ef-bg2) !important;
-    --button-background-color-ghost: var(--uc-ef-bg0) !important;
-    background-color: var(--uc-ef-bg0) !important;
-    color: var(--uc-ef-fg) !important;
+    --sidebar-launcher-surface-color: var(--uc-cendre-bg0) !important;
+    --sidebar-border-color: var(--uc-cendre-bg2) !important;
+    --button-background-color-ghost: var(--uc-cendre-bg0) !important;
+    background-color: var(--uc-cendre-bg0) !important;
+    color: var(--uc-cendre-fg) !important;
   }
 
   panel {
@@ -208,6 +208,6 @@
   }
 
   #appMenu-popup toolbarbutton.subviewbutton:not([disabled]):hover {
-    background-color: var(--uc-ef-bg2) !important;
+    background-color: var(--uc-cendre-bg2) !important;
   }
 }

@@ -21,8 +21,8 @@ def draw_tab(draw_data, screen, tab, before, max_tab_length, index, is_last, ext
                 label = label[:-1]
             label = label + '…' if available else ''
         fg, bg = screen.cursor.fg, screen.cursor.bg
-        screen.cursor.fg = as_rgb(0xd3c6aa)
-        screen.cursor.bg = as_rgb(0x475258)
+        screen.cursor.fg = as_rgb(0xe6d5c2)
+        screen.cursor.bg = as_rgb(0x171311)
         screen.draw(label)
         screen.cursor.bg = as_rgb(int(draw_data.default_bg))
         screen.cursor.fg, screen.cursor.bg = fg, bg

@@ -1,26 +1,22 @@
 if status is-interactive
-    set -l fg0 '#d3c6aa'
-    set -l bg0 '#2d353b'
-    set -l yellow '#dbbc7f'
-    set -l green '#a7c080'
-    set -l blue '#7fbbb3'
-    set -l bg_green '#425047'
-    set -l orange '#e69875'
-    set -l gray '#859289'
-
     set -l colors (string join ',' \
-        "fg:$fg0" \
-        "selected-fg:$yellow" \
-        "bg:$bg0" \
-        "hl:$green" \
-        "fg+:$fg0" \
-        "bg+:$bg_green" \
-        "hl+:$green" \
-        "info:$gray" \
-        "prompt:$orange" \
-        "pointer:$fg0" \
-        "marker:$blue" \
-        "spinner:$green")
+        "fg:#a09384" \
+        "selected-fg:#fcba81" \
+        "bg:#171311" \
+        "hl:#ea9875" \
+        "fg+:#e6d5c2" \
+        "bg+:#201b19" \
+        "hl+:#fcba81" \
+        "info:#73665b" \
+        "prompt:#d1766e" \
+        "pointer:#ea9875" \
+        "marker:#43b16a" \
+        "spinner:#ea9875" \
+        "query:#e6d5c2" \
+        "header:#4e89a2" \
+        "border:#362f2c" \
+        "scrollbar:#362f2c" \
+        "separator:#362f2c")
 
     set -gx FZF_DEFAULT_OPTS (string join ' ' -- \
         "--cycle" \

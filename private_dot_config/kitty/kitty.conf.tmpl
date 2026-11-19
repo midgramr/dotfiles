@@ -27,44 +27,16 @@ bold_font auto
 italic_font auto
 bold_italic_font auto
 
-foreground #d3c6aa
-background #2d353b
-cursor #d3c6aa
-cursor_text_color #2d353b
+include cendre.conf
 cursor_blink_interval 0
-selection_foreground #2d353b
-selection_background #a7c080
-active_border_color #4f585e
-inactive_border_color #4f585e
-scrollbar_handle_color #4f585e
-
-color0 #2d353b
-color1 #e67e80
-color2 #a7c080
-color3 #dbbc7f
-color4 #7fbbb3
-color5 #d699b6
-color6 #83c092
-color7 #d3c6aa
-color8 #7a8478
-color9 #e67e80
-color10 #a7c080
-color11 #dbbc7f
-color12 #7fbbb3
-color13 #d699b6
-color14 #83c092
-color15 #d3c6aa
+scrollbar_handle_color #362f2c
 
 tab_bar_edge bottom
 tab_bar_margin_width {{ if eq .chezmoi.os "linux" }}0{{ else }}4{{ end }}
 tab_bar_min_tabs 1
 tab_bar_style custom
 tab_separator ""
-tab_bar_background #343f44
-active_tab_foreground #d3c6aa
-active_tab_background #475258
-inactive_tab_foreground #7a8478
-inactive_tab_background #343f44
+tab_bar_background #0f0c0a
 active_tab_font_style normal
 inactive_tab_font_style normal
 tab_title_template " {index} {tab.active_exe} "

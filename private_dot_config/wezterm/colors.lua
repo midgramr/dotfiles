@@ -1,41 +1,8 @@
+local wezterm = require 'wezterm'
 local module = {}
 
 ---Colorscheme colors
-module.colors = {
-  foreground = '#d3c6aa',
-  background = '#2d353b',
-  cursor_bg = '#d3c6aa',
-  cursor_fg = '#2d353b',
-  cursor_border = '#d3c6aa',
-  selection_fg = '#2d353b',
-  selection_bg = '#a7c080',
-  scrollbar_thumb = '#7a8478',
-  split = '#7a8478',
-  ansi = {
-    '#2d353b',
-    '#e67e80',
-    '#a7c080',
-    '#dbbc7f',
-    '#7fbbb3',
-    '#d699b6',
-    '#83c092',
-    '#d3c6aa',
-  },
-  brights = {
-    '#7a8478',
-    '#e67e80',
-    '#a7c080',
-    '#dbbc7f',
-    '#7fbbb3',
-    '#d699b6',
-    '#83c092',
-    '#d3c6aa',
-  },
-  compose_cursor = '#a7c080',
-  tab_bar = {
-    background = '#3d484d',
-  },
-}
+module.colors = wezterm.color.load_scheme(wezterm.config_dir .. '/colors/cendre.toml')
 
 ---Apply colors to global config
 ---@param config Config global config

@@ -26,19 +26,19 @@ configuration {
 }
 
 * {
-  red: #e67e80;
-  orange: #e69875;
-  blue: #7fbbb3;
-  green: #a7c080;
-  foreground: #d3c6aa;
-  background: #2d353b;
-  lightbg: #2d353b;
-  lightfg: #425047;
-  selected-normal-foreground: #d3c6aa;
-  muted: #7a8478;
-  separator: #56635f;
+  red: #d25780;
+  orange: #ea9875;
+  blue: #4e89a2;
+  green: #99af6b;
+  foreground: #e6d5c2;
+  background: #171311;
+  lightbg: #171311;
+  lightfg: #2a2422;
+  selected-normal-foreground: #e6d5c2;
+  muted: #73665b;
+  separator: #5a504c;
 
-  highlight: var(green);
+  highlight: var(orange);
 }
 window {
   background-color: var(background);
@@ -60,7 +60,7 @@ element {
 }
 inputbar {
   children: [ entry ];
-  background-color: #343f44;
+  background-color: #201b19;
   padding: 8px 4px;
   margin: 0px 0px 4px;
 }
@@ -70,7 +70,7 @@ entry {
   text-color: var(selected-normal-foreground);
   placeholder: "Search…";
   placeholder-color: var(muted);
-  cursor-color: var(green);
+  cursor-color: var(orange);
   blink: false;
 }
 prompt {

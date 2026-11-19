@@ -8,23 +8,6 @@ require('fzf-lua').setup {
   fzf_opts = {
     ['--layout'] = 'reverse',
   },
-  ---@diagnostic disable: assign-type-mismatch
-  fzf_colors = {
-    ['fg'] = { 'fg', 'TelescopeNormal' },
-    ['bg'] = { 'bg', 'TelescopeNormal' },
-    ['hl'] = { 'fg', 'TelescopeMatching' },
-    ['fg+'] = { 'fg', 'TelescopeSelection' },
-    ['bg+'] = { 'bg', 'TelescopeSelection' },
-    ['hl+'] = { 'fg', 'TelescopeMatching' },
-    ['info'] = { 'fg', 'TelescopeMultiSelection' },
-    ['border'] = { 'fg', 'TelescopeBorder' },
-    ['gutter'] = '-1',
-    ['query'] = { 'fg', 'TelescopePromptNormal' },
-    ['prompt'] = { 'fg', 'TelescopePromptPrefix' },
-    ['pointer'] = { 'fg', 'TelescopeSelectionCaret' },
-    ['marker'] = { 'fg', 'TelescopeSelectionCaret' },
-    ['header'] = { 'fg', 'TelescopeTitle' },
-  },
   ---@diagnostic enable: assign-type-mismatch
   files = {
     formatter = 'path.filename_first',
@@ -34,22 +17,6 @@ require('fzf-lua').setup {
   grep = {
     git_icons = true,
     hidden = true,
-  },
-  hls = {
-    border = 'TelescopeBorder',
-    help_border = 'TelescopeBorder',
-    preview_border = 'TelescopeBorder',
-    cursorline = 'CursorLine',
-    header_bind = 'Blue',
-    header_text = 'Red',
-    path_colnr = 'Blue',
-    path_linenr = 'Green',
-    buf_flag_cur = 'Red',
-    buf_flag_alt = 'Blue',
-    tab_title = 'Blue',
-    tab_marker = 'ModeMsg',
-    live_prompt = 'Purple',
-    live_sym = 'Purple',
   },
   keymap = {
     builtin = {

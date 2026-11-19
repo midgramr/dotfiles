@@ -11,10 +11,10 @@
     mouse_left_click = do_action
     mouse_right_click = context
     mouse_middle_click = close_current
-    background = "#2d353b"
-    foreground = "#d3c6aa"
-    highlight = "#a7c080"
-    frame_color = "#56635f"
+    background = "#171311"
+    foreground = "#e6d5c2"
+    highlight = "#ea9875"
+    frame_color = "#5a504c"
     history_length = 10
 
 [ignore-insync]

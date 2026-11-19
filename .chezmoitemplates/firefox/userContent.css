@@ -1,5 +1,5 @@
-/* Everforest medium dark — Firefox 157.0, 2026-10-05.
- * Palette: sainnhe/everforest (MIT), supplied everforest.vim files.
+/* Cendre hard — Firefox 157.0, 2026-10-05.
+ * Palette: Aejkatappaja/cendre (MIT), lua/cendre/palette.lua.
  * Page styling is limited to built-in pages.
  * about:blank is excluded from page styling because websites embed it.
  * Modern Firefox design tokens checked against the installed stylesheets.
@@ -13,105 +13,105 @@
   @media not (forced-colors: active) {
     :root {
       color-scheme: dark !important;
-      --uc-ef-dim: #232a2e;
-      --uc-ef-bg0: #2d353b;
-      --uc-ef-bg1: #343f44;
-      --uc-ef-bg2: #3d484d;
-      --uc-ef-bg3: #475258;
-      --uc-ef-bg4: #4f585e;
-      --uc-ef-visual: #543a48;
-      --uc-ef-greenbg: #425047;
-      --uc-ef-fg: #d3c6aa;
-      --uc-ef-muted: #9da9a0;
-      --uc-ef-green: #a7c080;
-      --uc-ef-aqua: #83c092;
-      --uc-ef-blue: #7fbbb3;
-      --uc-ef-red: #e67e80;
-      --uc-ef-yellow: #dbbc7f;
+      --uc-cendre-deep: #0f0c0a;
+      --uc-cendre-bg0: #171311;
+      --uc-cendre-bg1: #201b19;
+      --uc-cendre-bg2: #2a2422;
+      --uc-cendre-bg3: #362f2c;
+      --uc-cendre-bg4: #463e3a;
+      --uc-cendre-visual: #3d2b23;
+      --uc-cendre-sel: #2a2422;
+      --uc-cendre-fg: #e6d5c2;
+      --uc-cendre-muted: #a09384;
+      --uc-cendre-ember: #ea9875;
+      --uc-cendre-brass: #fcba81;
+      --uc-cendre-frost: #4e89a2;
+      --uc-cendre-error: #d25780;
+      --uc-cendre-warn: #f4a21c;
 
-      --background-color-canvas: var(--uc-ef-bg0) !important;
-      --table-row-background-color: var(--uc-ef-bg0) !important;
-      --background-color-box: var(--uc-ef-bg1) !important;
-      --background-color-box-info: var(--uc-ef-bg1) !important;
-      --input-text-background-color: var(--uc-ef-bg1) !important;
-      --panel-background-color: var(--uc-ef-bg1) !important;
-      --popup-background-color: var(--uc-ef-bg1) !important;
-      --button-text-color-ghost: var(--uc-ef-fg) !important;
-      --button-text-color-ghost-hover: var(--uc-ef-fg) !important;
-      --button-text-color-ghost-active: var(--uc-ef-fg) !important;
-      --icon-color-accent-primary-desaturated: var(--uc-ef-aqua) !important;
-      --card-background-color: var(--uc-ef-bg1) !important;
-      --table-row-background-color-alternate: var(--uc-ef-bg1) !important;
-      --background-color-dimmed: var(--uc-ef-bg2) !important;
-      --background-color-list-item-hover: var(--uc-ef-bg2) !important;
-      --button-background-color: var(--uc-ef-bg2) !important;
-      --button-background-color-disabled: var(--uc-ef-bg2) !important;
-      --button-background-color-ghost-hover: var(--uc-ef-bg2) !important;
-      --background-color-dimmed-further: var(--uc-ef-bg3) !important;
-      --button-background-color-hover: var(--uc-ef-bg3) !important;
-      --button-background-color-ghost-active: var(--uc-ef-bg3) !important;
-      --border-color: var(--uc-ef-bg3) !important;
-      --border-color-deemphasized: var(--uc-ef-bg3) !important;
-      --panel-border-color: var(--uc-ef-bg3) !important;
-      --card-border-color: var(--uc-ef-bg3) !important;
-      --input-border-color: var(--uc-ef-bg3) !important;
-      --focus-outline-color: var(--uc-ef-bg4) !important;
-      --button-background-color-active: var(--uc-ef-greenbg) !important;
-      --color-accent-primary-selected: var(--uc-ef-greenbg) !important;
-      --text-color: var(--uc-ef-fg) !important;
-      --text-color-list-item-hover: var(--uc-ef-fg) !important;
-      --text-color-accent-primary-selected: var(--uc-ef-fg) !important;
-      --button-text-color: var(--uc-ef-fg) !important;
-      --button-text-color-hover: var(--uc-ef-fg) !important;
-      --button-text-color-active: var(--uc-ef-fg) !important;
-      --input-text-color: var(--uc-ef-fg) !important;
-      --panel-text-color: var(--uc-ef-fg) !important;
-      --text-color-deemphasized: var(--uc-ef-muted) !important;
-      --text-color-disabled: var(--uc-ef-muted) !important;
-      --button-text-color-disabled: var(--uc-ef-muted) !important;
-      --color-accent-primary: var(--uc-ef-green) !important;
-      --button-background-color-primary: var(--uc-ef-green) !important;
-      --icon-color-success: var(--uc-ef-green) !important;
-      --color-accent-primary-hover: var(--uc-ef-aqua) !important;
-      --button-background-color-primary-hover: var(--uc-ef-aqua) !important;
-      --link-color-hover: var(--uc-ef-aqua) !important;
-      --color-accent-primary-active: var(--uc-ef-blue) !important;
-      --button-background-color-primary-active: var(--uc-ef-blue) !important;
-      --link-color: var(--uc-ef-blue) !important;
-      --link-color-active: var(--uc-ef-blue) !important;
-      --button-text-color-primary: var(--uc-ef-dim) !important;
-      --button-text-color-primary-hover: var(--uc-ef-dim) !important;
-      --button-text-color-primary-active: var(--uc-ef-dim) !important;
-      --table-header-text-color: var(--uc-ef-dim) !important;
-      --text-color-error: var(--uc-ef-red) !important;
-      --icon-color-critical: var(--uc-ef-red) !important;
-      --icon-color-warning: var(--uc-ef-yellow) !important;
-      background-color: var(--uc-ef-bg0) !important;
-      color: var(--uc-ef-fg) !important;
-      accent-color: var(--uc-ef-green) !important;
+      --background-color-canvas: var(--uc-cendre-bg0) !important;
+      --table-row-background-color: var(--uc-cendre-bg0) !important;
+      --background-color-box: var(--uc-cendre-bg1) !important;
+      --background-color-box-info: var(--uc-cendre-bg1) !important;
+      --input-text-background-color: var(--uc-cendre-bg1) !important;
+      --panel-background-color: var(--uc-cendre-bg1) !important;
+      --popup-background-color: var(--uc-cendre-bg1) !important;
+      --button-text-color-ghost: var(--uc-cendre-fg) !important;
+      --button-text-color-ghost-hover: var(--uc-cendre-fg) !important;
+      --button-text-color-ghost-active: var(--uc-cendre-fg) !important;
+      --icon-color-accent-primary-desaturated: var(--uc-cendre-brass) !important;
+      --card-background-color: var(--uc-cendre-bg1) !important;
+      --table-row-background-color-alternate: var(--uc-cendre-bg1) !important;
+      --background-color-dimmed: var(--uc-cendre-bg2) !important;
+      --background-color-list-item-hover: var(--uc-cendre-bg2) !important;
+      --button-background-color: var(--uc-cendre-bg2) !important;
+      --button-background-color-disabled: var(--uc-cendre-bg2) !important;
+      --button-background-color-ghost-hover: var(--uc-cendre-bg2) !important;
+      --background-color-dimmed-further: var(--uc-cendre-bg3) !important;
+      --button-background-color-hover: var(--uc-cendre-bg3) !important;
+      --button-background-color-ghost-active: var(--uc-cendre-bg3) !important;
+      --border-color: var(--uc-cendre-bg3) !important;
+      --border-color-deemphasized: var(--uc-cendre-bg3) !important;
+      --panel-border-color: var(--uc-cendre-bg3) !important;
+      --card-border-color: var(--uc-cendre-bg3) !important;
+      --input-border-color: var(--uc-cendre-bg3) !important;
+      --focus-outline-color: var(--uc-cendre-bg4) !important;
+      --button-background-color-active: var(--uc-cendre-sel) !important;
+      --color-accent-primary-selected: var(--uc-cendre-sel) !important;
+      --text-color: var(--uc-cendre-fg) !important;
+      --text-color-list-item-hover: var(--uc-cendre-fg) !important;
+      --text-color-accent-primary-selected: var(--uc-cendre-fg) !important;
+      --button-text-color: var(--uc-cendre-fg) !important;
+      --button-text-color-hover: var(--uc-cendre-fg) !important;
+      --button-text-color-active: var(--uc-cendre-fg) !important;
+      --input-text-color: var(--uc-cendre-fg) !important;
+      --panel-text-color: var(--uc-cendre-fg) !important;
+      --text-color-deemphasized: var(--uc-cendre-muted) !important;
+      --text-color-disabled: var(--uc-cendre-muted) !important;
+      --button-text-color-disabled: var(--uc-cendre-muted) !important;
+      --color-accent-primary: var(--uc-cendre-ember) !important;
+      --button-background-color-primary: var(--uc-cendre-ember) !important;
+      --icon-color-success: var(--uc-cendre-ember) !important;
+      --color-accent-primary-hover: var(--uc-cendre-brass) !important;
+      --button-background-color-primary-hover: var(--uc-cendre-brass) !important;
+      --link-color-hover: var(--uc-cendre-brass) !important;
+      --color-accent-primary-active: var(--uc-cendre-frost) !important;
+      --button-background-color-primary-active: var(--uc-cendre-frost) !important;
+      --link-color: var(--uc-cendre-frost) !important;
+      --link-color-active: var(--uc-cendre-frost) !important;
+      --button-text-color-primary: var(--uc-cendre-deep) !important;
+      --button-text-color-primary-hover: var(--uc-cendre-deep) !important;
+      --button-text-color-primary-active: var(--uc-cendre-deep) !important;
+      --table-header-text-color: var(--uc-cendre-deep) !important;
+      --text-color-error: var(--uc-cendre-error) !important;
+      --icon-color-critical: var(--uc-cendre-error) !important;
+      --icon-color-warning: var(--uc-cendre-warn) !important;
+      background-color: var(--uc-cendre-bg0) !important;
+      color: var(--uc-cendre-fg) !important;
+      accent-color: var(--uc-cendre-ember) !important;
     }
 
     body {
-      background-color: var(--uc-ef-bg0) !important;
-      color: var(--uc-ef-fg) !important;
+      background-color: var(--uc-cendre-bg0) !important;
+      color: var(--uc-cendre-fg) !important;
     }
 
     ::selection {
-      background-color: var(--uc-ef-visual) !important;
-      color: var(--uc-ef-fg) !important;
+      background-color: var(--uc-cendre-visual) !important;
+      color: var(--uc-cendre-fg) !important;
     }
 
     input:is([type="search"], [type="text"], [type="url"], :not([type])),
     textarea {
-      background-color: var(--uc-ef-bg1) !important;
-      color: var(--uc-ef-fg) !important;
-      caret-color: var(--uc-ef-fg) !important;
+      background-color: var(--uc-cendre-bg1) !important;
+      color: var(--uc-cendre-fg) !important;
+      caret-color: var(--uc-cendre-fg) !important;
     }
 
     input:focus,
     textarea:focus {
-      border-color: var(--uc-ef-bg4) !important;
-      outline-color: var(--uc-ef-bg4) !important;
+      border-color: var(--uc-cendre-bg4) !important;
+      outline-color: var(--uc-cendre-bg4) !important;
     }
   }
 }
@@ -121,18 +121,18 @@
   @media not (forced-colors: active) {
     #categories moz-page-nav-button {
       --page-nav-button-background-color: transparent !important;
-      --page-nav-button-background-color-selected: var(--uc-ef-greenbg) !important;
-      --page-nav-button-background-color-hover: var(--uc-ef-bg1) !important;
-      --page-nav-button-background-color-active: var(--uc-ef-bg1) !important;
-      --page-nav-button-text-color: var(--uc-ef-fg) !important;
-      --page-nav-button-text-color-selected: var(--uc-ef-fg) !important;
-      --page-nav-button-text-color-hover: var(--uc-ef-fg) !important;
-      --page-nav-button-text-color-active: var(--uc-ef-fg) !important;
-      --page-nav-button-indicator-background-color: var(--uc-ef-green) !important;
+      --page-nav-button-background-color-selected: var(--uc-cendre-sel) !important;
+      --page-nav-button-background-color-hover: var(--uc-cendre-bg1) !important;
+      --page-nav-button-background-color-active: var(--uc-cendre-bg1) !important;
+      --page-nav-button-text-color: var(--uc-cendre-fg) !important;
+      --page-nav-button-text-color-selected: var(--uc-cendre-fg) !important;
+      --page-nav-button-text-color-hover: var(--uc-cendre-fg) !important;
+      --page-nav-button-text-color-active: var(--uc-cendre-fg) !important;
+      --page-nav-button-indicator-background-color: var(--uc-cendre-ember) !important;
     }
 
     #categories moz-page-nav-button:hover {
-      --page-nav-button-background-color-selected: var(--uc-ef-greenbg) !important;
+      --page-nav-button-background-color-selected: var(--uc-cendre-sel) !important;
     }
   }
 }
@@ -140,27 +140,27 @@
 @-moz-document url-prefix("about:firefoxview") {
   @media not (forced-colors: active) {
     :root {
-      --fxview-background-color: var(--uc-ef-bg0) !important;
-      --fxview-background-color-secondary: var(--uc-ef-bg1) !important;
-      --fxview-element-background-hover: var(--uc-ef-bg2) !important;
-      --fxview-element-background-active: var(--uc-ef-bg3) !important;
-      --fxview-primary-action-background: var(--uc-ef-green) !important;
+      --fxview-background-color: var(--uc-cendre-bg0) !important;
+      --fxview-background-color-secondary: var(--uc-cendre-bg1) !important;
+      --fxview-element-background-hover: var(--uc-cendre-bg2) !important;
+      --fxview-element-background-active: var(--uc-cendre-bg3) !important;
+      --fxview-primary-action-background: var(--uc-cendre-ember) !important;
     }
 
     moz-page-nav moz-page-nav-button {
       --page-nav-button-background-color: transparent !important;
-      --page-nav-button-background-color-selected: var(--uc-ef-greenbg) !important;
-      --page-nav-button-background-color-hover: var(--uc-ef-bg1) !important;
-      --page-nav-button-background-color-active: var(--uc-ef-bg1) !important;
-      --page-nav-button-text-color: var(--uc-ef-fg) !important;
-      --page-nav-button-text-color-selected: var(--uc-ef-fg) !important;
-      --page-nav-button-text-color-hover: var(--uc-ef-fg) !important;
-      --page-nav-button-text-color-active: var(--uc-ef-fg) !important;
-      --page-nav-button-indicator-background-color: var(--uc-ef-green) !important;
+      --page-nav-button-background-color-selected: var(--uc-cendre-sel) !important;
+      --page-nav-button-background-color-hover: var(--uc-cendre-bg1) !important;
+      --page-nav-button-background-color-active: var(--uc-cendre-bg1) !important;
+      --page-nav-button-text-color: var(--uc-cendre-fg) !important;
+      --page-nav-button-text-color-selected: var(--uc-cendre-fg) !important;
+      --page-nav-button-text-color-hover: var(--uc-cendre-fg) !important;
+      --page-nav-button-text-color-active: var(--uc-cendre-fg) !important;
+      --page-nav-button-indicator-background-color: var(--uc-cendre-ember) !important;
     }
 
     card-container {
-      --button-background-color-ghost: var(--uc-ef-bg1) !important;
+      --button-background-color-ghost: var(--uc-cendre-bg1) !important;
     }
   }
 }
@@ -170,17 +170,17 @@
   @media not (forced-colors: active) {
     :root {
       --toolbox-background-gradient: none !important;
-      --newtab-background-color: #2d353b !important;
-      --newtab-background-color-secondary: #343f44 !important;
-      --newtab-text-primary-color: #d3c6aa !important;
-      --newtab-text-secondary-color: #7fbbb3 !important;
-      --newtab-primary-action-background: #a7c080 !important;
+      --newtab-background-color: #171311 !important;
+      --newtab-background-color-secondary: #201b19 !important;
+      --newtab-text-primary-color: #e6d5c2 !important;
+      --newtab-text-secondary-color: #4e89a2 !important;
+      --newtab-primary-action-background: #ea9875 !important;
       --font-size-root: 17px !important;
       --box-shadow-level-3: none !important;
     }
 
     html, body {
-      background: #2d353b !important;
+      background: #171311 !important;
       margin: 0 !important;
       min-height: 100vh !important;
       font-family: JetBrainsMono Nerd Font Mono !important;
@@ -207,7 +207,7 @@
       margin: 0 auto !important;
       padding: max(48px, calc(50vh - 240px)) 0 48px !important;
       font: 14px/1.8 JetBrainsMono Nerd Font Mono !important;
-      color: #d3c6aa !important;
+      color: #e6d5c2 !important;
       background: transparent !important;
       box-shadow: none !important;
     }
@@ -220,8 +220,8 @@
       content: "Firefox";
       display: block;
       padding: 100px 0 12px;
-      border-bottom: 1px solid #4f585e;
-      color: #a7c080;
+      border-bottom: 1px solid #463e3a;
+      color: #ea9875;
       font-size: 16px;
       letter-spacing: 0.1em;
       text-align: center;
@@ -234,7 +234,7 @@
       height: auto !important;
       margin: 0 !important;
       padding: 12px 0 !important;
-      border-bottom: 1px solid #4f585e;
+      border-bottom: 1px solid #463e3a;
       text-align: center;
       font: inherit !important;
       line-height: 1.6 !important;
@@ -247,7 +247,7 @@
     .search-wrapper .search-inner-wrapper::before {
       content: "The fast, private browser that keeps you safe";
       display: block;
-      color: #d3c6aa;
+      color: #e6d5c2;
     }
 
     .search-wrapper .search-inner-wrapper::after {
@@ -259,32 +259,32 @@
       font-family: "JetBrainsMono Nerd Font Mono";
       font-size: 48px;
       line-height: 1;
-      color: #a7c080;
+      color: #ea9875;
       text-align: center;
       pointer-events: none;
     }
 
     .search-wrapper content-search-handoff-ui {
       font-family: JetBrainsMono Nerd Font Mono !important;
-      --content-search-handoff-ui-background-color: #343f44 !important;
-      --content-search-handoff-ui-color: #d3c6aa !important;
-      --content-search-handoff-ui-fill: #7fbbb3 !important;
-      --content-search-handoff-ui-caret-color: #a7c080 !important;
+      --content-search-handoff-ui-background-color: #201b19 !important;
+      --content-search-handoff-ui-color: #e6d5c2 !important;
+      --content-search-handoff-ui-fill: #4e89a2 !important;
+      --content-search-handoff-ui-caret-color: #ea9875 !important;
       --content-search-handoff-ui-border-radius: 16px !important;
-      --content-search-handoff-ui-unfocused-border-color: #4f585e !important;
-      --content-search-handoff-ui-fakefocus-border-color: #a7c080 !important;
+      --content-search-handoff-ui-unfocused-border-color: #463e3a !important;
+      --content-search-handoff-ui-fakefocus-border-color: #ea9875 !important;
       --content-search-handoff-ui-fakefocus-box-shadow-inner: transparent !important;
       --content-search-handoff-ui-fakefocus-box-shadow-outer: transparent !important;
     }
 
     .search-inner-wrapper moz-urlbar {
       font-family: JetBrainsMono Nerd Font Mono !important;
-      --toolbar-field-background-color: #343f44 !important;
-      --toolbar-field-text-color: #d3c6aa !important;
-      --toolbar-field-border-color: #4f585e !important;
-      --toolbar-field-background-color-focus: #343f44 !important;
-      --toolbar-field-text-color-focus: #d3c6aa !important;
-      --toolbar-field-border-color-focus: #a7c080 !important;
+      --toolbar-field-background-color: #201b19 !important;
+      --toolbar-field-text-color: #e6d5c2 !important;
+      --toolbar-field-border-color: #463e3a !important;
+      --toolbar-field-background-color-focus: #201b19 !important;
+      --toolbar-field-text-color-focus: #e6d5c2 !important;
+      --toolbar-field-border-color-focus: #ea9875 !important;
       --toolbarbutton-border-radius: 16px !important;
       --urlbar-border-radius: 16px !important;
     }
@@ -299,7 +299,7 @@
       justify-self: center;
       text-align: left;
       padding: 12px 0;
-      color: #7fbbb3;
+      color: #4e89a2;
       font: inherit;
       line-height: 2;
     }

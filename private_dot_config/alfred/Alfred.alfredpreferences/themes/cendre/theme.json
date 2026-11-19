@@ -1,0 +1,65 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#EA9875FF",
+        "font" : "Overpass",
+        "color" : "#73665BFF"
+      },
+      "shortcut" : {
+        "size" : 14,
+        "colorSelected" : "#73665BFF",
+        "font" : "Overpass",
+        "color" : "#73665BFF"
+      },
+      "backgroundSelected" : "#2A2422FF",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#EA9875FF",
+        "font" : "Overpass",
+        "color" : "#E6D5C2FF"
+      },
+      "iconPaddingHorizontal" : 7,
+      "roundness" : 8,
+      "paddingVertical" : 6,
+      "iconSize" : 33
+    },
+    "search" : {
+      "backgroundSelected" : "#2F1E17FF",
+      "paddingHorizontal" : 7,
+      "spacing" : 9,
+      "text" : {
+        "size" : 16,
+        "colorSelected" : "#E6D5C2FF",
+        "font" : "Overpass",
+        "color" : "#E6D5C2FF"
+      },
+      "background" : "#201B19FF",
+      "roundness" : 8,
+      "paddingVertical" : 10
+    },
+    "window" : {
+      "color" : "#171311FF",
+      "paddingHorizontal" : 9,
+      "width" : 700,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 0,
+      "roundness" : 14,
+      "paddingVertical" : 9
+    },
+    "credit" : "midgramr",
+    "visualEffectMode" : 2,
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#73665BFF",
+      "thickness" : 2
+    },
+    "name" : "Cendre"
+  }
+}

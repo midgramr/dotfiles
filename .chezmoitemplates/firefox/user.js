@@ -1,11 +1,11 @@
-// Everforest highlight colors — the about:config values behind the Highlight /
+// Cendre highlight colors — the about:config values behind the Highlight /
 // HighlightText and TextHighlight / TextSelectAttention system colors, which
 // the userChrome and userContent stylesheets cannot reach.
-// Palette: sainnhe/everforest (MIT). Colors mirror --uc-ef-visual, --uc-ef-fg,
-// --uc-ef-green, --uc-ef-yellow and --uc-ef-bg0.
-user_pref("ui.highlight", "#543a48");
-user_pref("ui.highlighttext", "#d3c6aa");
-user_pref("ui.textSelectAttentionBackground", "#a7c080");
-user_pref("ui.textSelectAttentionForeground", "#2d353b");
-user_pref("ui.textHighlightBackground", "#dbbc7f");
-user_pref("ui.textHighlightForeground", "#2d353b");
+// Palette: Aejkatappaja/cendre (MIT). Colors mirror --uc-cendre-visual,
+// --uc-cendre-fg, --uc-cendre-ember, --uc-cendre-brass and --uc-cendre-bg0.
+user_pref("ui.highlight", "#3d2b23");
+user_pref("ui.highlighttext", "#e6d5c2");
+user_pref("ui.textSelectAttentionBackground", "#ea9875");
+user_pref("ui.textSelectAttentionForeground", "#171311");
+user_pref("ui.textHighlightBackground", "#fcba81");
+user_pref("ui.textHighlightForeground", "#171311");

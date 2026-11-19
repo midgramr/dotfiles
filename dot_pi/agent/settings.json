@@ -22,7 +22,7 @@
     "npm:pi-paster",
     "npm:pi-vimmode"
   ],
-  "theme": "everforest-dark-medium",
+  "theme": "cendre",
   "modelThinkingLevels": {
     "openrouter/z-ai/glm-5.3-flash": "low",
     "openrouter/deepseek/deepseek-v4.1-flash": "low"

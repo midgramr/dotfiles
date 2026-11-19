@@ -6,21 +6,21 @@ set $alt Mod1
 set $super Mod4
 set $mod Mod5
 
-set $i3lockopts --inside-color=2d353b \
---ring-color=2d353b \
---insidever-color=2d353b \
---ringver-color=7fbbb3 \
---insidewrong-color=2d353b \
---ringwrong-color=e69875 \
---line-color=232a2e \
---keyhl-color=a7c080 \
---bshl-color=e69875 \
---layout-color=d3c6aa \
---time-color=d3c6aa \
---verif-color=d3c6aa \
---wrong-color=d3c6aa \
---modif-color=d3c6aa \
---greeter-color=d3c6aa \
+set $i3lockopts --inside-color=171311 \
+--ring-color=171311 \
+--insidever-color=171311 \
+--ringver-color=4e89a2 \
+--insidewrong-color=171311 \
+--ringwrong-color=d25780 \
+--line-color=0f0c0a \
+--keyhl-color=ea9875 \
+--bshl-color=d25780 \
+--layout-color=e6d5c2 \
+--time-color=e6d5c2 \
+--verif-color=e6d5c2 \
+--wrong-color=e6d5c2 \
+--modif-color=e6d5c2 \
+--greeter-color=e6d5c2 \
 --time-str='%l:%M %p' \
 --time-font=Overpass \
 --date-font=Overpass \
@@ -50,11 +50,11 @@ exec /snap/bin/obsidian
 exec copyq
 
 # Color options
-client.focused          #859289 #859289 #2d353b #859289 #859289
-client.focused_inactive #859289 #859289 #2d353b #859289 #859289
-client.unfocused        #475258 #475258 #d3c6aa #475258 #475258
-client.urgent           #ddbc7f #ddbc7f #2d353b #ddbc7f #ddbc7f
-client.background       #2d353b
+client.focused          #73665b #73665b #171311 #73665b #73665b
+client.focused_inactive #73665b #73665b #171311 #73665b #73665b
+client.unfocused        #362f2c #362f2c #e6d5c2 #362f2c #362f2c
+client.urgent           #f4a21c #f4a21c #171311 #f4a21c #f4a21c
+client.background       #171311
 
 focus_on_window_activation focus
 

@@ -77,7 +77,7 @@ require('blink.cmp').setup {
           },
         },
       },
-      winhighlight = 'Normal:Normal,PmenuExtra:Normal,CursorLine:TelescopeSelection',
+      winhighlight = 'Normal:Normal,PmenuExtra:Normal',
     },
   },
   sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },

@@ -1,0 +1,78 @@
+{
+  "name": "Cendre",
+  "base": "dark",
+  "overrides": {
+    "text": "#e6d5c2",
+    "inverseText": "#171311",
+    "inactive": "#73665b",
+    "inactiveShimmer": "#a09384",
+    "subtle": "#5a504c",
+
+    "claude": "#ea9875",
+    "claudeShimmer": "#fcba81",
+
+    "suggestion": "#4e89a2",
+    "permission": "#4e89a2",
+    "permissionShimmer": "#58bdff",
+    "remember": "#a692cd",
+
+    "success": "#43b16a",
+    "error": "#d25780",
+    "warning": "#f4a21c",
+    "warningShimmer": "#fcba81",
+    "merged": "#a692cd",
+
+    "promptBorder": "#73665b",
+    "promptBorderShimmer": "#a09384",
+    "planMode": "#20c9cb",
+    "autoAccept": "#9480ba",
+    "bashBorder": "#d1766e",
+    "ide": "#4e89a2",
+    "fastMode": "#ea9875",
+    "fastModeShimmer": "#fcba81",
+    "effortUltra": "#a692cd",
+
+    "diffAdded": "#202515",
+    "diffRemoved": "#301d1b",
+    "diffAddedDimmed": "#1b1c13",
+    "diffRemovedDimmed": "#231816",
+    "diffAddedWord": "#29482a",
+    "diffRemovedWord": "#582b34",
+
+    "rate_limit_fill": "#fcba81",
+    "rate_limit_empty": "#362f2c",
+    "briefLabelYou": "#4e89a2",
+    "briefLabelClaude": "#ea9875",
+
+    "userMessageBackground": "#201b19",
+    "userMessageBackgroundHover": "#362f2c",
+    "bashMessageBackgroundColor": "#201b19",
+    "memoryBackgroundColor": "#201b19",
+    "selectionBg": "#2f1e17",
+    "composerSidebarBackground": "#0f0c0a",
+
+    "red_FOR_SUBAGENTS_ONLY": "#d1766e",
+    "blue_FOR_SUBAGENTS_ONLY": "#58bdff",
+    "green_FOR_SUBAGENTS_ONLY": "#99af6b",
+    "yellow_FOR_SUBAGENTS_ONLY": "#fcba81",
+    "purple_FOR_SUBAGENTS_ONLY": "#9480ba",
+    "orange_FOR_SUBAGENTS_ONLY": "#ea9875",
+    "pink_FOR_SUBAGENTS_ONLY": "#d25780",
+    "cyan_FOR_SUBAGENTS_ONLY": "#20c9cb",
+
+    "rainbow_red": "#d25780",
+    "rainbow_orange": "#ea9875",
+    "rainbow_yellow": "#fcba81",
+    "rainbow_green": "#99af6b",
+    "rainbow_blue": "#58bdff",
+    "rainbow_indigo": "#4e89a2",
+    "rainbow_violet": "#a692cd",
+    "rainbow_red_shimmer": "#d25780",
+    "rainbow_orange_shimmer": "#ea9875",
+    "rainbow_yellow_shimmer": "#fcba81",
+    "rainbow_green_shimmer": "#99af6b",
+    "rainbow_blue_shimmer": "#58bdff",
+    "rainbow_indigo_shimmer": "#4e89a2",
+    "rainbow_violet_shimmer": "#a692cd"
+  }
+}
