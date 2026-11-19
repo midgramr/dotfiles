@@ -18,6 +18,10 @@ Assume the defaults below on every request. They only need restating when I want
 
 - **Do exactly what was asked.** No extra abstractions, no helper layers "for later", no drive-by
   edits to files outside the request. If a change seems needed elsewhere, say so and wait.
+- **Avoid excessive double checking.** If you find the root cause of an issue immediately, avoid
+  extensive double checking. You do not need to be 100% confident in something before implementing
+  a change. Making a mistake then reverting is preferrable to excessive double-checking before
+  starting an implementation.
 - **Match the codebase, not the textbook.** Existing conventions win over general best practice —
   e.g. this Scala code throws exceptions; `Either`/`Left`/`Right` is not used here, so don't
   introduce it. Check how neighbouring files do it before choosing a pattern.
