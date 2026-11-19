@@ -35,6 +35,17 @@ Assume the defaults below on every request. They only need restating when I want
   the person's name. Same for anything referenced inside those messages (GitLab MRs, Jira tickets,
   Confluence pages) — carry the URL through rather than naming it bare.
 
+### Databricks notebooks
+
+- **Import modules at the top and reuse imports.** Avoid writing fully-qualified names in code
+- **Add spaces for readability within code cells.** Spaces should separate components that form a
+  logical unit.
+- **Avoid excessive condition checking (`require`).** Only add require statements where invalid
+  state would could a runtime error. Note any notable edge cases in a comment
+- **Avoid notebook.exit blocks.** Any other ceremony should also be avoided.
+- **Leave markdown descriptions high-level.** Tailor them to someone reading the notebook for the
+  first time without any additional context.
+
 ### Config updates
 
 - **Sync changes to chezmoi.** If a config is tracked in chezmoi, automatically sync any updates
