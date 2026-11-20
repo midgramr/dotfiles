@@ -4,7 +4,7 @@ return {
     vim.fn.stdpath 'data' .. '/mason/bin/clangd',
     '--clang-tidy',
     '--background-index',
-    '--query-driver=/opt/homebrew/bin/g++-15,/opt/homebrew/bin/gcc-15',
+    '--query-driver=/opt/homebrew/bin/g++-16,/opt/homebrew/bin/gcc-16',
   },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
   root_markers = {
