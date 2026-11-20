@@ -1,6 +1,6 @@
 extends c
 
-snippet cf Codeforces
+snippet cp Competitive Programming
     #include <bits/stdc++.h>
     #define all(a) (a).begin(), (a).end()
     #define sz(a) (int)(a).size()
@@ -12,19 +12,27 @@ snippet cf Codeforces
     using ll = long long;
     using pii = pair<int, int>;
 
+    void setIO(string name = "") {
+        cin.tie(0)->sync_with_stdio(0);
+        if (sz(name)) {
+            freopen((name + ".in").c_str(), "r", stdin);
+            freopen((name + ".out").c_str(), "w", stdout);
+        }
+    }
+
     void solve() {
         $0
     }
 
     int main() {
-        cin.tie(0)->sync_with_stdio(0);
+        setIO($1);
         int t; cin >> t;
         while (t--) {
             solve();
         }
     }
 
-snippet cf2 Codeforces
+snippet cp2 Competitive Programming
     #include <bits/stdc++.h>
     #define all(a) (a).begin(), (a).end()
     #define sz(a) (int)(a).size()
@@ -36,12 +44,20 @@ snippet cf2 Codeforces
     using ll = long long;
     using pii = pair<int, int>;
 
+    void setIO(string name = "") {
+        cin.tie(0)->sync_with_stdio(0);
+        if (sz(name)) {
+            freopen((name + ".in").c_str(), "r", stdin);
+            freopen((name + ".out").c_str(), "w", stdout);
+        }
+    }
+
     void solve() {
         $0
     }
 
     int main() {
-        cin.tie(0)->sync_with_stdio(0);
+        setIO($1);
         solve();
     }
 
@@ -180,7 +196,7 @@ snippet dinics Dinics Algorithm (Max Flow)
         }
     };
 
-snippet segment Segment Tree 
+snippet segment Segment Tree
     int n;
     vector<int> tree;
 

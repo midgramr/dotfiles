@@ -30,6 +30,7 @@ spaces=(
     "Browser"
     "Terminal"
     "Notes"
+    "Discord"
     "Misc"
 )
 {{- end }}
@@ -62,7 +63,7 @@ yabai -m rule --add label="kitty" app="^kitty$" space=2
 yabai -m rule --add label="misc" app="^(FaceTime|Finder|System Settings|Calculator|Activity Monitor|Messages|Reminders|Riot Client|Dictionary|engine)$" manage=off
 yabai -m rule --add label="pip" app="^Firefox$" title="^Picture-in-Picture$" manage=off
 
-yabai -m rule --add label="chatgpt" app="^ChatGPT$" scratchpad="chatgpt"
+yabai -m rule --add label="claude" app="^Claude$" scratchpad="claude"
 yabai -m rule --add label="music" app="^Music$" scratchpad="music"
 {{ if eq .chezmoi.hostname "LLTUSMZ01KEHF" -}}
 yabai -m rule --add label="obsidian" app="^Obsidian$" scratchpad="obsidian"
