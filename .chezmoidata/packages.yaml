@@ -15,6 +15,7 @@ packages:
       - "gh"
       - "git-delta"
       - "go"
+      - "gowall"
       - "kubectl"
       - "kubectx"
       - "lua"
@@ -30,10 +31,12 @@ packages:
   darwin:
     taps:
       - "nikitabobko/tap"
+      - "FelixKratz/formulae"
     casks:
       - "chatgpt"
       - "codex"
       - "docker-desktop"
+      - "borders"
       - "karabiner-elements"
       - "kitty"
       - "linearmouse"
