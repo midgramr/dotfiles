@@ -59,11 +59,10 @@ meh - t : yabai -m window --grid 4:4:0:0:3:3
 hyper - f : yabai -m window --toggle float
 hyper - s : yabai -m window --toggle split
 
-# Apps
-meh - e : open "/System/Library/CoreServices/Finder.app"
-meh - m : open "/System/Applications/Messages.app"
-meh - r : open "/System/Applications/Reminders.app"
-meh - x : open "/System/Applications/System Settings.app"
-
+# Scratchpads
 meh - a : yabai -m window --toggle music || open "/System/Applications/Music.app"
+meh - e : yabai -m window --toggle finder || open "/System/Library/CoreServices/Finder.app"
 meh - c : yabai -m window --toggle claude || open "/Applications/Claude.app"
+meh - m : yabai -m window --toggle messages || open "/System/Applications/Messages.app"
+meh - r : yabai -m window --toggle reminders || open "/System/Applications/Reminders.app"
+meh - x : yabai -m window --toggle settings || open "/System/Applications/System Settings.app"

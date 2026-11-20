@@ -9,7 +9,7 @@
   },
   "httpIdleTimeoutMs": 300000,
   "transport": "auto",
-  "hideThinkingBlock": false,
+  "hideThinkingBlock": true,
   "defaultProvider": "openrouter",
   "defaultModel": "deepseek/deepseek-v4.1-flash",
   "packages": [

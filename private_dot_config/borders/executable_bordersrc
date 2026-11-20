@@ -1,11 +1,11 @@
 #!/bin/bash
 
 options=(
-  width=2.0
+  width=2
   hidpi=on
 
   # CENDRE
-  active_color=0xFFEA9875
+  active_color=0xFF73665B
   inactive_color=0xFF362F2C
 )
 
