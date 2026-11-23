@@ -32,11 +32,12 @@ packages:
     taps:
       - "nikitabobko/tap"
       - "FelixKratz/formulae"
+    brews:
+      - "FelixKratz/formulae/borders"
     casks:
       - "chatgpt"
       - "codex"
       - "docker-desktop"
-      - "borders"
       - "karabiner-elements"
       - "kitty"
       - "linearmouse"

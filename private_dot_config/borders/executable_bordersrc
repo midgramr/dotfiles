@@ -7,6 +7,10 @@ options=(
   # CENDRE
   active_color=0xFF73665B
   inactive_color=0xFF362F2C
+
+  # Phone/FaceTime call popup and Visual Intelligence (cmd+shift+6) overlays.
+  # Names must match the process executable exactly; no spaces after commas.
+  blacklist="Phone,FaceTime,Screenshot,screencapture,screencaptureui,Siri AI,Siri"
 )
 
 borders "${options[@]}"

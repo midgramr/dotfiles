@@ -1,6 +1,6 @@
 extends c
 
-snippet cp Competitive Programming
+snippet us Usaco
     #include <bits/stdc++.h>
     #define all(a) (a).begin(), (a).end()
     #define sz(a) (int)(a).size()
@@ -32,13 +32,6 @@ snippet cp Competitive Programming
         }
     }
 
-snippet cp2 Competitive Programming
-    #include <bits/stdc++.h>
-    #define all(a) (a).begin(), (a).end()
-    #define sz(a) (int)(a).size()
-    #define rep(i, a, b) for (int i = a; i < b; ++i)
-    #define rrep(i, a, b) for (int i = a; i >= b; --i)
-
     constexpr char nl = '\n';
     using namespace std;
     using ll = long long;
@@ -59,6 +52,49 @@ snippet cp2 Competitive Programming
     int main() {
         setIO($1);
         solve();
+    }
+
+snippet cf Codeforces
+    #include <bits/stdc++.h>
+    #define all(a) (a).begin(), (a).end()
+    #define sz(a) (int)(a).size()
+    #define rep(i, a, b) for (int i = a; i < b; ++i)
+    #define rrep(i, a, b) for (int i = a; i >= b; --i)
+
+    constexpr char nl = '\n';
+    using namespace std;
+    using ll = long long;
+    using pii = pair<int, int>;
+
+    void solve() {
+        $0
+    }
+
+    int main() {
+        solve();
+    }
+
+snippet cf2 Codeforces
+    #include <bits/stdc++.h>
+    #define all(a) (a).begin(), (a).end()
+    #define sz(a) (int)(a).size()
+    #define rep(i, a, b) for (int i = a; i < b; ++i)
+    #define rrep(i, a, b) for (int i = a; i >= b; --i)
+
+    constexpr char nl = '\n';
+    using namespace std;
+    using ll = long long;
+    using pii = pair<int, int>;
+
+    void solve() {
+        $0
+    }
+
+    int main() {
+        int t; cin >> t;
+        while (t--) {
+            solve();
+        }
     }
 
 snippet ordset GNU PBDS Order Statistic Tree
