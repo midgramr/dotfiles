@@ -10,7 +10,7 @@ options=(
 
   # Phone/FaceTime call popup and Visual Intelligence (cmd+shift+6) overlays.
   # Names must match the process executable exactly; no spaces after commas.
-  blacklist="Phone,FaceTime,Screenshot,screencapture,screencaptureui,Siri AI,Siri"
+  blacklist="Discord,Phone,FaceTime,Screenshot,screencapture,screencaptureui,Siri AI,Siri"
 )
 
 borders "${options[@]}"

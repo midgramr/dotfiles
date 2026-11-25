@@ -61,6 +61,7 @@ hyper - s : yabai -m window --toggle split
 
 # Scratchpads
 meh - a : yabai -m window --toggle music || open "/System/Applications/Music.app"
+meh - a : yabai -m window --toggle facetime || open "/System/Applications/FaceTime.app"
 meh - e : yabai -m window --toggle finder || open "/System/Library/CoreServices/Finder.app"
 meh - c : yabai -m window --toggle claude || open "/Applications/Claude.app"
 meh - m : yabai -m window --toggle messages || open "/System/Applications/Messages.app"
