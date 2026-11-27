@@ -211,3 +211,21 @@
     background-color: var(--uc-cendre-bg2) !important;
   }
 }
+
+/* Nova borders buttons with the accent color; use the quiet border from
+ * userContent.css in the print sidebar and prompts (e.g. the quit dialog). */
+@-moz-document url("chrome://global/content/print.html"),
+  url-prefix("chrome://global/content/commonDialog.xhtml") {
+  @media not (forced-colors: active) {
+    :root {
+      --button-border-color: var(--uc-cendre-bg3) !important;
+      /* Pressed primary (Save/Print) button: darkened ember, not frost. */
+      --button-background-color-primary-active: color-mix(in srgb, var(--uc-cendre-ember) 75%, var(--uc-cendre-deep)) !important;
+    }
+
+    /* The segmented control's frame reads this token on its host. */
+    #orientation-control {
+      --border-color-interactive: var(--uc-cendre-bg3) !important;
+    }
+  }
+}
